@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem_in.h                                           :+:      :+:    :+:   */
+/*   lem_in.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/19 13:58:46 by hstiv             #+#    #+#             */
-/*   Updated: 2019/05/19 13:58:58 by hstiv            ###   ########.fr       */
+/*   Created: 2019/05/19 13:58:35 by hstiv             #+#    #+#             */
+/*   Updated: 2019/05/19 13:58:37 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEM__IN_H
-# define LEM__IN_H
+#include "lem_in.h"
 
-# include "libft.h"
-# include <fcntl.h>
-# define BUFF_SIZE 9999
+int				main(int ac, char **av)
+{
+	char		**s;
 
-char                    **ft_rec(char *s);
-
-
-#endif
+	if (ac != 2 || !(s = ft_rec(av[1])))
+	{
+		perror("Error\n");
+		return (0);
+	}
+	while (*s != NULL)
+	{
+		printf("%s\n", *s);
+		s++;
+	}
+	ft_arraydel((void **)s);
+	return (0);
+}
