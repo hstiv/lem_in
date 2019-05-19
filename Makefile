@@ -13,6 +13,7 @@ all: $(NAME)
 $(NAME):
 	@echo "(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧ $@ is compiling... Wait a sec."
 	@make -C libft re && gcc $(WWW) -g -o $@ $(SRC) -I $(HEAD)
+	@rm -rf lem_in.dSYM
 	@echo "(•̀ᴗ•́)و $@ generated!".
 
 clean:

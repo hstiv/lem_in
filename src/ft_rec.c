@@ -17,7 +17,7 @@ char			**ft_rec(char *file_name)
 	int			fd;
 	char		buf[BUFF_SIZE + 1];
 	int			y;
-	
+
 	if (!(fd = open(file_name, O_RDONLY)))
 		return (NULL);
 	if ((y = read(fd, buf, BUFF_SIZE)) < 0)

@@ -10,14 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEM__IN_H
-# define LEM__IN_H
+#ifndef LEM_IN_H
+# define LEM_IN_H
 
 # include "libft.h"
 # include <fcntl.h>
 # define BUFF_SIZE 9999
 
-char                    **ft_rec(char *s);
-
-
+char					**ft_rec(char *s);
 #endif
