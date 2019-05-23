@@ -19,6 +19,8 @@ size_t				ft_count_char(char const *s, char c)
 
 	l = 0;
 	i = 0;
+	if (s[0] == '#' && s[1] == '#')
+		return (1);
 	while (s[l] != '\0')
 	{
 		if (s[l] != c && s[l] != '\0')

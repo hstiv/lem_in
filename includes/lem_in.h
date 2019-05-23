@@ -39,8 +39,10 @@ typedef struct			s_room
 	struct s_room		*next;
 }						t_room;
 
+void					ft_triplefree(char ***s);
 int						deep_rec(t_lem *lem, char **s);
-char					**ft_rec(char *s, t_lem *lem);
+char					***ft_rec(char *s, t_lem *lem);
+char					***triple_split(char **s);
 t_lem                   *ft_newlem();
 t_room					*ft_newroom();
 #endif

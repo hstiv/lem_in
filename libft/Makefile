@@ -67,7 +67,8 @@ SRC = $(PATH_SRC)ft_strlen.c \
 	$(PATH_SRC)ft_lstiter.c \
 	$(PATH_SRC)ft_lstmap.c \
 	$(PATH_SRC)ft_dellst.c \
-	$(PATH_SRC)ft_arraydel.c
+	$(PATH_SRC)ft_arraydel.c \
+	$(PATH_SRC)ft_strlen2.c
 
 CFLAGS = -Wall -Wextra -Werror
 

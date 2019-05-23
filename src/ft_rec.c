@@ -65,7 +65,7 @@ int				deep_valid(t_lem *lem, char **s)
 
 
 
-char			**ft_rec(char *file_name, t_lem *lem)
+char			***ft_rec(char *file_name, t_lem *lem)
 {
 	int			fd;
 	char		buf[BUFF_SIZE + 1];
@@ -78,7 +78,8 @@ char			**ft_rec(char *file_name, t_lem *lem)
 		return (NULL);
 	buf[y] = '\0';
 	s = triple_split(ft_strsplit(buf, '\n'));
-	if (!deep_valid(lem, s) || !deep_rec(lem, s))
-		return (NULL);
+	lem->ants += 1;
+	// if (!deep_valid(lem, s) || !deep_rec(lem, s))
+	// 	return (NULL);
 	return (s);
 }

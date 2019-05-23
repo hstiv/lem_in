@@ -14,7 +14,7 @@
 
 int				main(int ac, char **av)
 {
-	char		**s;
+	char		***s;
 	t_lem		*lem;
 
 	lem = ft_newlem();
@@ -23,7 +23,7 @@ int				main(int ac, char **av)
 		perror("Error\n");
 		return (0);
 	}
-	ft_arraydel((void **)s);
+	ft_triplefree(s);
 	free(lem);
 	return (0);
 }

@@ -25,7 +25,8 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-void				ft_arraydel(void **array);
+int					ft_strlen2(char **s);
+void				ft_arraydel(char **array);
 void				ft_dellst(void *lst, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
