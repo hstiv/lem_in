@@ -15,7 +15,32 @@
 
 # include "libft.h"
 # include <fcntl.h>
+# include <string.h>
 # define BUFF_SIZE 9999
 
-char					**ft_rec(char *s);
+typedef struct			s_lem
+{
+	char				**s;
+	int					ants;
+	int					rooms;
+	struct s_lem		*begin;
+	struct s_lem		*end;
+}						t_lem;
+
+typedef struct			s_room
+{
+	int					*w;
+	int					room_cnt;
+	char				*name;
+	int					ant;
+	int					x;
+	int					y;
+	struct s_room		**bridge;
+	struct s_room		*next;
+}						t_room;
+
+int						deep_rec(t_lem *lem, char **s);
+char					**ft_rec(char *s, t_lem *lem);
+t_lem                   *ft_newlem();
+t_room					*ft_newroom();
 #endif

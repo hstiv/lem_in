@@ -12,17 +12,17 @@
 
 #include "libft.h"
 
-static int			ft_atoi_if(long long int sign)
+static int			ft_atoi_if(int sign)
 {
 	if (sign > 0)
 		return (-1);
 	return (0);
 }
 
-static int			ft_atoi_maker(long long int sign, const char *n)
+static int			ft_atoi_maker(int sign, const char *n)
 {
-	long long int	res;
-	long long int	check;
+	int				res;
+	int				check;
 
 	res = 0;
 	check = 0;
@@ -42,7 +42,7 @@ static int			ft_atoi_maker(long long int sign, const char *n)
 
 int					ft_atoi(const char *n)
 {
-	long long int	sign;
+	int				sign;
 
 	sign = 1;
 	while ((9 <= *n && *n <= 13) || *n == 32)

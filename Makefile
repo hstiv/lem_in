@@ -6,7 +6,7 @@ WWW = -Wall -Wextra -Werror
 
 LFT = libft/libft.a
 
-SRC = src/lem_in.c src/ft_rec.c $(LFT) 
+SRC = src/lem_in.c src/ft_rec.c src/ft_newlst.c $(LFT) 
 
 all: $(NAME)
 

@@ -15,17 +15,15 @@
 int				main(int ac, char **av)
 {
 	char		**s;
+	t_lem		*lem;
 
-	if (ac != 2 || !(s = ft_rec(av[1])))
+	lem = ft_newlem();
+	if (ac != 2 || !(s = ft_rec(av[1], lem)))
 	{
 		perror("Error\n");
 		return (0);
 	}
-	while (*s != NULL)
-	{
-		printf("%s\n", *s);
-		s++;
-	}
 	ft_arraydel((void **)s);
+	free(lem);
 	return (0);
 }
