@@ -6,7 +6,7 @@ char                ***triple_split(char **str)
 	int				i;
 	int				l;
 
-	l = ft_strlen2(str);
+	l = ft_len2(str);
 	i = 0;
 	if (!(s = (char ***)malloc(sizeof(char **) * (l + 1))))
 		return (NULL);

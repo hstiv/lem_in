@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int                 ft_strlen2(char **s)
+int                 ft_len2(char **s)
 {
     int             i;
 

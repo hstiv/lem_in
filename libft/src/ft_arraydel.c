@@ -16,7 +16,7 @@ void	ft_arraydel(char **array)
 {
 	int	i;
 
-	i = ft_strlen2(array) - 1;
+	i = ft_len2(array) - 1;
 	while (i >= 0)
 	{
 		free(array[i]);
