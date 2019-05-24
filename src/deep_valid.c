@@ -11,12 +11,12 @@ static int		ant_count_check(char *s, t_lem *lem)
 	return (1);
 }
 
+
+
 int				deep_valid(t_lem *lem, char ***s)
 {
 	int			i;
-	// char		**s1;
 	t_room		*room;
-	// int			c;
 
 	i = 1;
 	room = ft_newroom();
@@ -29,8 +29,8 @@ int				deep_valid(t_lem *lem, char ***s)
 			write(1, "Invalid name\n", 13);
 			return (0);
 		}
-		while (s[i][0][0] == '#' && s[i][0])
 		room->name = ft_strdup(s[i][0]);
+		i++;
 	}
 	return (1);
 }

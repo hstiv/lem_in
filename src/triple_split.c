@@ -36,9 +36,12 @@ char                ***triple_split(char **str)
 	{
 		while ((str[i][0] == '#' && str[i][1] != '#') || !cmp(str, i))
 			i++;
-		s[l] = ft_strsplit(str[i], ' ');
-		l++;
-		i++;
+		if (ft_strlenc(str[i], '-') == ft_strlen(str[i]))
+		{
+			s[l] = ft_strsplit(str[i], ' ');
+			l++;
+			i++;
+		}
 	}
 	linksplit(s, str, i, l);
 	ft_arraydel(str);
