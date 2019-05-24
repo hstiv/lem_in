@@ -30,7 +30,7 @@ int				deep_valid(t_lem *lem, char ***s)
 			return (0);
 		}
 		while (s[i][0][0] == '#' && s[i][0])
-		room->name = ft_strdup(s[i][0])
+		room->name = ft_strdup(s[i][0]);
 	}
 	return (1);
 }
