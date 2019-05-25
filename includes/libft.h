@@ -25,6 +25,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_err(char *s);
 int					ft_len3(char ***s);
 int					ft_len2(char **s);
 void				ft_arraydel(char **array);
