@@ -21,9 +21,10 @@ t_lem			*ft_newlem(void)
 	{
 		new->s = NULL;
 		new->ants = 0;
-		new->rooms = 0;
+		new->rooms_cnt = 0;
 		new->begin = NULL;
 		new->end = NULL;
+		new->edge = NULL;
 	}
 	return (new);
 }

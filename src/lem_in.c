@@ -20,8 +20,8 @@ int				main(int ac, char **av)
 	lem = ft_newlem();
 	if (ac != 2 || !(s = ft_rec(av[1], lem)))
 	{
-		perror("Error\n");
-		return (0);
+		free(lem);
+		return(ft_err("Error\n"));
 	}
 	ft_triplefree(s);
 	free(lem);

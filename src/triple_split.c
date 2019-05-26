@@ -12,26 +12,53 @@
 
 #include "lem_in.h"
 
-static int			cmp(char **s, int i)
+static int			len_rooms(char ***s)
 {
-	if (!ft_strcmp(s[i], "##start") || !ft_strcmp(s[i], "##end"))
+	int				i;
+	int				l;
+
+	i = 0;
+	l = 0;
+	while (s[i] != NULL && ft_len2(s[i]) != 2)
+	{
+		if (s[i][0][0] == '#')
+			i++;
+		if (ft_len2(s[i]) == 3 && s[i][0][0] != '#')
+			l++;
+		i++;
+	}
+	return (l);
+}
+
+static int			ft_cmp(char **s, int i)
+{
+	if (ft_strequ(s[i], "##start") || ft_strequ(s[i], "##end"))
 		return (1);
 	else if (s[i][0] == '#')
 		return (0);
 	return (1);
 }
 
-static void			linksplit(char ***s, char **str, int i, int l)
+static int			linksplit(char ***s, char **str, int i, int l)
 {
+	int				o;
+
+	o = l;
 	while (str[i] != NULL)
 	{
+		while (str[i + 1] != NULL && !ft_cmp(str, i))
+			i++;
 		s[l] = ft_strsplit(str[i], '-');
 		l++;
 		i++;
 	}
+	if (o == 0 || i == o)
+		return (0);
+	o = len_rooms(s);
+	return (o);
 }
 
-char                ***triple_split(char **str)
+char                ***triple_split(char **str, t_lem *lem)
 {
 	char			***s;
 	int				i;
@@ -46,16 +73,16 @@ char                ***triple_split(char **str)
 	l = 0;
 	while (str[i] && str[i][ft_strlenc(str[i], '-')] == '\0')
 	{
-		while ((str[i][0] == '#' && str[i][1] != '#') || !cmp(str, i))
+		while (!ft_cmp(str, i))
 			i++;
-		if (ft_strlenc(str[i], '-') == ft_strlen(str[i]))
+		if (str[i] != NULL && ft_strlenc(str[i], '-') == ft_strlen(str[i]))
 		{
 			s[l] = ft_strsplit(str[i], ' ');
 			l++;
 			i++;
 		}
 	}
-	linksplit(s, str, i, l);
+	lem->rooms_cnt = linksplit(s, str, i, l);
 	ft_arraydel(str);
 	return (s);
 }
