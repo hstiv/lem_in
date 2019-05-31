@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../includes/lem_in.h
+libft.h
+../includes/libft.h
+fcntl.h
+-
+string.h
+-
+
+../includes/libft.h
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+stdio.h
+-
+
+/Users/hstiv/lem_in/src/ft_rec.c
+lem_in.h
+/Users/hstiv/lem_in/src/lem_in.h
+

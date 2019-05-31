@@ -21,7 +21,7 @@
 typedef struct			s_lem
 {
 	char				**s;
-	char				**edge;
+	struct s_room		**adj;
 	int					ants;
 	int					rooms_cnt;
 	struct s_lem		*begin;
@@ -31,20 +31,29 @@ typedef struct			s_lem
 typedef struct			s_room
 {
 	int					*w;
-	int					room_cnt;
+	int 				nb;
 	char				*name;
 	int					ant;
 	int					x;
 	int					y;
-	struct s_room		**bridge;
-	struct s_room		*next;
+	int 				lk_cnt;
+	struct s_tmp		*tmp;
 }						t_room;
 
-void					edge_list(t_lem *lem, char ***s);
+typedef struct			s_tmp
+{
+	t_room				*room;
+	struct s_tmp		*next;
+	struct s_tmp		*prev;
+}						t_tmp;
+
+int						adj_list(t_lem *lem, char ***s);
 void					ft_triplefree(char ***s);
 int						deep_rec(t_lem *lem, char ***s);
 char					***ft_rec(char *s, t_lem *lem);
 char					***triple_split(char **s, t_lem *lem);
+int 					link_make(t_lem *lem, char ***s, int i);
 t_lem					*ft_newlem();
 t_room					*ft_newroom();
+t_tmp					*ft_newtmp();
 #endif
