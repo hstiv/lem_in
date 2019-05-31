@@ -174,12 +174,18 @@ CMakeFiles/lem_in.dir/libft/src/ft_tolower.c.o
  /Users/hstiv/lem_in/libft/src/ft_tolower.c
 CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.o
  /Users/hstiv/lem_in/libft/src/ft_toupper.c
+CMakeFiles/lem_in.dir/src/adj_list.c.o
+ ../includes/lem_in.h
+ ../includes/libft.h
+ /Users/hstiv/lem_in/src/adj_list.c
 CMakeFiles/lem_in.dir/src/deep_valid.c.o
  ../includes/lem_in.h
  ../includes/libft.h
  /Users/hstiv/lem_in/src/deep_valid.c
-CMakeFiles/lem_in.dir/src/edge_list.c.o
- /Users/hstiv/lem_in/src/edge_list.c
+CMakeFiles/lem_in.dir/src/free_lem.c.o
+ ../includes/lem_in.h
+ ../includes/libft.h
+ /Users/hstiv/lem_in/src/free_lem.c
 CMakeFiles/lem_in.dir/src/ft_newlst.c.o
  ../includes/lem_in.h
  ../includes/libft.h
@@ -196,6 +202,10 @@ CMakeFiles/lem_in.dir/src/lem_in.c.o
  ../includes/lem_in.h
  ../includes/libft.h
  /Users/hstiv/lem_in/src/lem_in.c
+CMakeFiles/lem_in.dir/src/link_make.c.o
+ ../includes/lem_in.h
+ ../includes/libft.h
+ /Users/hstiv/lem_in/src/link_make.c
 CMakeFiles/lem_in.dir/src/triple_split.c.o
  ../includes/lem_in.h
  ../includes/libft.h

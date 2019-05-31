@@ -174,11 +174,17 @@ CMakeFiles/lem_in.dir/libft/src/ft_tolower.c.o: ../libft/src/ft_tolower.c
 
 CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.o: ../libft/src/ft_toupper.c
 
+CMakeFiles/lem_in.dir/src/adj_list.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/src/adj_list.c.o: ../includes/libft.h
+CMakeFiles/lem_in.dir/src/adj_list.c.o: ../src/adj_list.c
+
 CMakeFiles/lem_in.dir/src/deep_valid.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/deep_valid.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/deep_valid.c.o: ../src/deep_valid.c
 
-CMakeFiles/lem_in.dir/src/edge_list.c.o: ../src/edge_list.c
+CMakeFiles/lem_in.dir/src/free_lem.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/src/free_lem.c.o: ../includes/libft.h
+CMakeFiles/lem_in.dir/src/free_lem.c.o: ../src/free_lem.c
 
 CMakeFiles/lem_in.dir/src/ft_newlst.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/ft_newlst.c.o: ../includes/libft.h
@@ -195,6 +201,10 @@ CMakeFiles/lem_in.dir/src/ft_triplefree.c.o: ../src/ft_triplefree.c
 CMakeFiles/lem_in.dir/src/lem_in.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/lem_in.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/lem_in.c.o: ../src/lem_in.c
+
+CMakeFiles/lem_in.dir/src/link_make.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/src/link_make.c.o: ../includes/libft.h
+CMakeFiles/lem_in.dir/src/link_make.c.o: ../src/link_make.c
 
 CMakeFiles/lem_in.dir/src/triple_split.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/triple_split.c.o: ../includes/libft.h
