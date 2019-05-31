@@ -17,14 +17,14 @@ static void			if_start(t_lem *lem, char ***s, int *i, int *l)
 	t_room				*adj;
 
 	adj = lem->adj[*l];
-	*(i)++;
+	(*i)++;
 	adj->x = ft_atoi(s[*i][1]);
 	adj->y = ft_atoi(s[*i][2]);
 	adj->name = ft_strdup(s[*i][0]);
 	lem->begin = adj;
 	adj->nb = *l;
-	*(i)++;
-	*(l)++;
+	(*i)++;
+	(*l)++;
 }
 
  static void			if_end(t_lem *lem, char ***s, int *i, int *l)
@@ -32,14 +32,14 @@ static void			if_start(t_lem *lem, char ***s, int *i, int *l)
 	t_room				*adj;
 
 	adj = lem->adj[*l];
-	*(i)++;
+	(*i)++;
 	adj->x = ft_atoi(s[*i][1]);
 	adj->y = ft_atoi(s[*i][2]);
 	adj->name = ft_strdup(s[*i][0]);
 	lem->end = adj;
 	adj->nb = *l;
-	*(i)++;
-	*(l)++;
+	(*i)++;
+	(*l)++;
  }
 
  static void			if_common(t_lem *lem, char ***s, int *i, int *l)
@@ -51,8 +51,8 @@ static void			if_start(t_lem *lem, char ***s, int *i, int *l)
 	adj->y = ft_atoi(s[*i][2]);
 	adj->name = ft_strdup(s[*i][0]);
 	adj->nb = *l;
-	*(i)++;
-	*(l)++;
+	(*i)++;
+	(*l)++;
  }
 
  int					adj_list(t_lem *lem, char ***s)
