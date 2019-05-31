@@ -6,7 +6,7 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/25 14:16:47 by hstiv             #+#    #+#             */
-/*   Updated: 2019/05/25 14:16:49 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/05/31 15:46:39 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ static int			linksplit(char ***s, char **str, int i, int l)
 	int				o;
 
 	o = l;
+	//todo duble links
 	while (str[i] != NULL)
 	{
 		while (str[i + 1] != NULL && !ft_cmp(str, i))
@@ -58,7 +59,7 @@ static int			linksplit(char ***s, char **str, int i, int l)
 	return (o);
 }
 
-char                ***triple_split(char **str, t_lem *lem)
+char				***triple_split(char **str, t_lem *lem)
 {
 	char			***s;
 	int				i;

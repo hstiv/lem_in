@@ -77,9 +77,9 @@ add_executable(lem_in
         libft/src/ft_tolower.c
         libft/src/ft_toupper.c
         src/deep_valid.c
-        src/edge_list.c
+        src/adj_list.c
         src/ft_newlst.c
         src/ft_rec.c
         src/ft_triplefree.c
         src/lem_in.c
-        src/triple_split.c src/link_make.c)
+        src/triple_split.c src/link_make.c src/free_lem.c)

@@ -36,12 +36,10 @@ t_room			*ft_newroom(void)
 	new = (t_room *)malloc(sizeof(t_room));
 	if (new)
 	{
-		new->w = 0;
 		new->ant = 0;
 		new->x = 0;
 		new->y = 0;
-		new->prev = NULL;
-		new->next = NULL;
+		new->tmp = NULL;
 	}
 	return (new);
 }
@@ -54,6 +52,7 @@ t_tmp			*ft_newtmp(void)
 	if (new)
 	{
 		new->room = NULL;
+		new->visited = 0;
 		new->next = NULL;
 		new->prev = NULL;
 	}

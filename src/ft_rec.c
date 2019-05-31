@@ -104,6 +104,7 @@ char			***ft_rec(char *file_name, t_lem *lem)
 		y++;
 	}
 	lem->ants += 1;
+	//todo deep_valid for multiple start/end, name with 'L' at the beginning
 //	if (!deep_valid(lem, s))
 //		return (NULL);
 	return (s);

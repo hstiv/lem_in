@@ -7,7 +7,7 @@ WWW = -Wall -Wextra -Werror
 LFT = libft/libft.a
 
 SRC = src/lem_in.c src/ft_rec.c src/ft_newlst.c src/triple_split.c \
-src/ft_triplefree.c src/deep_valid.c src/edge_list.c $(LFT) 
+src/ft_triplefree.c src/deep_valid.c src/adj_list.c src/free_lem.c $(LFT)
 
 all: $(NAME)
 

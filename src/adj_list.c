@@ -1,7 +1,19 @@
- #include "lem_in.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   edge_list.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/31 15:46:51 by hstiv             #+#    #+#             */
+/*   Updated: 2019/05/31 15:50:38 by hstiv            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
- static void			if_start(t_lem *lem, char ***s, int *i, int *l)
- {
+#include "lem_in.h"
+
+static void			if_start(t_lem *lem, char ***s, int *i, int *l)
+{
 	t_room				*adj;
 
 	adj = lem->adj[*l];
@@ -13,7 +25,7 @@
 	adj->nb = *l;
 	*(i)++;
 	*(l)++;
- }
+}
 
  static void			if_end(t_lem *lem, char ***s, int *i, int *l)
  {

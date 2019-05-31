@@ -30,26 +30,28 @@ typedef struct			s_lem
 
 typedef struct			s_room
 {
-	int					*w;
 	int 				nb;
 	char				*name;
 	int					ant;
 	int					x;
 	int					y;
-	int 				lk_cnt;
+	int 				link_count;
 	struct s_tmp		*tmp;
 }						t_room;
 
 typedef struct			s_tmp
 {
 	t_room				*room;
+	int					visited;
 	struct s_tmp		*next;
 	struct s_tmp		*prev;
 }						t_tmp;
 
+void					free_lem(t_lem *lem);
+void					free_adj(t_room **adj);
 int						adj_list(t_lem *lem, char ***s);
 void					ft_triplefree(char ***s);
-int						deep_rec(t_lem *lem, char ***s);
+//int						deep_rec(t_lem *lem, char ***s);
 char					***ft_rec(char *s, t_lem *lem);
 char					***triple_split(char **s, t_lem *lem);
 int 					link_make(t_lem *lem, char ***s, int i);

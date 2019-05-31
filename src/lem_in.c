@@ -23,7 +23,8 @@ int				main(int ac, char **av)
 		free(lem);
 		return(ft_err("Error\n"));
 	}
+	adj_list(lem, s);
 	ft_triplefree(s);
-	free(lem);
+	free_lem(lem);
 	return (0);
 }

@@ -1878,6 +1878,33 @@ libft/src/ft_toupper.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.s
 .PHONY : libft/src/ft_toupper.c.s
 
+src/adj_list.o: src/adj_list.c.o
+
+.PHONY : src/adj_list.o
+
+# target to build an object file
+src/adj_list.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/adj_list.c.o
+.PHONY : src/adj_list.c.o
+
+src/adj_list.i: src/adj_list.c.i
+
+.PHONY : src/adj_list.i
+
+# target to preprocess a source file
+src/adj_list.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/adj_list.c.i
+.PHONY : src/adj_list.c.i
+
+src/adj_list.s: src/adj_list.c.s
+
+.PHONY : src/adj_list.s
+
+# target to generate assembly for a file
+src/adj_list.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/adj_list.c.s
+.PHONY : src/adj_list.c.s
+
 src/deep_valid.o: src/deep_valid.c.o
 
 .PHONY : src/deep_valid.o
@@ -1905,32 +1932,32 @@ src/deep_valid.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/deep_valid.c.s
 .PHONY : src/deep_valid.c.s
 
-src/edge_list.o: src/edge_list.c.o
+src/free_lem.o: src/free_lem.c.o
 
-.PHONY : src/edge_list.o
+.PHONY : src/free_lem.o
 
 # target to build an object file
-src/edge_list.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/edge_list.c.o
-.PHONY : src/edge_list.c.o
+src/free_lem.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/free_lem.c.o
+.PHONY : src/free_lem.c.o
 
-src/edge_list.i: src/edge_list.c.i
+src/free_lem.i: src/free_lem.c.i
 
-.PHONY : src/edge_list.i
+.PHONY : src/free_lem.i
 
 # target to preprocess a source file
-src/edge_list.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/edge_list.c.i
-.PHONY : src/edge_list.c.i
+src/free_lem.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/free_lem.c.i
+.PHONY : src/free_lem.c.i
 
-src/edge_list.s: src/edge_list.c.s
+src/free_lem.s: src/free_lem.c.s
 
-.PHONY : src/edge_list.s
+.PHONY : src/free_lem.s
 
 # target to generate assembly for a file
-src/edge_list.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/edge_list.c.s
-.PHONY : src/edge_list.c.s
+src/free_lem.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/free_lem.c.s
+.PHONY : src/free_lem.c.s
 
 src/ft_newlst.o: src/ft_newlst.c.o
 
@@ -2298,12 +2325,15 @@ help:
 	@echo "... libft/src/ft_toupper.o"
 	@echo "... libft/src/ft_toupper.i"
 	@echo "... libft/src/ft_toupper.s"
+	@echo "... src/adj_list.o"
+	@echo "... src/adj_list.i"
+	@echo "... src/adj_list.s"
 	@echo "... src/deep_valid.o"
 	@echo "... src/deep_valid.i"
 	@echo "... src/deep_valid.s"
-	@echo "... src/edge_list.o"
-	@echo "... src/edge_list.i"
-	@echo "... src/edge_list.s"
+	@echo "... src/free_lem.o"
+	@echo "... src/free_lem.i"
+	@echo "... src/free_lem.s"
 	@echo "... src/ft_newlst.o"
 	@echo "... src/ft_newlst.i"
 	@echo "... src/ft_newlst.s"
