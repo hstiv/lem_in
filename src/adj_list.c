@@ -40,8 +40,6 @@ static void			if_start(t_lem *lem, char ***s, int *i, int *l)
 
  static void			if_common(t_lem *lem, char ***s, int *i, int *l)
  {
-	t_room				*adj;
-
 	lem->adj[*l] = ft_newroom();
 	lem->adj[*l]->x = ft_atoi(s[*i][1]);
 	lem->adj[*l]->y = ft_atoi(s[*i][2]);
