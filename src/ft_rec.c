@@ -12,7 +12,6 @@
 
 #include "lem_in.h"
 
-
 char			***ft_rec(char *file_name, t_lem *lem)
 {
 	int			fd;

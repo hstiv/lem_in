@@ -26,7 +26,7 @@ static int			ind_sch(t_lem *lem, char *s)
 
 static void			lnk_connect(t_room **adj, int n1, int n2)
 {
-	t_tmp			*tmp;
+	t_room			*room;
 
 	tmp = adj[n1]->tmp;
 	if (!tmp)
@@ -49,8 +49,6 @@ int 				link_make(t_lem *lem, char ***s, int i)
 	int 			n1;
 	int 			n2;
 
-	n1= 0;
-	n2 = 0;
 	while (s[i])
 	{
 		n1 = ind_sch(lem, s[i][0]);

@@ -36,16 +36,11 @@ typedef struct			s_room
 	int					x;
 	int					y;
 	int 				link_count;
-	struct s_tmp		*tmp;
+	int 				visited;
+	struct s_room		*next;
+	struct s_room		*prev;
+	struct s_room		*self;
 }						t_room;
-
-typedef struct			s_tmp
-{
-	t_room				*room;
-	int					visited;
-	struct s_tmp		*next;
-	struct s_tmp		*prev;
-}						t_tmp;
 
 int 					link_make(t_lem *lem, char ***s, int i);
 void					free_lem(t_lem *lem);
@@ -57,5 +52,4 @@ char					***triple_split(char **s, t_lem *lem);
 int 					link_make(t_lem *lem, char ***s, int i);
 t_lem					*ft_newlem();
 t_room					*ft_newroom();
-t_tmp					*ft_newtmp();
 #endif
