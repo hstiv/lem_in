@@ -27,21 +27,21 @@ static int			ind_sch(t_lem *lem, char *s)
 static void			lnk_connect(t_room **adj, int n1, int n2)
 {
 	t_room			*room;
+	t_room			*tmp;
 
-	tmp = adj[n1]->tmp;
-	if (!tmp)
-	{
-		tmp = ft_newtmp();
-		tmp->room = adj[n2];
-	}
+	room = ft_newroom();
+	if (!adj[n1]->next)
+		adj[n1]->next = room;
 	else
 	{
+		tmp = adj[n1];
 		while (tmp->next)
 			tmp = tmp->next;
-		tmp->next = ft_newtmp();
-		tmp->next->prev = tmp;
-		tmp->next->room = adj[n2];
+		tmp->next = room;
+		room->prev = tmp;
 	}
+	room->self = adj[n2];
+	room->nb = n2;
 }
 
 int 				link_make(t_lem *lem, char ***s, int i)

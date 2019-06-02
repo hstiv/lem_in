@@ -2,14 +2,14 @@
 
 void				free_adj(t_room **adj)
 {
-	t_tmp			*tmp;
+	t_room			*tmp;
 	int 			i;
-	t_tmp			*prev;
+	t_room			*prev;
 
 	i = 0;
 	while (adj[i])
 	{
-		tmp = adj[i]->tmp;
+		tmp = adj[i]->next;
 		while (tmp)
 		{
 			prev = tmp;

@@ -41,22 +41,10 @@ t_room			*ft_newroom(void)
 		new->y = 0;
 		new->name = NULL;
 		new->link_count = 0;
-		new->tmp = NULL;
-	}
-	return (new);
-}
-
-t_tmp			*ft_newtmp(void)
-{
-	t_tmp		*new;
-
-	new = (t_tmp *)malloc(sizeof(t_tmp));
-	if (new)
-	{
-		new->room = NULL;
-		new->visited = 0;
 		new->next = NULL;
+		new->self = NULL;
 		new->prev = NULL;
+		new->visited = 0;
 	}
 	return (new);
 }
