@@ -59,6 +59,29 @@ static int			linksplit(char ***s, char **str, int i, int l)
 	return (o);
 }
 
+static int 		deep_valid(char ***s, int j)
+{
+	int 		i;
+	int 		l;
+
+	i = 1;
+	while (i < j)
+	{
+		l = i + 1;
+		if (s[i][0][0] == 'L')
+			return (0);
+		while (l < j)
+		{
+			if (s[i][0][0] == '#')
+				if (ft_strequ(s[i][0], s[l][0]))
+					return (0);
+			l++;
+		}
+		i++;
+	}
+	return (1);
+}
+
 char				***triple_split(char **str, t_lem *lem)
 {
 	char			***s;
@@ -83,6 +106,8 @@ char				***triple_split(char **str, t_lem *lem)
 			i++;
 		}
 	}
+	if (!deep_valid(s, l))
+		return (NULL);
 	lem->rooms_cnt = linksplit(s, str, i, l);
 	ft_arraydel(str);
 	return (s);

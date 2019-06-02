@@ -6,7 +6,7 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 13:58:35 by hstiv             #+#    #+#             */
-/*   Updated: 2019/05/19 13:58:37 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/06/02 17:42:28 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int				main(int ac, char **av)
 	if (ac != 2 || !(s = ft_rec(av[1], lem)))
 	{
 		free(lem);
-		return(ft_err("Error\n"));
+		return (ft_err("Error\n"));
 	}
 	adj_list(lem, s);
 	ft_triplefree(s);

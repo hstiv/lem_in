@@ -292,9 +292,6 @@
 		<Unit filename="/Users/hstiv/lem_in/src/adj_list.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/hstiv/lem_in/src/deep_valid.c">
-			<Option target="lem_in"/>
-		</Unit>
 		<Unit filename="/Users/hstiv/lem_in/src/free_lem.c">
 			<Option target="lem_in"/>
 		</Unit>

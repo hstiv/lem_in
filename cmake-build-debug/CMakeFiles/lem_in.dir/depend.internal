@@ -178,10 +178,6 @@ CMakeFiles/lem_in.dir/src/adj_list.c.o
  ../includes/lem_in.h
  ../includes/libft.h
  /Users/hstiv/lem_in/src/adj_list.c
-CMakeFiles/lem_in.dir/src/deep_valid.c.o
- ../includes/lem_in.h
- ../includes/libft.h
- /Users/hstiv/lem_in/src/deep_valid.c
 CMakeFiles/lem_in.dir/src/free_lem.c.o
  ../includes/lem_in.h
  ../includes/libft.h

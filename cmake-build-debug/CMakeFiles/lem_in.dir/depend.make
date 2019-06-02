@@ -178,10 +178,6 @@ CMakeFiles/lem_in.dir/src/adj_list.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/adj_list.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/adj_list.c.o: ../src/adj_list.c
 
-CMakeFiles/lem_in.dir/src/deep_valid.c.o: ../includes/lem_in.h
-CMakeFiles/lem_in.dir/src/deep_valid.c.o: ../includes/libft.h
-CMakeFiles/lem_in.dir/src/deep_valid.c.o: ../src/deep_valid.c
-
 CMakeFiles/lem_in.dir/src/free_lem.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/free_lem.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/free_lem.c.o: ../src/free_lem.c

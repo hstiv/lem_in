@@ -6,7 +6,7 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:03:55 by hstiv             #+#    #+#             */
-/*   Updated: 2019/05/31 17:03:57 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/06/02 17:42:12 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int			ind_sch(t_lem *lem, char *s)
 {
-	int 			i;
+	int				i;
 	t_room			**adj;
 
 	adj = lem->adj;
@@ -44,10 +44,10 @@ static void			lnk_connect(t_room **adj, int n1, int n2)
 	room->nb = n2;
 }
 
-int 				link_make(t_lem *lem, char ***s, int i)
+int					link_make(t_lem *lem, char ***s, int i)
 {
-	int 			n1;
-	int 			n2;
+	int				n1;
+	int				n2;
 
 	while (s[i])
 	{

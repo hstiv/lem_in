@@ -1905,33 +1905,6 @@ src/adj_list.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/adj_list.c.s
 .PHONY : src/adj_list.c.s
 
-src/deep_valid.o: src/deep_valid.c.o
-
-.PHONY : src/deep_valid.o
-
-# target to build an object file
-src/deep_valid.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/deep_valid.c.o
-.PHONY : src/deep_valid.c.o
-
-src/deep_valid.i: src/deep_valid.c.i
-
-.PHONY : src/deep_valid.i
-
-# target to preprocess a source file
-src/deep_valid.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/deep_valid.c.i
-.PHONY : src/deep_valid.c.i
-
-src/deep_valid.s: src/deep_valid.c.s
-
-.PHONY : src/deep_valid.s
-
-# target to generate assembly for a file
-src/deep_valid.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/deep_valid.c.s
-.PHONY : src/deep_valid.c.s
-
 src/free_lem.o: src/free_lem.c.o
 
 .PHONY : src/free_lem.o
@@ -2328,9 +2301,6 @@ help:
 	@echo "... src/adj_list.o"
 	@echo "... src/adj_list.i"
 	@echo "... src/adj_list.s"
-	@echo "... src/deep_valid.o"
-	@echo "... src/deep_valid.i"
-	@echo "... src/deep_valid.s"
 	@echo "... src/free_lem.o"
 	@echo "... src/free_lem.i"
 	@echo "... src/free_lem.s"

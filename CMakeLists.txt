@@ -76,7 +76,6 @@ add_executable(lem_in
         libft/src/ft_strtrim.c
         libft/src/ft_tolower.c
         libft/src/ft_toupper.c
-        src/deep_valid.c
         src/adj_list.c
         src/ft_newlst.c
         src/ft_rec.c

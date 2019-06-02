@@ -64,7 +64,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/libft/src/ft_strtrim.c.o"
   "CMakeFiles/lem_in.dir/libft/src/ft_tolower.c.o"
   "CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.o"
-  "CMakeFiles/lem_in.dir/src/deep_valid.c.o"
   "CMakeFiles/lem_in.dir/src/adj_list.c.o"
   "CMakeFiles/lem_in.dir/src/ft_newlst.c.o"
   "CMakeFiles/lem_in.dir/src/ft_rec.c.o"
