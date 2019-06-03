@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-.././includes/lem_in.h
+../includes/lem_in.h
 libft.h
-.././includes/libft.h
+../includes/libft.h
 fcntl.h
 -
 string.h
 -
 
-.././includes/libft.h
+../includes/libft.h
 string.h
 -
 stdlib.h
@@ -24,7 +24,7 @@ unistd.h
 stdio.h
 -
 
-/Users/mdebbi/Desktop/lem_in/src/recursive_pathfinder.c
-includes/lem_in.h
--
+/Users/hstiv/lem_in/src/triple_split.c
+lem_in.h
+/Users/hstiv/lem_in/src/lem_in.h
 
