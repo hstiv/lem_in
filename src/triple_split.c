@@ -44,7 +44,6 @@ static int			linksplit(char ***s, char **str, int i, int l)
 	int				o;
 
 	o = l;
-	//todo duble links
 	while (str[i] != NULL)
 	{
 		while (str[i + 1] != NULL && !ft_cmp(str, i))
@@ -59,10 +58,10 @@ static int			linksplit(char ***s, char **str, int i, int l)
 	return (o);
 }
 
-static int 		deep_valid(char ***s, int j)
+static int			deep_valid(char ***s, int j)
 {
-	int 		i;
-	int 		l;
+	int				i;
+	int				l;
 
 	i = 1;
 	while (i < j)
@@ -88,21 +87,19 @@ char				***triple_split(char **str, t_lem *lem)
 	int				i;
 	int				l;
 
-	l = ft_len2(str);
+	l = ft_len2(str) - 1;
 	i = 0;
 	if (!(s = (char ***)malloc(sizeof(char **) * (l + 1))))
 		return (NULL);
-	while (--l >= 0)
-		s[l] = NULL;
-	l = 0;
+	while (l > 0)
+		s[l--] = NULL;
 	while (str[i] && str[i][ft_strlenc(str[i], '-')] == '\0')
 	{
 		while (!ft_cmp(str, i))
 			i++;
 		if (str[i] != NULL && ft_strlenc(str[i], '-') == ft_strlen(str[i]))
 		{
-			s[l] = ft_strsplit(str[i], ' ');
-			l++;
+			s[l++] = ft_strsplit(str[i], ' ');
 			i++;
 		}
 	}
