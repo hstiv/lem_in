@@ -20,7 +20,21 @@ static int			len_rooms(char ***s)
 	i = 0;
 	l = 0;
 	while (s[i] != NULL && ft_len2(s[i]) != 2)
-	{
+	{static int			double_linked(int n1, int n2, t_room **adj)
+		{
+			t_room			*tmp;
+
+			tmp = adj[n1]->next;
+			if (!tmp)
+				return (0);
+			while (tmp)
+			{
+				if (tmp->self == adj[n2])
+					return (1);
+				tmp = tmp->next;
+			}
+			return (0);
+		}
 		if (s[i][0][0] == '#')
 			i++;
 		if (ft_len2(s[i]) == 3 && s[i][0][0] != '#')
@@ -58,10 +72,10 @@ static int			linksplit(char ***s, char **str, int i, int l)
 	return (o);
 }
 
-static int 		deep_valid(char ***s, int j)
+static int			deep_valid(char ***s, int j)
 {
-	int 		i;
-	int 		l;
+	int				i;
+	int				l;
 
 	i = 1;
 	while (i < j)
@@ -87,21 +101,19 @@ char				***triple_split(char **str, t_lem *lem)
 	int				i;
 	int				l;
 
-	l = ft_len2(str);
+	l = ft_len2(str) - 1;
 	i = 0;
 	if (!(s = (char ***)malloc(sizeof(char **) * (l + 1))))
 		return (NULL);
-	while (--l >= 0)
-		s[l] = NULL;
-	l = 0;
+	while (l > 0)
+		s[l--] = NULL;
 	while (str[i] && str[i][ft_strlenc(str[i], '-')] == '\0')
 	{
 		while (!ft_cmp(str, i))
 			i++;
 		if (str[i] != NULL && ft_strlenc(str[i], '-') == ft_strlen(str[i]))
 		{
-			s[l] = ft_strsplit(str[i], ' ');
-			l++;
+			s[l++] = ft_strsplit(str[i], ' ');
 			i++;
 		}
 	}
