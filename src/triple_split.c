@@ -91,9 +91,10 @@ char				***triple_split(char **str, t_lem *lem)
 	i = 0;
 	if (!(s = (char ***)malloc(sizeof(char **) * (l + 1))))
 		return (NULL);
-	while (l >= 0)
-		s[l--] = NULL;
+	while (i <= l)
+		s[i++] = NULL;
 	l = 0;
+	i = 0;
 	while (str[i] && str[i][ft_strlenc(str[i], '-')] == '\0')
 	{
 		while (!ft_cmp(str, i))

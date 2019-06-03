@@ -24,11 +24,7 @@ unistd.h
 stdio.h
 -
 
-<<<<<<< HEAD
-/Users/hstiv/lem_in/src/link_make.c
-=======
 /Users/hstiv/lem_in/src/triple_split.c
->>>>>>> origin/master
 lem_in.h
 /Users/hstiv/lem_in/src/lem_in.h
 
