@@ -44,6 +44,22 @@ static void			lnk_connect(t_room **adj, int n1, int n2)
 	room->nb = n2;
 }
 
+static int			double_linked(int n1, int n2, t_room **adj)
+{
+	t_room			*tmp;
+
+	tmp = adj[n1]->next;
+	if (!tmp)
+		return (0);
+	while (tmp)
+	{
+		if (tmp->self == adj[n2])
+			return (1);
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
 int					link_make(t_lem *lem, char ***s, int i)
 {
 	int				n1;
@@ -53,8 +69,11 @@ int					link_make(t_lem *lem, char ***s, int i)
 	{
 		n1 = ind_sch(lem, s[i][0]);
 		n2 = ind_sch(lem, s[i][1]);
-		lnk_connect(lem->adj, n1, n2);
-		lnk_connect(lem->adj, n2, n1);
+		if (!double_linked(n1, n2, lem->adj)
+			&& !double_linked(n2, n1, lem->adj)) {
+			lnk_connect(lem->adj, n1, n2);
+			lnk_connect(lem->adj, n2, n1);
+		}
 		i++;
 	}
 	return (1);

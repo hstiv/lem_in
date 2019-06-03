@@ -24,7 +24,7 @@ unistd.h
 stdio.h
 -
 
-/Users/hstiv/lem_in/src/adj_list.c
+/Users/hstiv/lem_in/src/link_make.c
 lem_in.h
 /Users/hstiv/lem_in/src/lem_in.h
 

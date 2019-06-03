@@ -44,7 +44,6 @@ static int			linksplit(char ***s, char **str, int i, int l)
 	int				o;
 
 	o = l;
-	//todo duble links
 	while (str[i] != NULL)
 	{
 		while (str[i + 1] != NULL && !ft_cmp(str, i))
