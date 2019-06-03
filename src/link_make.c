@@ -70,12 +70,8 @@ int					link_make(t_lem *lem, char ***s, int i)
 		n1 = ind_sch(lem, s[i][0]);
 		n2 = ind_sch(lem, s[i][1]);
 		if (!double_linked(n1, n2, lem->adj)
-<<<<<<< HEAD
-			&& !double_linked(n2, n1, lem->adj)) {
-=======
 			&& !double_linked(n2, n1, lem->adj))
 		{
->>>>>>> origin/master
 			lnk_connect(lem->adj, n1, n2);
 			lnk_connect(lem->adj, n2, n1);
 		}
