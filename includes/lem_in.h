@@ -42,6 +42,12 @@ typedef struct			s_room
 	struct s_room		*self;
 }						t_room;
 
+typedef struct {
+	int len;
+	t_room *start;
+	t_room *end;
+} t_path;
+
 int 					link_make(t_lem *lem, char ***s, int i);
 void					free_lem(t_lem *lem);
 void					free_adj(t_room **adj);
@@ -52,5 +58,6 @@ char					***triple_split(char **s, t_lem *lem);
 int 					link_make(t_lem *lem, char ***s, int i);
 t_lem					*ft_newlem();
 t_room					*ft_newroom();
-int 					rpf(t_room *room, t_lem *lem);
+int 					rpf(t_room *room, t_lem *lem, t_path *path);
+t_path					*create_path();
 #endif

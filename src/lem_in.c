@@ -24,7 +24,8 @@ int				main(int ac, char **av)
 		return (ft_err("Error\n"));
 	}
 	adj_list(lem, s);
-	rpf(lem->begin, lem);
+	t_path *path = create_path();
+	rpf(lem->begin, lem, path);
 	ft_triplefree(s);
 	free_lem(lem);
 	return (0);

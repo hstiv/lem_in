@@ -2,14 +2,53 @@
 // Created by Maybell Debbi on 2019-06-03.
 //
 
-#include <includes/lem_in.h>
+#include "lem_in.h"
 
-int 	rpf(t_room *room, t_lem *lem)
+
+t_path	*create_path()
+{
+	t_path	*path;
+
+	path = malloc(sizeof(t_path));
+	path->end = NULL;
+	path->start = NULL;
+	path->len = 0;
+	return (path);
+}
+
+void	add_to_path(t_path *path, t_room *room)
+{
+	t_room *newroom = ft_newroom();
+	*newroom = *room;
+
+	newroom->prev = path->end;
+	path->len++;
+	if (!path->start)
+		path->start = newroom;
+	if (path->end)
+		path->end->next = newroom;
+	path->end = newroom;
+	newroom->next = NULL;
+}
+
+void	remove_last_from_path(t_path *path)
+{
+	t_room *end;
+
+	end = path->end;
+	path->len--;
+	path->end = end->prev;
+	end->prev->next = NULL;
+	free(end);
+}
+
+int 	rpf(t_room *room, t_lem *lem, t_path *path)
 {
 	static int i = 0;
 	i++;
 	t_room *this_room = room;
 
+	add_to_path(path, room);
 	if (!room || room->visited == 1)
 		return (0);
 	if (room == lem->end)
@@ -18,13 +57,15 @@ int 	rpf(t_room *room, t_lem *lem)
 	room = room->next;
 	while (room)
 	{
-		if (rpf(lem->adj[room->nb], lem))
+		if (rpf(lem->adj[room->nb], lem, path))
 		{
-			printf("%d, %s\n",i, this_room->name);
-			return (1);
+
+			printf("%d, %s\n",i, this_room->name);//
+
 		}
 		room = room->next;
 	}
 	this_room->visited = 0;
+	remove_last_from_path(path);
 	return (0);
 }
