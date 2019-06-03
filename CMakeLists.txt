@@ -77,8 +77,11 @@ add_executable(lem_in
         libft/src/ft_tolower.c
         libft/src/ft_toupper.c
         src/adj_list.c
+        src/free_lem.c
         src/ft_newlst.c
         src/ft_rec.c
         src/ft_triplefree.c
         src/lem_in.c
-        src/triple_split.c src/link_make.c src/free_lem.c src/recursive_pathfinder.c)
+        src/link_make.c
+        src/recursive_pathfinder.c
+        src/triple_split.c)

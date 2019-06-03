@@ -1,0 +1,41 @@
+4
+##start
+A 3 2
+##end
+M 4 6
+B 0 4
+C 4 2
+D 4 4
+E 8 2
+F 8 4
+H 9 2
+K 3 5
+G 2 4
+M 3 5
+A-B
+A-C
+B-C
+B-E
+
+
+C-D
+C-F
+
+E-F
+E-H
+
+D-F
+D-G
+
+
+
+F-H
+H-K
+
+
+K-G
+K-M
+
+G-M
+
+

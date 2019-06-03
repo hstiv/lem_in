@@ -5,16 +5,6 @@
 #include "lem_in.h"
 
 
-t_path	*create_path()
-{
-	t_path	*path;
-
-	path = malloc(sizeof(t_path));
-	path->end = NULL;
-	path->start = NULL;
-	path->len = 0;
-	return (path);
-}
 
 void	add_to_path(t_path *path, t_room *room)
 {
@@ -37,9 +27,25 @@ void	remove_last_from_path(t_path *path)
 
 	end = path->end;
 	path->len--;
-	path->end = end->prev;
-	end->prev->next = NULL;
+	if (path->len > 0)
+	{
+		path->end = end->prev;
+		end->prev->next = NULL;
+	}
 	free(end);
+}
+
+void	print_path(t_path *path)
+{
+	t_room *start;
+
+	start = path->start;
+	while (start)
+	{
+		printf("%s->", start->name);
+		start = start->next;
+	}
+	printf("\n");
 }
 
 int 	rpf(t_room *room, t_lem *lem, t_path *path)
@@ -52,15 +58,19 @@ int 	rpf(t_room *room, t_lem *lem, t_path *path)
 	if (!room || room->visited == 1)
 		return (0);
 	if (room == lem->end)
+	{
+		print_path(path);
+		remove_last_from_path(path);
 		return (1);
+	}
 	room->visited = 1;
 	room = room->next;
 	while (room)
 	{
-		if (rpf(lem->adj[room->nb], lem, path))
+		if (room->self->visited == 0 && rpf(lem->adj[room->nb], lem, path))
 		{
 
-			printf("%d, %s\n",i, this_room->name);//
+//			printf("%d, %s\n",i, this_room->name);//
 
 		}
 		room = room->next;

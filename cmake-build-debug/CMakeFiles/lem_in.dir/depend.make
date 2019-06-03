@@ -202,8 +202,8 @@ CMakeFiles/lem_in.dir/src/link_make.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/link_make.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/link_make.c.o: ../src/link_make.c
 
-CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o: .././includes/lem_in.h
-CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o: .././includes/libft.h
+CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o: ../src/recursive_pathfinder.c
 
 CMakeFiles/lem_in.dir/src/triple_split.c.o: ../includes/lem_in.h

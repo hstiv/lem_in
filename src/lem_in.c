@@ -11,6 +11,16 @@
 /* ************************************************************************** */
 
 #include "lem_in.h"
+t_path	*create_path()
+{
+	t_path	*path;
+
+	path = malloc(sizeof(t_path));
+	path->end = NULL;
+	path->start = NULL;
+	path->len = 0;
+	return (path);
+}
 
 int				main(int ac, char **av)
 {
