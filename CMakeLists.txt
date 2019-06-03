@@ -81,4 +81,4 @@ add_executable(lem_in
         src/ft_rec.c
         src/ft_triplefree.c
         src/lem_in.c
-        src/triple_split.c src/link_make.c src/free_lem.c)
+        src/triple_split.c src/link_make.c src/free_lem.c src/recursive_pathfinder.c)

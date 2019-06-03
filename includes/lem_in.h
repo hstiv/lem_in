@@ -52,4 +52,5 @@ char					***triple_split(char **s, t_lem *lem);
 int 					link_make(t_lem *lem, char ***s, int i);
 t_lem					*ft_newlem();
 t_room					*ft_newroom();
+int 					rpf(t_room *room, t_lem *lem);
 #endif
