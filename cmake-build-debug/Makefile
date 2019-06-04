@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/den/Programs/clion-2019.1.2/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Users/mdebbi/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /home/den/Programs/clion-2019.1.2/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Users/mdebbi/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/den/Desktop/lem_in
+CMAKE_SOURCE_DIR = /Users/mdebbi/Desktop/lem_in
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/den/Desktop/lem_in/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/mdebbi/Desktop/lem_in/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/den/Desktop/lem_in/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/den/Programs/clion-2019.1.2/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Users/mdebbi/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/den/Programs/clion-2019.1.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Users/mdebbi/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/den/Desktop/lem_in/cmake-build-debug/CMakeFiles /home/den/Desktop/lem_in/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles /Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/den/Desktop/lem_in/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -2013,6 +2013,60 @@ src/ft_triplefree.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/ft_triplefree.c.s
 .PHONY : src/ft_triplefree.c.s
 
+src/groups.o: src/groups.c.o
+
+.PHONY : src/groups.o
+
+# target to build an object file
+src/groups.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/groups.c.o
+.PHONY : src/groups.c.o
+
+src/groups.i: src/groups.c.i
+
+.PHONY : src/groups.i
+
+# target to preprocess a source file
+src/groups.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/groups.c.i
+.PHONY : src/groups.c.i
+
+src/groups.s: src/groups.c.s
+
+.PHONY : src/groups.s
+
+# target to generate assembly for a file
+src/groups.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/groups.c.s
+.PHONY : src/groups.c.s
+
+src/intersection_handling.o: src/intersection_handling.c.o
+
+.PHONY : src/intersection_handling.o
+
+# target to build an object file
+src/intersection_handling.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/intersection_handling.c.o
+.PHONY : src/intersection_handling.c.o
+
+src/intersection_handling.i: src/intersection_handling.c.i
+
+.PHONY : src/intersection_handling.i
+
+# target to preprocess a source file
+src/intersection_handling.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/intersection_handling.c.i
+.PHONY : src/intersection_handling.c.i
+
+src/intersection_handling.s: src/intersection_handling.c.s
+
+.PHONY : src/intersection_handling.s
+
+# target to generate assembly for a file
+src/intersection_handling.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/intersection_handling.c.s
+.PHONY : src/intersection_handling.c.s
+
 src/lem_in.o: src/lem_in.c.o
 
 .PHONY : src/lem_in.o
@@ -2128,8 +2182,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... lem_in"
 	@echo "... edit_cache"
+	@echo "... lem_in"
 	@echo "... libft/src/ft_arraydel.o"
 	@echo "... libft/src/ft_arraydel.i"
 	@echo "... libft/src/ft_arraydel.s"
@@ -2340,6 +2394,12 @@ help:
 	@echo "... src/ft_triplefree.o"
 	@echo "... src/ft_triplefree.i"
 	@echo "... src/ft_triplefree.s"
+	@echo "... src/groups.o"
+	@echo "... src/groups.i"
+	@echo "... src/groups.s"
+	@echo "... src/intersection_handling.o"
+	@echo "... src/intersection_handling.i"
+	@echo "... src/intersection_handling.s"
 	@echo "... src/lem_in.o"
 	@echo "... src/lem_in.i"
 	@echo "... src/lem_in.s"

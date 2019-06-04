@@ -97,25 +97,6 @@ void	print_all_pathes(t_path **patharr)
 	}
 }
 
-int 	is_intersect(t_path *path1, t_path *path2)
-{
-	t_path *shorter;
-	t_path *longer;
-	t_room *shorthead;
-
-	shorter = (path1->len < path2->len) ? path1 : path2;
-	longer = (shorter == path1) ? path2 : path1;
-	shorthead = shorter->start;
-	while (shorthead)
-	{
-		if (shorthead != shorter->start && shorthead != shorter->end)
-			if(longer->intersection_arr[shorthead->nb] != 0)
-				return (1);
-		shorthead = shorthead->next;
-	}
-	return (0);
-}
-
 t_path**	find_two(t_path **patharr)
 {
 	int sumlen = INT_MAX;
@@ -143,10 +124,24 @@ t_path**	find_two(t_path **patharr)
 	return (two);
 }
 
+int 	min(int a, int b)
+{
+	return (a < b ? a : b);
+}
+
+int		calc_max_group_size(t_lem *lem)
+{
+	int min_paths;
+
+	min_paths = min(lem->begin->link_count, lem->end->link_count);
+	return (min(min(min_paths, lem->ants), lem->path_count));
+}
+
 int				main(int ac, char **av)
 {
 	char		***s;
 	t_lem		*lem;
+
 
 	lem = ft_newlem();
 	if (ac != 2 || !(s = ft_rec(av[1], lem)))
@@ -155,17 +150,20 @@ int				main(int ac, char **av)
 		return (ft_err("Error\n"));
 	}
 	adj_list(lem, s);
-	int path_count;
+
 	t_path *path = create_path();
 	t_path *pathlist = NULL;
-	printf("total paths count: %d\n",path_count = rpf(lem->begin, lem, path, &pathlist));
-	t_path **patharr;
-	patharr = path_list_to_array(pathlist, path_count, lem->rooms_cnt);
-	//todo free pathlist here, no more need it
-	print_all_pathes(patharr);
-//	printf("%d\n",is_intersect(patharr[6], patharr[42]));
+	printf("total paths count: %d\n",lem->path_count = rpf(lem->begin, lem, path, &pathlist));
 
-	t_path **two = find_two(patharr);
+	lem->max_group_size = calc_max_group_size(lem);
+
+
+	lem->patharr = path_list_to_array(pathlist, lem->path_count, lem->rooms_cnt);
+	//todo free pathlist here, no more need it
+	print_all_pathes(lem->patharr);
+
+
+	t_path **two = find_two(lem->patharr);
 	printf("two shortest non intersecting paths are:\n");
 	print_path(two[0]);
 	print_path(two[1]);

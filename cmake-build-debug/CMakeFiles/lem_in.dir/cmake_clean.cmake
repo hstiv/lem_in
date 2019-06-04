@@ -69,6 +69,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/src/ft_newlst.c.o"
   "CMakeFiles/lem_in.dir/src/ft_rec.c.o"
   "CMakeFiles/lem_in.dir/src/ft_triplefree.c.o"
+  "CMakeFiles/lem_in.dir/src/groups.c.o"
+  "CMakeFiles/lem_in.dir/src/intersection_handling.c.o"
   "CMakeFiles/lem_in.dir/src/lem_in.c.o"
   "CMakeFiles/lem_in.dir/src/link_make.c.o"
   "CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o"

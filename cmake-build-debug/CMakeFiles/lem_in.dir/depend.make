@@ -194,6 +194,14 @@ CMakeFiles/lem_in.dir/src/ft_triplefree.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/ft_triplefree.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/ft_triplefree.c.o: ../src/ft_triplefree.c
 
+CMakeFiles/lem_in.dir/src/groups.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/src/groups.c.o: ../includes/libft.h
+CMakeFiles/lem_in.dir/src/groups.c.o: ../src/groups.c
+
+CMakeFiles/lem_in.dir/src/intersection_handling.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/src/intersection_handling.c.o: ../includes/libft.h
+CMakeFiles/lem_in.dir/src/intersection_handling.c.o: ../src/intersection_handling.c
+
 CMakeFiles/lem_in.dir/src/lem_in.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/lem_in.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/lem_in.c.o: ../src/lem_in.c
