@@ -17,7 +17,7 @@
 # include <fcntl.h>
 # include <string.h>
 # include <limits.h>
-# define BUFF_SIZE 9999
+# define BUFF_SIZE 100000
 
 typedef struct			s_lem
 {

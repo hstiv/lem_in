@@ -155,6 +155,7 @@ int				main(int ac, char **av)
 		return (ft_err("Error\n"));
 	}
 	adj_list(lem, s);
+	ft_putchar(65);
 	int path_count;
 	t_path *path = create_path();
 	t_path *pathlist = NULL;

@@ -15,7 +15,7 @@
 char			***ft_rec(char *file_name, t_lem *lem)
 {
 	int			fd;
-	char		buf[BUFF_SIZE + 1];
+	char		buf[BUFF_SIZE];
 	int			y;
 	char		***s;
 
