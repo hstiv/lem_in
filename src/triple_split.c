@@ -48,9 +48,14 @@ static int			linksplit(char ***s, char **str, int i, int l)
 	{
 		while (str[i + 1] != NULL && !ft_cmp(str, i))
 			i++;
-		s[l] = ft_strsplit(str[i], '-');
-		l++;
-		i++;
+		if (ft_cmp(str, i))
+		{
+            s[l] = ft_strsplit(str[i], '-');
+            l++;
+            i++;
+        }
+		else
+		    i++;
 	}
 	if (o == 0 || i == o)
 		return (0);
@@ -112,6 +117,14 @@ char				***triple_split(char **str, t_lem *lem)
 	if (!deep_valid(s, l, lem))
 		return (NULL);
 	lem->rooms_cnt = linksplit(s, str, i, l);
+//	l = 0;
+//    while (s[l])
+//    {
+//        ft_putstr(s[l][0]);
+//        ft_putchar('\n');
+//        l++;
+//    }
+//    return (NULL);
 	ft_arraydel(str);
 	return (s);
 }
