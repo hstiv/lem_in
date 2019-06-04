@@ -149,8 +149,11 @@ int				main(int ac, char **av)
 		free(lem);
 		return (ft_err("Error\n"));
 	}
-	adj_list(lem, s);
-
+	if (!adj_list(lem, s))
+	{
+        free(lem);
+        return (ft_err("Error\n"));
+    }
 	t_path *path = create_path();
 	t_path *pathlist = NULL;
 	printf("total paths count: %d\n",lem->path_count = rpf(lem->begin, lem, path, &pathlist));

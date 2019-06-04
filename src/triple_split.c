@@ -79,9 +79,8 @@ static int			deep_valid(char ***s, int j, t_lem *lem)
 			return (0);
 		while (l < j)
 		{
-			if (s[i][0][0] == '#')
-				if (ft_strequ(s[i][0], s[l][0]))
-					return (0);
+			if (ft_strequ(s[i][0], s[l][0]))
+				return (0);
 			l++;
 		}
 		i++;
@@ -95,6 +94,12 @@ char				***triple_split(char **str, t_lem *lem)
 	int				i;
 	int				l;
 
+	if (str == NULL || *str == NULL)
+    {
+	    if (str)
+	        free(str);
+	    return (NULL);
+    }
 	l = ft_len2(str);
 	i = 0;
 	if (!(s = (char ***)malloc(sizeof(char **) * (l + 1))))

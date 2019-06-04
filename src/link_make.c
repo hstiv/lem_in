@@ -19,7 +19,7 @@ static int			ind_sch(t_lem *lem, char *s)
 
 	adj = lem->adj;
 	i = 0;
-	while (ft_strcmp(adj[i]->name, s) != 0)
+	while (adj[i] && ft_strcmp(adj[i]->name, s) != 0)
 		i++;
 	return (i);
 }
@@ -71,6 +71,8 @@ int					link_make(t_lem *lem, char ***s, int i)
 	{
 		n1 = ind_sch(lem, s[i][0]);
 		n2 = ind_sch(lem, s[i][1]);
+		if (!lem->adj[n1] || !lem->adj[n2])
+		    return (0);
 		if (!double_linked(n1, n2, lem->adj)
 			&& !double_linked(n2, n1, lem->adj))
 		{
