@@ -23,10 +23,13 @@ typedef struct			s_lem
 {
 	char				**s;
 	struct s_room		**adj;
-	int					ants;
+	int					ants;//todo?
 	int					rooms_cnt;
 	struct s_room		*begin;
 	struct s_room		*end;
+	int					path_count;
+	struct s_path 		**patharr;
+	int					max_group_size;
 }						t_lem;
 
 typedef struct			s_room
@@ -36,7 +39,7 @@ typedef struct			s_room
 	int					ant;
 	int					x;
 	int					y;
-	int 				link_count;
+	int 				link_count;//todo
 	int 				visited;
 	struct s_room		*next;
 	struct s_room		*prev;
@@ -51,6 +54,13 @@ typedef struct s_path{
 	char *intersection_arr;//todo
 } t_path;
 
+typedef struct s_group {
+	int size;
+	int sumlen;
+	t_path **path_array;
+	struct s_group *next;//??maybe?
+} t_group;
+
 int 					link_make(t_lem *lem, char ***s, int i);
 void					free_lem(t_lem *lem);
 void					free_adj(t_room **adj);
@@ -63,4 +73,6 @@ t_lem					*ft_newlem();
 t_room					*ft_newroom();
 int 					rpf(t_room *room, t_lem *lem, t_path *path, t_path **pathlist);
 t_path					*create_path();
+int 	is_intersect(t_path *path1, t_path *path2);
+int		is_intersecting_n_paths(t_path **path_arr, int size);
 #endif
