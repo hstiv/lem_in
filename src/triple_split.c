@@ -64,7 +64,7 @@ static int			deep_valid(char ***s, int j, t_lem *lem)
 	int				l;
 
 	i = 1;
-	if (ft_len2(s[0]) != 1 && !ft_isdigit(s[0][0]))
+	if (ft_len2(s[0]) != 1 || !ft_isdigit(s[0][0][0]))
 		return (0);
 	lem->ants = ft_atoi(s[0][0]);
 	while (i < j)
