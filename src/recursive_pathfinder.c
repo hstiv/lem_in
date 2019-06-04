@@ -5,7 +5,6 @@
 #include "lem_in.h"
 
 
-
 void	add_to_path(t_path *path, t_room *room)
 {
 	t_room *newroom = ft_newroom();
@@ -35,23 +34,44 @@ void	remove_last_from_path(t_path *path)
 	free(end);
 }
 
-void	print_path(t_path *path)
-{
-	t_room *start;
 
-	start = path->start;
-	while (start)
+
+//typedef struct {
+//	int path_count;
+//	t_path *path_list;
+//} t_allpathes;
+
+t_path	*copy_path(t_path *path)
+{
+	t_path *copy;
+	t_room *pathhead;
+
+	pathhead = path->start;
+	copy = create_path();
+	while (pathhead)
 	{
-		printf("%s->", start->name);
-		start = start->next;
+		add_to_path(copy, pathhead);
+		pathhead = pathhead->next;
 	}
-	printf("\n");
+	return (copy);
 }
 
-int 	rpf(t_room *room, t_lem *lem, t_path *path)
+void 	add_path_to_all(t_path *path, t_path **path_list)
 {
-	static int i = 0;
-	i++;
+//	t_path *tmp;
+	path = copy_path(path);
+	if (*path_list == NULL)
+		*path_list = path;
+	else{
+//		tmp = *path_list;
+		path->next = *path_list;
+		*path_list = path;
+	}
+}
+
+int 	rpf(t_room *room, t_lem *lem, t_path *path, t_path **pathlist)
+{
+	int path_count = 0;
 	t_room *this_room = room;
 
 	add_to_path(path, room);
@@ -59,7 +79,8 @@ int 	rpf(t_room *room, t_lem *lem, t_path *path)
 		return (0);
 	if (room == lem->end)
 	{
-		print_path(path);
+//		print_path(path);
+		add_path_to_all(path, pathlist);
 		remove_last_from_path(path);
 		return (1);
 	}
@@ -67,15 +88,13 @@ int 	rpf(t_room *room, t_lem *lem, t_path *path)
 	room = room->next;
 	while (room)
 	{
-		if (room->self->visited == 0 && rpf(lem->adj[room->nb], lem, path))
+		if (room->self->visited == 0)
 		{
-
-//			printf("%d, %s\n",i, this_room->name);//
-
+			path_count += rpf(lem->adj[room->nb], lem, path, pathlist);
 		}
 		room = room->next;
 	}
 	this_room->visited = 0;
 	remove_last_from_path(path);
-	return (0);
+	return (path_count);
 }

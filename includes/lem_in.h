@@ -16,6 +16,7 @@
 # include "libft.h"
 # include <fcntl.h>
 # include <string.h>
+# include <limits.h>
 # define BUFF_SIZE 9999
 
 typedef struct			s_lem
@@ -42,10 +43,12 @@ typedef struct			s_room
 	struct s_room		*self;
 }						t_room;
 
-typedef struct {
+typedef struct s_path{
 	int len;
 	t_room *start;
 	t_room *end;
+	struct s_path *next;
+	char *intersection_arr;//todo
 } t_path;
 
 int 					link_make(t_lem *lem, char ***s, int i);
@@ -58,6 +61,6 @@ char					***triple_split(char **s, t_lem *lem);
 int 					link_make(t_lem *lem, char ***s, int i);
 t_lem					*ft_newlem();
 t_room					*ft_newroom();
-int 					rpf(t_room *room, t_lem *lem, t_path *path);
+int 					rpf(t_room *room, t_lem *lem, t_path *path, t_path **pathlist);
 t_path					*create_path();
 #endif
