@@ -39,7 +39,9 @@ static void			lnk_connect(t_room **adj, int n1, int n2)
 			tmp = tmp->next;
 		tmp->next = room;
 		room->prev = tmp;
+
 	}
+	adj[n1]->link_count += 1;
 	room->self = adj[n2];
 	room->nb = n2;
 }

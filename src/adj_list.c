@@ -80,5 +80,6 @@ int						adj_list(t_lem *lem, char ***s)
 			return (0);
 	}
 	lem->adj[l] = NULL;
+	lem->begin->ant = lem->ants;
 	return (link_make(lem, s, i));
 }
