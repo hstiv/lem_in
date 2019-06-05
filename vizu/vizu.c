@@ -1,5 +1,20 @@
 #include "vizulib.h"
 
+static void			cor_give(t_room **adj)
+{
+	int				i;
+	int				t;
+
+	t = 5;
+	i = 0;
+	while (adj[i])
+	{
+		adj[i]->cor = t;
+		t += 15;
+		i++;
+	}
+}
+
 static int			adj(t_lem *lem, char **av, int ac)
 {
 	char		***s;
@@ -27,8 +42,9 @@ int					main(int c, char **s)
 	lem = ft_newlem();
 	mlx = ft_newmlx();
 	mlx->lem = lem;
-	if (!adj(lem, s, c))
+	if (!adj(lem, s, c) || !lem->begin || !lem->end)
 		return (0);
+	cor_give(lem->adj);
 	run_window(mlx);
 	free_lem(lem);
 	free(mlx);

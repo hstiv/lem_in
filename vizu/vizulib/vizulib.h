@@ -53,6 +53,7 @@ typedef struct			s_room
 	int					y;
 	int					link_count;
 	int					visited;
+	int					cor;
 	struct s_room		*next;
 	struct s_room		*prev;
 	struct s_room		*self;
@@ -80,9 +81,13 @@ typedef	struct			s_mlx
 	int					fill;
 	int					x;
 	int					y;
+	int					cor;
+	int					cmnd;
 	t_lem				*lem;
 }						t_mlx;
 
+void					putman(t_mlx *mlx);
+int						key_release(int keycode, t_mlx *mlx);
 void					graph_color(t_lem *lem, t_room *adj,
 										t_mlx *mlx, int *col);
 void					cloner(t_room *cl, t_room *adj, t_mlx *mlx);

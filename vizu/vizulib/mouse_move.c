@@ -22,5 +22,6 @@ int					mouse_move(int x, int y, t_mlx *param)
 	}
 	mlx_clear_window(param->ptr, param->wind);
 	mappaint(param);
+	putman(param);
 	return (0);
 }

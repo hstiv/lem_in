@@ -1,4 +1,4 @@
-NAME= vizu
+NAME= vizu-hex
 
 HEAD = vizulib/
 

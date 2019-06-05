@@ -22,6 +22,10 @@ static void			mouse_for_everything(int button, t_mlx *param)
 		param->l += 0.1;
 	if (param->right_mouse && button == 5 && param->l > 0)
 		param->l -= 0.1;
+	if (param->cmnd && button == 4)
+		param->cor += 5;
+	if (param->cmnd && button == 5)
+		param->cor -= 5;
 }
 
 int					mouse_press(int button, int x, int y, t_mlx *param)
@@ -37,6 +41,7 @@ int					mouse_press(int button, int x, int y, t_mlx *param)
 	}
 	mouse_for_everything(button, param);
 	mlx_clear_window(param->ptr, param->wind);
+	putman(param);
 	mappaint(param);
 	return (0);
 }
