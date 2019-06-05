@@ -22,9 +22,9 @@ static void			mouse_for_everything(int button, t_mlx *param)
 		param->l += 0.1;
 	if (param->right_mouse && button == 5 && param->l > 0)
 		param->l -= 0.1;
-	if (param->cmnd && button == 4)
+	if (!param->right_mouse && !param->left_mouse && button == 4)
 		param->cor += 5;
-	if (param->cmnd && button == 5)
+	if (!param->right_mouse && !param->left_mouse && button == 5)
 		param->cor -= 5;
 }
 
