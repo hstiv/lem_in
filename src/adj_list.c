@@ -14,7 +14,7 @@
 
 static int				if_start(t_lem *lem, char ***s, int *i, int *l)
 {
-	if (!(lem->adj[*l] = ft_newroom()))
+	if (lem->begin || !(lem->adj[*l] = ft_newroom()))
 		return (0);
 	(*i)++;
 	lem->adj[*l]->x = ft_atoi(s[*i][1]);
@@ -29,7 +29,7 @@ static int				if_start(t_lem *lem, char ***s, int *i, int *l)
 
 static	int				if_end(t_lem *lem, char ***s, int *i, int *l)
 {
-	if (!(lem->adj[*l] = ft_newroom()))
+	if (lem->end || !(lem->adj[*l] = ft_newroom()))
 		return (0);
 	(*i)++;
 	lem->adj[*l]->x = ft_atoi(s[*i][1]);
@@ -55,31 +55,44 @@ static int				if_common(t_lem *lem, char ***s, int *i, int *l)
 	return (1);
 }
 
-int						adj_list(t_lem *lem, char ***s)
+int						adj_list(t_lem *lem, char ****str)
 {
-	t_room				**adj;
-	int					l;
-	int					i;
+	t_room **adj;
+	char 	***s;
+	int l;
+	int j;
+	int i;
 
-	l = 0;
-	if (!(adj = (t_room**)malloc(sizeof(t_room*) * (lem->rooms_cnt + 1))))
+	j = 0;
+	if (!(adj = (t_room **) malloc(sizeof(t_room *) * (lem->rooms_cnt + 1))))
 		return (0);
 	lem->adj = adj;
 	i = 1;
-	while (l != lem->rooms_cnt)
+	l = 0;
+	while (str[j] != NULL)
 	{
-		if (s[i][0][0] == '#' && s[i][0][2] == 's'
-				&& !(if_start(lem, s, &i, &l)))
-			return (0);
-		else if (s[i][0][0] == '#' && s[i][0][2] == 'e')
+		s = str[j];
+		l = 0;
+		while (l < lem->rooms_cnt)
 		{
-			if (!(if_end(lem, s, &i, &l)))
+			if (s[i][0][0] == '#' && s[i][0][2] == 's'
+				&& !(if_start(lem, s, &i, &l)))
+				return (0);
+			else if (s[i][0][0] == '#' && s[i][0][2] == 'e')
+			{
+				if (!(if_end(lem, s, &i, &l)))
+					return (0);
+			}
+			else if (l < lem->rooms_cnt && !if_common(lem, s, &i, &l))
 				return (0);
 		}
-		else if (!if_common(lem, s, &i, &l))
+		if (!link_make(lem, str, i, j))
 			return (0);
+		j++;
 	}
 	lem->adj[l] = NULL;
+	if (!lem->begin || !lem->end)
+		return (0);
 	lem->begin->ant = lem->ants;
-	return (link_make(lem, s, i));
+	return (1);
 }

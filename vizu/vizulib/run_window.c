@@ -17,7 +17,9 @@ void				putman(t_mlx *mlx)
 	t_room			**adj;
 	int				i;
 	int				color;
+	int				l;
 
+	l = mlx->lem->rooms_cnt;
 	i = 0;
 	adj = mlx->lem->adj;
 	while (adj[i])
@@ -28,6 +30,7 @@ void				putman(t_mlx *mlx)
 			color = mlx->yellow;
 		else
 			color = mlx->white;
+		
 		mlx_string_put(mlx->ptr, mlx->wind, 5,
 			adj[i]->cor + mlx->cor, color, adj[i]->name);
 		i++;

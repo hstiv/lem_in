@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 
-void				ft_triplefree(char ***s)
+static void			free_helper(char ***s)
 {
 	int				i;
 
@@ -27,4 +27,17 @@ void				ft_triplefree(char ***s)
 	}
 	free(s);
 	s = NULL;
+}
+
+void				ft_triplefree(char ****s)
+{
+	int				i;
+
+	i = 0;
+	while (s[i] != NULL)
+	{
+		free_helper(s[i]);
+		i++;
+	}
+	free(s);
 }

@@ -32,7 +32,7 @@ char				**ft_strsplit(char const *s, char c)
 	if (!s)
 		return (NULL);
 	l = ft_count_char(s, c);
-	if (!(argv = (char **)malloc(sizeof(char**) * (l + 1))))
+	if (!(argv = (char **)malloc(sizeof(char*) * (l + 1))))
 		return (NULL);
 	while (l--)
 	{

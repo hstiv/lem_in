@@ -5,7 +5,7 @@ static void			cor_give(t_room **adj)
 	int				i;
 	int				t;
 
-	t = 5;
+	t = 0;
 	i = 0;
 	while (adj[i])
 	{
