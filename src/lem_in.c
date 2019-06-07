@@ -139,7 +139,7 @@ int		calc_max_group_size(t_lem *lem)
 
 int				main(int ac, char **av)
 {
-	char		***s;
+	char		****s;
 	t_lem		*lem;
 
 

@@ -12,20 +12,32 @@
 
 #include "lem_in.h"
 
-char			***ft_rec(char *file_name, t_lem *lem)
+char			****ft_rec(char *file_name, t_lem *lem)
 {
 	int			fd;
 	char		buf[BUFF_SIZE];
 	int			y;
-	char		***s;
+	char 		****s;
+	int 		i;
 
+	i = 0;
+	s = (char ****)malloc(sizeof(char ***) * 10);
+	while (i < 10)
+		s[i++] = NULL;
+	i = 0;
 	if (!(fd = open(file_name, O_RDONLY)))
 		return (NULL);
-	if ((y = read(fd, buf, BUFF_SIZE)) < 0)
-		return (NULL);
-	buf[y] = '\0';
-	if (!(s = triple_split(ft_strsplit(buf, '\n'), lem)))
-		return (NULL);
+	while ((y = read(fd, buf, BUFF_SIZE)) > 0)
+	{
+		buf[y] = '\0';
+		if (!(s[i] = triple_split(ft_strsplit(buf, '\n'), lem, i + 1)))
+		{
+			if (i > 0)
+				ft_triplefree(s);
+			return (NULL);
+		}
+		i++;
+	}
 	if (!lem->rooms_cnt)
 	{
 		ft_triplefree(s);

@@ -32,7 +32,7 @@ norm:
 
 clean:
 	@rm -rf obj
-	@make -C $(INCLUDES) fclean
+	@make -C libft fclean
 
 fclean: clean
 	@rm -f $(NAME)

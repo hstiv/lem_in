@@ -63,15 +63,16 @@ static int			linksplit(char ***s, char **str, int i, int l)
 	return (o);
 }
 
-static int			deep_valid(char ***s, int j, t_lem *lem)
+static int			deep_valid(char ***s, int j, t_lem *lem, int cnt)
 {
 	int				i;
 	int				l;
 
 	i = 1;
-	if (ft_len2(s[0]) != 1 || !ft_isdigit(s[0][0][0]))
+	if (cnt == 1 && !ft_isdigit(s[0][0][0]))
 		return (0);
-	lem->ants = ft_atoi(s[0][0]);
+	if (cnt == 1)
+		lem->ants = ft_atoi(s[0][0]);
 	while (i < j)
 	{
 		l = i + 1;
@@ -88,7 +89,7 @@ static int			deep_valid(char ***s, int j, t_lem *lem)
 	return (1);
 }
 
-char				***triple_split(char **str, t_lem *lem)
+char				***triple_split(char **str, t_lem *lem, int	cnt)
 {
 	char			***s;
 	int				i;
@@ -113,15 +114,16 @@ char				***triple_split(char **str, t_lem *lem)
 		while (!ft_cmp(str, i))
 			i++;
 		if (str[i] != NULL && ft_strlenc(str[i], '-') == ft_strlen(str[i]))
-		{
+        {
 			s[l] = ft_strsplit(str[i], ' ');
 			l++;
 			i++;
 		}
 	}
-	if (!deep_valid(s, l, lem))
+	if (!deep_valid(s, l, lem, cnt))
 		return (NULL);
-	lem->rooms_cnt = linksplit(s, str, i, l);
+	if (str[i] && str[i][ft_strlenc(str[i], '-') != '\0'] && ft_len2(s[l - 1]) == 3)
+		lem->rooms_cnt = linksplit(s, str, i, l);
 //	l = 0;
 //    while (s[l])
 //    {

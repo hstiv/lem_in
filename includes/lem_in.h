@@ -61,14 +61,14 @@ typedef struct s_group {
 	struct s_group *next;//??maybe?
 } t_group;
 
-int 					link_make(t_lem *lem, char ***s, int i);
+//int 					link_make(t_lem *lem, char ***s, int i);
 void					free_lem(t_lem *lem);
 void					free_adj(t_room **adj);
-int						adj_list(t_lem *lem, char ***s);
-void					ft_triplefree(char ***s);
-char					***ft_rec(char *s, t_lem *lem);
-char					***triple_split(char **s, t_lem *lem);
-int 					link_make(t_lem *lem, char ***s, int i);
+int						adj_list(t_lem *lem, char ****s);
+void					ft_triplefree(char ****s);
+char					****ft_rec(char *s, t_lem *lem);
+char					***triple_split(char **s, t_lem *lem, int cnt);
+int 					link_make(t_lem *lem, char ****s, int i, int j);
 t_lem					*ft_newlem();
 t_room					*ft_newroom();
 int 					rpf(t_room *room, t_lem *lem, t_path *path, t_path **pathlist);

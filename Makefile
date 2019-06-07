@@ -1,5 +1,7 @@
 NAME = lem_in
 
+VIZU = vizu-hex
+
 HEAD = includes/
 
 WWW = -Wall -Wextra -Werror
@@ -17,8 +19,13 @@ $(NAME):
 	@rm -rf lem_in.dSYM
 	@echo "(•̀ᴗ•́)و $@ generated!".
 
+$(VIZU):
+	@make -C vizu re
+	@mv vizu/vizu-hex ./
 clean:
 	@rm -rf src/*.o
+	@rm -rf vizu-hex
+	@make -C vizu fclean
 	@make -C libft fclean
 
 fclean: clean
