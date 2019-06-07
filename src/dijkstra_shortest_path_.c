@@ -62,6 +62,21 @@ static t_path	*dijkstra_backtrace(t_lem *lem)
 	return (spath);
 }
 
+static t_path	*reverse_path(t_path *path)
+{
+	t_path *reversed;
+	t_room *tmp;
+
+	reversed = create_path();
+	tmp = path->end;
+	while (tmp)
+	{
+		add_to_path(reversed, tmp);
+		tmp = tmp->prev;
+	}
+	return (reversed);
+}
+
 t_path	*dijkstra_search(t_lem *lem)
 {
 	t_path *shortest_path;
@@ -73,5 +88,5 @@ t_path	*dijkstra_search(t_lem *lem)
 	shortest_path = dijkstra_backtrace(lem);
 
 	dijkstra_reset(lem);
-	return (shortest_path);
+	return (reverse_path(shortest_path));
 }

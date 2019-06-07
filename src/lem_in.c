@@ -168,7 +168,7 @@ int				main(int ac, char **av)
 
 
 	print_path(dijkstra_search(lem));
-	printf("shortest path len = %d\n", lem->end->dijkstra);
+//	printf("shortest path len = %d\n", lem->end->dijkstra);
 
 //	t_path **two = find_two(lem->patharr);
 //	printf("two shortest non intersecting paths are:\n");
