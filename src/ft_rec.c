@@ -37,6 +37,12 @@ char			****ft_rec(char *file_name, t_lem *lem)
 		}
 		i++;
 	}
+	i = 0;
+	while (s[i])
+	{
+		lem->rooms_cnt += len_rooms(s[i]);
+		i++;
+	}
 	if (!lem->rooms_cnt)
 	{
 		ft_triplefree(s);

@@ -68,6 +68,8 @@ int					link_make(t_lem *lem, char ****str, int i, int j)
 	int				n2;
 	char 			***s;
 
+	if (ft_len2(str[j][i]) != 2)
+		return (2);
 	while (str[j] != NULL)
 	{
 		s = str[j];

@@ -66,13 +66,12 @@ int						adj_list(t_lem *lem, char ****str)
 	j = 0;
 	if (!(adj = (t_room **) malloc(sizeof(t_room *) * (lem->rooms_cnt + 1))))
 		return (0);
-	lem->adj = adj;
-	i = 1;
 	l = 0;
+	lem->adj = adj;
 	while (str[j] != NULL)
 	{
 		s = str[j];
-		l = 0;
+		i = (j == 0) ? 1 : 0;
 		while (l < lem->rooms_cnt)
 		{
 			if (s[i][0][0] == '#' && s[i][0][2] == 's'

@@ -70,6 +70,7 @@ typedef struct s_group {
 } t_group;
 
 //int 					link_make(t_lem *lem, char ***s, int i);
+int						len_rooms(char ***s);
 void					free_lem(t_lem *lem);
 void					free_adj(t_room **adj);
 int						adj_list(t_lem *lem, char ****s);

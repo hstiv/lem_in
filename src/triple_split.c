@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 
-static int			len_rooms(char ***s)
+int					len_rooms(char ***s)
 {
 	int				i;
 	int				l;
@@ -39,11 +39,11 @@ static int			ft_cmp(char **s, int i)
 	return (1);
 }
 
-static int			linksplit(char ***s, char **str, int i, int l)
+static void			linksplit(char ***s, char **str, int i, int l)
 {
 	int				o;
 
-	o = l;
+//	o = l;
 	while (str[i] != NULL)
 	{
 		while (str[i + 1] != NULL && !ft_cmp(str, i))
@@ -57,10 +57,10 @@ static int			linksplit(char ***s, char **str, int i, int l)
 		else
 		    i++;
 	}
-	if (o == 0 || i == o)
-		return (0);
-	o = len_rooms(s);
-	return (o);
+//	if (o == 0 || i == o)
+//		return (0);
+//	o = len_rooms(s);
+//	return (o);
 }
 
 static int			deep_valid(char ***s, int j, t_lem *lem, int cnt)
@@ -125,8 +125,8 @@ char				***triple_split(char **str, t_lem *lem, int	cnt)
 		ft_arraydel(str);
 		return (NULL);
 	}
-	if (str[i] && str[i][ft_strlenc(str[i], '-') != '\0'] && ft_len2(s[l - 1]) == 3)
-		lem->rooms_cnt = linksplit(s, str, i, l);
+	if (str[i] && str[i][ft_strlenc(str[i], '-') == '-'])
+		linksplit(s, str, i, l);
 //	l = 0;
 //    while (s[l])
 //    {
