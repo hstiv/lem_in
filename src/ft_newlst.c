@@ -45,6 +45,8 @@ t_room			*ft_newroom(void)
 		new->self = NULL;
 		new->prev = NULL;
 		new->visited = 0;
+		new->dijkstra = INT_MAX;
+		new->queue_next = NULL;
 	}
 	return (new);
 }

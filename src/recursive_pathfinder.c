@@ -68,18 +68,21 @@ void 	add_path_to_all(t_path *path, t_path **path_list)
 		*path_list = path;
 	}
 }
+int recursdepth = 0;
 
 int 	rpf(t_room *room, t_lem *lem, t_path *path, t_path **pathlist)
-{
+{	//printf("rec depth-%d\n", recursdepth);
+//	print_path(path);
+//	printf("%d\n", room->nb);
 	int path_count = 0;
+	recursdepth++;
 	t_room *this_room = room;
 
+//	if (room->link_count)
 	add_to_path(path, room);
-	if (!room || room->visited == 1)
-		return (0);
 	if (room == lem->end)
 	{
-//		print_path(path);
+		recursdepth--;
 		add_path_to_all(path, pathlist);
 		remove_last_from_path(path);
 		return (1);
@@ -96,5 +99,6 @@ int 	rpf(t_room *room, t_lem *lem, t_path *path, t_path **pathlist)
 	}
 	this_room->visited = 0;
 	remove_last_from_path(path);
+	recursdepth--;
 	return (path_count);
 }

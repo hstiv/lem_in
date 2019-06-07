@@ -44,14 +44,22 @@ typedef struct			s_room
 	struct s_room		*next;
 	struct s_room		*prev;
 	struct s_room		*self;
+	unsigned int		dijkstra;
+	struct s_room		*queue_next;
 }						t_room;
+
+typedef struct{
+	t_room	*start;
+	t_room	*end;
+	int size;
+} t_queue;
 
 typedef struct s_path{
 	int len;
 	t_room *start;
 	t_room *end;
 	struct s_path *next;
-	char *intersection_arr;//todo
+	char *intersection_arr;
 } t_path;
 
 typedef struct s_group {
@@ -68,11 +76,16 @@ int						adj_list(t_lem *lem, char ***s);
 void					ft_triplefree(char ***s);
 char					***ft_rec(char *s, t_lem *lem);
 char					***triple_split(char **s, t_lem *lem);
-int 					link_make(t_lem *lem, char ***s, int i);
+//int 					link_make(t_lem *lem, char ***s, int i);
 t_lem					*ft_newlem();
 t_room					*ft_newroom();
 int 					rpf(t_room *room, t_lem *lem, t_path *path, t_path **pathlist);
 t_path					*create_path();
+void	add_to_path(t_path *path, t_room *room);
 int 	is_intersect(t_path *path1, t_path *path2);
 int		is_intersecting_n_paths(t_path **path_arr, int size);
+void	add_to_priority_queue(t_room *room, t_queue *queue);
+t_room	*pop_from_queue(t_queue *queue);
+void	add_to_queue(t_room *room, t_queue *queue);
+t_path	*dijkstra_search(t_lem *lem);
 #endif

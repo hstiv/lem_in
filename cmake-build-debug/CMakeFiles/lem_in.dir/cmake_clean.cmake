@@ -75,6 +75,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/src/link_make.c.o"
   "CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o"
   "CMakeFiles/lem_in.dir/src/triple_split.c.o"
+  "CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o"
+  "CMakeFiles/lem_in.dir/src/queue.c.o"
   "lem_in.pdb"
   "lem_in"
 )

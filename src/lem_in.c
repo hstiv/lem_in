@@ -156,21 +156,39 @@ int				main(int ac, char **av)
     }
 	t_path *path = create_path();
 	t_path *pathlist = NULL;
-	printf("total paths count: %d\n",lem->path_count = rpf(lem->begin, lem, path, &pathlist));
+//	printf("total paths count: %d\n",lem->path_count = rpf(lem->begin, lem, path, &pathlist));
 
 	lem->max_group_size = calc_max_group_size(lem);
 
 
-	lem->patharr = path_list_to_array(pathlist, lem->path_count, lem->rooms_cnt);
+//	lem->patharr = path_list_to_array(pathlist, lem->path_count, lem->rooms_cnt);
 	//todo free pathlist here, no more need it
-	print_all_pathes(lem->patharr);
+//	print_all_pathes(lem->patharr);
 
 
-	t_path **two = find_two(lem->patharr);
-	printf("two shortest non intersecting paths are:\n");
-	print_path(two[0]);
-	print_path(two[1]);
+	print_path(dijkstra_search(lem));
+	printf("shortest path len = %d\n", lem->end->dijkstra);
+
+//	t_path **two = find_two(lem->patharr);
+//	printf("two shortest non intersecting paths are:\n");
+//	print_path(two[0]);
+//	print_path(two[1]);
 	ft_triplefree(s);
 	free_lem(lem);
 	return (0);
 }
+
+
+//int main(){
+//	t_queue *queue = ft_memalloc(sizeof(t_queue));
+//	t_room *r1 = ft_newroom();
+//	t_room *r2 = ft_newroom();
+//	t_room *r3 = ft_newroom();
+//	r1->dijkstra = 4;
+//	r2->dijkstra = 5;
+//	r3->dijkstra = 3;
+//	add_to_priority_queue(r1, queue);
+//	add_to_priority_queue(r2, queue);
+//	add_to_priority_queue(r3, queue);
+//	t_room *pop = pop_from_queue(queue);
+//}

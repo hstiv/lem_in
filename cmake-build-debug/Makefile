@@ -1905,6 +1905,33 @@ src/adj_list.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/adj_list.c.s
 .PHONY : src/adj_list.c.s
 
+src/dijkstra_shortest_path_.o: src/dijkstra_shortest_path_.c.o
+
+.PHONY : src/dijkstra_shortest_path_.o
+
+# target to build an object file
+src/dijkstra_shortest_path_.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o
+.PHONY : src/dijkstra_shortest_path_.c.o
+
+src/dijkstra_shortest_path_.i: src/dijkstra_shortest_path_.c.i
+
+.PHONY : src/dijkstra_shortest_path_.i
+
+# target to preprocess a source file
+src/dijkstra_shortest_path_.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.i
+.PHONY : src/dijkstra_shortest_path_.c.i
+
+src/dijkstra_shortest_path_.s: src/dijkstra_shortest_path_.c.s
+
+.PHONY : src/dijkstra_shortest_path_.s
+
+# target to generate assembly for a file
+src/dijkstra_shortest_path_.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.s
+.PHONY : src/dijkstra_shortest_path_.c.s
+
 src/free_lem.o: src/free_lem.c.o
 
 .PHONY : src/free_lem.o
@@ -2120,6 +2147,33 @@ src/link_make.s: src/link_make.c.s
 src/link_make.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/link_make.c.s
 .PHONY : src/link_make.c.s
+
+src/queue.o: src/queue.c.o
+
+.PHONY : src/queue.o
+
+# target to build an object file
+src/queue.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/queue.c.o
+.PHONY : src/queue.c.o
+
+src/queue.i: src/queue.c.i
+
+.PHONY : src/queue.i
+
+# target to preprocess a source file
+src/queue.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/queue.c.i
+.PHONY : src/queue.c.i
+
+src/queue.s: src/queue.c.s
+
+.PHONY : src/queue.s
+
+# target to generate assembly for a file
+src/queue.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/queue.c.s
+.PHONY : src/queue.c.s
 
 src/recursive_pathfinder.o: src/recursive_pathfinder.c.o
 
@@ -2382,6 +2436,9 @@ help:
 	@echo "... src/adj_list.o"
 	@echo "... src/adj_list.i"
 	@echo "... src/adj_list.s"
+	@echo "... src/dijkstra_shortest_path_.o"
+	@echo "... src/dijkstra_shortest_path_.i"
+	@echo "... src/dijkstra_shortest_path_.s"
 	@echo "... src/free_lem.o"
 	@echo "... src/free_lem.i"
 	@echo "... src/free_lem.s"
@@ -2406,6 +2463,9 @@ help:
 	@echo "... src/link_make.o"
 	@echo "... src/link_make.i"
 	@echo "... src/link_make.s"
+	@echo "... src/queue.o"
+	@echo "... src/queue.i"
+	@echo "... src/queue.s"
 	@echo "... src/recursive_pathfinder.o"
 	@echo "... src/recursive_pathfinder.i"
 	@echo "... src/recursive_pathfinder.s"

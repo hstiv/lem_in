@@ -292,6 +292,9 @@
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/adj_list.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/dijkstra_shortest_path_.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/free_lem.c">
 			<Option target="lem_in"/>
 		</Unit>
@@ -314,6 +317,9 @@
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/link_make.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/queue.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/recursive_pathfinder.c">
