@@ -14,7 +14,7 @@
 
 static int				if_start(t_lem *lem, char ***s, int *i, int *l)
 {
-	if (!(lem->adj[*l] = ft_newroom()))
+	if (lem->begin || !(lem->adj[*l] = ft_newroom()))
 		return (0);
 	(*i)++;
 	lem->adj[*l]->x = ft_atoi(s[*i][1]);
@@ -29,7 +29,7 @@ static int				if_start(t_lem *lem, char ***s, int *i, int *l)
 
 static	int				if_end(t_lem *lem, char ***s, int *i, int *l)
 {
-	if (!(lem->adj[*l] = ft_newroom()))
+	if (lem->end || !(lem->adj[*l] = ft_newroom()))
 		return (0);
 	(*i)++;
 	lem->adj[*l]->x = ft_atoi(s[*i][1]);
@@ -73,7 +73,7 @@ int						adj_list(t_lem *lem, char ****str)
 	{
 		s = str[j];
 		l = 0;
-		while (l != lem->rooms_cnt)
+		while (l < lem->rooms_cnt)
 		{
 			if (s[i][0][0] == '#' && s[i][0][2] == 's'
 				&& !(if_start(lem, s, &i, &l)))
@@ -83,7 +83,7 @@ int						adj_list(t_lem *lem, char ****str)
 				if (!(if_end(lem, s, &i, &l)))
 					return (0);
 			}
-			else if (!if_common(lem, s, &i, &l))
+			else if (l < lem->rooms_cnt && !if_common(lem, s, &i, &l))
 				return (0);
 		}
 		if (!link_make(lem, str, i, j))
@@ -91,6 +91,8 @@ int						adj_list(t_lem *lem, char ****str)
 		j++;
 	}
 	lem->adj[l] = NULL;
+	if (!lem->begin || !lem->end)
+		return (0);
 	lem->begin->ant = lem->ants;
 	return (1);
 }

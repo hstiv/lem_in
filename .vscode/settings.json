@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "lem_in.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "vizulib.h": "c"
     }
 }

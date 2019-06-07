@@ -32,8 +32,7 @@ char			****ft_rec(char *file_name, t_lem *lem)
 		buf[y] = '\0';
 		if (!(s[i] = triple_split(ft_strsplit(buf, '\n'), lem, i + 1)))
 		{
-			if (i > 0)
-				ft_triplefree(s);
+			(i > 0) ? ft_triplefree(s) : free(s);
 			return (NULL);
 		}
 		i++;

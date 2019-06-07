@@ -121,7 +121,10 @@ char				***triple_split(char **str, t_lem *lem, int	cnt)
 		}
 	}
 	if (!deep_valid(s, l, lem, cnt))
+	{
+		ft_arraydel(str);
 		return (NULL);
+	}
 	if (str[i] && str[i][ft_strlenc(str[i], '-') != '\0'] && ft_len2(s[l - 1]) == 3)
 		lem->rooms_cnt = linksplit(s, str, i, l);
 //	l = 0;
