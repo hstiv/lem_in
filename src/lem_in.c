@@ -139,18 +139,20 @@ int		calc_max_group_size(t_lem *lem)
 
 int				main(int ac, char **av)
 {
-	char		****s;
+	t_split		*data;
 	t_lem		*lem;
 
 
 	lem = ft_newlem();
-	if (ac != 2 || !(s = ft_rec(av[1], lem)))
+	if (ac != 2 || !(data = ft_rec(av[1], lem)))
 	{
 		free(lem);
-		free(s);
+		split_free(data);
 		return (ft_err("Error\n"));
 	}
-	if (!adj_list(lem, s))
+	while(data->prev)
+		data = data->prev;
+	if (!adj_list(lem, data))
 	{
         free(lem);
         return (ft_err("Error\n"));

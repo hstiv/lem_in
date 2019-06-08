@@ -49,3 +49,22 @@ t_room			*ft_newroom(void)
 	}
 	return (new);
 }
+
+t_split			*ft_newsplit(void)
+{
+	t_split		*new;
+
+	new = (t_split *)malloc(sizeof(t_split));
+	if (new)
+	{
+		new->l = 0;
+		new->name1 = NULL;
+		new->name2 = NULL;
+		new->name3 = NULL;
+		new->begin = 0;
+		new->end = 0;
+		new->next = NULL;
+		new->prev = NULL;
+	}
+	return (new);
+}

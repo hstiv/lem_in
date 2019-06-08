@@ -17,20 +17,22 @@ static void			cor_give(t_room **adj)
 
 static int			adj(t_lem *lem, char **av, int ac)
 {
-	char		***s;
+	t_split			*data;
 
-	if (ac != 2 || !(s = ft_rec(av[1], lem)))
+	if (ac != 2 || !(data = ft_rec(av[1], lem)))
 	{
 		free(lem);
 		return (ft_err("Error\n"));
 	}
-	if (!adj_list(lem, s))
+	while (data->prev)
+		data = data->prev;
+	if (!adj_list(lem, data))
 	{
 		free(lem);
-		ft_triplefree(s);
+		split_free(data);
 		return (ft_err("Error\n"));
 	}
-	ft_triplefree(s);
+	split_free(data);
 	return (1);
 }
 

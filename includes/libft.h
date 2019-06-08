@@ -14,17 +14,23 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <sys/types.h>
+# include <fcntl.h>
+# include <sys/stat.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
 
+# define BUFF_SIZE 20
+
 typedef struct		s_list
 {
-	void			*content;
+	char			***content;
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
 
+int					get_next_line(const int fd, char **line);
 int					ft_err(char *s);
 int					ft_len3(char ***s);
 int					ft_len2(char **s);

@@ -12,86 +12,74 @@
 
 #include "lem_in.h"
 
-static int				if_start(t_lem *lem, char ***s, int *i, int *l)
+static int				if_start(t_lem *lem, t_split *tmp, int *l)
 {
 	if (lem->begin || !(lem->adj[*l] = ft_newroom()))
 		return (0);
-	(*i)++;
-	lem->adj[*l]->x = ft_atoi(s[*i][1]);
-	lem->adj[*l]->y = ft_atoi(s[*i][2]);
-	lem->adj[*l]->name = ft_strdup(s[*i][0]);
+	lem->adj[*l]->x = ft_atoi(tmp->name2);
+	lem->adj[*l]->y = ft_atoi(tmp->name3);
+	lem->adj[*l]->name = ft_strdup(tmp->name1);
 	lem->begin = lem->adj[*l];
 	lem->adj[*l]->nb = *l;
-	(*i)++;
 	(*l)++;
 	return (1);
 }
 
-static	int				if_end(t_lem *lem, char ***s, int *i, int *l)
+static	int				if_end(t_lem *lem, t_split *tmp, int *l)
 {
 	if (lem->end || !(lem->adj[*l] = ft_newroom()))
 		return (0);
-	(*i)++;
-	lem->adj[*l]->x = ft_atoi(s[*i][1]);
-	lem->adj[*l]->y = ft_atoi(s[*i][2]);
-	lem->adj[*l]->name = ft_strdup(s[*i][0]);
+	lem->adj[*l]->x = ft_atoi(tmp->name2);
+	lem->adj[*l]->y = ft_atoi(tmp->name3);
+	lem->adj[*l]->name = ft_strdup(tmp->name1);
 	lem->end = lem->adj[*l];
 	lem->adj[*l]->nb = *l;
-	(*i)++;
 	(*l)++;
 	return (1);
 }
 
-static int				if_common(t_lem *lem, char ***s, int *i, int *l)
+static int				if_common(t_lem *lem, t_split *tmp, int *l)
 {
 	if (!(lem->adj[*l] = ft_newroom()))
 		return (0);
-	lem->adj[*l]->x = ft_atoi(s[*i][1]);
-	lem->adj[*l]->y = ft_atoi(s[*i][2]);
-	lem->adj[*l]->name = ft_strdup(s[*i][0]);
+	lem->adj[*l]->x = ft_atoi(tmp->name2);
+	lem->adj[*l]->y = ft_atoi(tmp->name3);
+	lem->adj[*l]->name = ft_strdup(tmp->name1);
 	lem->adj[*l]->nb = *l;
-	(*i)++;
 	(*l)++;
 	return (1);
 }
 
-int						adj_list(t_lem *lem, char ****str)
+int						adj_list(t_lem *lem, t_split *split)
 {
-	t_room **adj;
-	char 	***s;
-	int l;
-	int j;
-	int i;
+	t_room				**adj;
+	int					l;
+	t_split				*tmp;
 
-	j = 0;
+	tmp = split;
 	if (!(adj = (t_room **) malloc(sizeof(t_room *) * (lem->rooms_cnt + 1))))
 		return (0);
 	l = 0;
 	lem->adj = adj;
-	while (str[j] != NULL)
+	while (l < lem->rooms_cnt)
 	{
-		s = str[j];
-		i = (j == 0) ? 1 : 0;
-		while (l < lem->rooms_cnt)
+		if (tmp->begin)
 		{
-			if (s[i][0][0] == '#' && s[i][0][2] == 's'
-				&& !(if_start(lem, s, &i, &l)))
-				return (0);
-			else if (s[i][0][0] == '#' && s[i][0][2] == 'e')
-			{
-				if (!(if_end(lem, s, &i, &l)))
-					return (0);
-			}
-			else if (l < lem->rooms_cnt && !if_common(lem, s, &i, &l))
+			if (lem->begin || !(if_start(lem, tmp, &l)))
 				return (0);
 		}
-		if (!link_make(lem, str, i, j))
+		else if (tmp->end)
+		{
+			if (!lem->end && !(if_end(lem, tmp, &l)))
+				return (0);
+		}
+		else if (l < lem->rooms_cnt && !if_common(lem, tmp, &l))
 			return (0);
-		j++;
+		tmp = tmp->next;
 	}
 	lem->adj[l] = NULL;
 	if (!lem->begin || !lem->end)
 		return (0);
 	lem->begin->ant = lem->ants;
-	return (1);
+	return(link_make(lem, tmp));
 }

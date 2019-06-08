@@ -13,7 +13,6 @@
 #ifndef VIZULIB_H
 # define VIZULIB_H
 
-# define BUFF_SIZE 100000
 # define HEIGHT 1395
 # define WIDTH 2560
 # define LINE 20
@@ -86,6 +85,21 @@ typedef	struct			s_mlx
 	t_lem				*lem;
 }						t_mlx;
 
+typedef struct			s_split
+{
+	char				*name1;
+	char				*name2;
+	char				*name3;
+	int					l;
+	int					begin;
+	int					end;
+	struct s_split		*next;
+	struct s_split		*prev;
+	
+}						t_split;
+
+t_split					*ft_newsplit();
+void					split_free(t_split *split);
 void					putman(t_mlx *mlx);
 int						key_release(int keycode, t_mlx *mlx);
 void					graph_color(t_lem *lem, t_room *adj,
@@ -98,14 +112,14 @@ int						mouse_release(int button, int x, int y, t_mlx *param);
 int						mouse_move(int x, int y, t_mlx *param);
 int						mouse_press(int button, int x, int y, t_mlx *param);
 int						key_press(int keycode, t_mlx *param);
-int						link_make(t_lem *lem, char ***s, int i);
+int						link_make(t_lem *lem, t_split *tmp);
 void					free_lem(t_lem *lem);
 void					free_adj(t_room **adj);
-int						adj_list(t_lem *lem, char ***s);
+int						adj_list(t_lem *lem, t_split *split);
 void					ft_triplefree(char ***s);
-char					***ft_rec(char *s, t_lem *lem);
+t_split					*ft_rec(char *s, t_lem *lem);
 char					***triple_split(char **s, t_lem *lem);
-int						link_make(t_lem *lem, char ***s, int i);
+int						link_make(t_lem *lem, t_split *tmp);
 t_lem					*ft_newlem();
 t_room					*ft_newroom();
 void					mappaint(t_mlx *mlx);

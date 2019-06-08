@@ -48,6 +48,19 @@ typedef struct			s_room
 	struct s_room		*queue_next;
 }						t_room;
 
+typedef struct s_split
+{
+	char		*name1;
+	char		*name2;
+	char		*name3;
+	int			l;
+	int			begin;
+	int			end;
+	struct s_split	*next;
+	struct s_split	*prev;
+	
+}			t_split;
+
 typedef struct{
 	t_room	*start;
 	t_room	*end;
@@ -69,15 +82,17 @@ typedef struct s_group {
 	struct s_group *next;//??maybe?
 } t_group;
 
+void					split_free(t_split *split);
 //int 					link_make(t_lem *lem, char ***s, int i);
+t_split					*ft_newsplit();
 int						len_rooms(char ***s);
 void					free_lem(t_lem *lem);
 void					free_adj(t_room **adj);
-int						adj_list(t_lem *lem, char ****s);
+int						adj_list(t_lem *lem, t_split *split);
 void					ft_triplefree(char ****s);
-char					****ft_rec(char *s, t_lem *lem);
+t_split					*ft_rec(char *s, t_lem *lem);
 char					***triple_split(char **s, t_lem *lem, int cnt);
-int 					link_make(t_lem *lem, char ****s, int i, int j);
+int 					link_make(t_lem *lem, t_split *tmp);
 t_lem					*ft_newlem();
 t_room					*ft_newroom();
 int 					rpf(t_room *room, t_lem *lem, t_path *path, t_path **pathlist);

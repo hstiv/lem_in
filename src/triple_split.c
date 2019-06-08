@@ -131,6 +131,10 @@ char				***triple_split(char **str, t_lem *lem, int	cnt)
 //    while (s[l])
 //    {
 //        ft_putstr(s[l][0]);
+//        ft_putchar(32);
+//        ft_putstr(s[l][1]);
+//		ft_putchar(32);
+//		ft_putstr(s[l][1]);
 //        ft_putchar('\n');
 //        l++;
 //    }
