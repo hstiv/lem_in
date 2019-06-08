@@ -176,7 +176,7 @@ int				main(int ac, char **av)
 //	printf("two shortest non intersecting paths are:\n");
 //	print_path(two[0]);
 //	print_path(two[1]);
-	ft_triplefree(s);
+	split_free(data);
 	free_lem(lem);
 	return (0);
 }
