@@ -81,6 +81,7 @@ typedef struct s_group {
 	struct s_group *next;//??maybe?
 } t_group;
 
+void					dislinker(t_lem *lem, t_path, *path);
 void					split_free(t_split *split);
 //int 					link_make(t_lem *lem, char ***s, int i);
 t_split					*ft_newsplit();
