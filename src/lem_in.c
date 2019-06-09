@@ -152,9 +152,29 @@ int				main(int ac, char **av)
 	}
 	while(data->prev)
 		data = data->prev;
-	if (!adj_list(lem, data))
+//	while (data)
+//	{
+//		ft_putstr(data->name1);
+//		ft_putchar(32);
+//		ft_putstr(data->name2);
+//		ft_putchar(32);
+//		if (data->name3)
+//		{
+//			ft_putstr(data->name3);
+//			ft_putchar(32);
+//		}
+//		ft_putnbr(data->begin);
+//		ft_putchar(32);
+//		ft_putnbr(data->end);
+//		ft_putchar(32);
+//		ft_putchar('\n');
+//		data = data->next;
+//	}
+//	return (0);
+	if (lem->ants <= 0 || !adj_list(lem, data))
 	{
         free(lem);
+        split_free(data);
         return (ft_err("Error\n"));
     }
 	t_path *path = create_path();

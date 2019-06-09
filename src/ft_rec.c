@@ -73,19 +73,21 @@ static int		common_room(t_split *tmp, char **s, int *t)
 		ft_arraydel(s);
 		return (0);
 	}
-	tmp->name1 = ft_strdup(s[0]);
-	tmp->name2 = ft_strdup(s[1]);
-	tmp->name3 = ft_strdup(s[2]);
-	ft_arraydel(s);
-	if (tmp->name1[0] == 'L')
+	tmp->name1 = s[0];
+	tmp->name2 = s[1];
+	tmp->name3 = s[2];
+	if (tmp->name1[0] == 'L' || !s[2] || !s[1]
+				|| !ft_isdigit(s[2][0]) || !ft_isdigit(s[1][0]))
 	{
 		split_free(tmp);
+		free(s);
 		return (0);
 	}
 	if (*t == 1)
 		tmp->begin = 1;
 	else if (*t == 2)
 		tmp->end = 1;
+	free(s);
 	return (1);
 }
 
@@ -97,9 +99,9 @@ static int		linker(t_split *tmp, char **s)
 		ft_arraydel(s);
 		return (0);
 	}
-	tmp->name1 = ft_strdup(s[0]);
-	tmp->name2 = ft_strdup(s[1]);
-	ft_arraydel(s);
+	tmp->name1 = s[0];
+	tmp->name2 = s[1];
+	free(s);
 	return (1);
 }
 

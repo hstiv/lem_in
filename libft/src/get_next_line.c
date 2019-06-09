@@ -12,58 +12,102 @@
 
 #include "libft.h"
 
-static int		make_read_line(char **gnl, int fd, char **line)
+static int		ft_memadd(char **tmp, const int fd, UL mem)
 {
-	size_t		i;
-	char		*loc;
+	char		*del;
 
-	i = ft_strlenc(gnl[fd], '\n');
-	if (!(*line = ft_strsub(gnl[fd], 0, i)))
-		return (-1);
-	if (!(loc = ft_strsub(gnl[fd], i + 1, ft_strlen(gnl[fd]))))
-		return (-1);
-	free(gnl[fd]);
-	gnl[fd] = loc;
+	del = tmp[fd];
+	if (!(tmp[fd] = ft_strnew(mem)))
+		return (0);
+	if (del)
+	{
+		ft_memcpy(tmp[fd] + 8, del + 8, *(((UL *)del) + 3) - 8);
+		free(del);
+	}
+	else
+	{
+		*((((UL **)tmp)[fd]) + 1) = 33;
+		*((((UL **)tmp)[fd]) + 2) = 33;
+		*((((UL **)tmp)[fd]) + 3) = 33;
+	}
+	*(((UL **)tmp)[fd]) = mem;
 	return (1);
 }
 
-static int		make_next_line(char **gnl, char **line, int fd)
+static int		detect(char *tmp)
 {
-	int			i;
+	while (*(((UL *)tmp) + 2) != *(((UL *)tmp) + 3))
+	{
+		if (tmp[*(((UL *)tmp) + 2)] == '\n')
+		{
+			*(tmp + 32) = '\1';
+			return (1);
+		}
+		++((UL *)tmp)[2];
+	}
+	*(tmp + 32) = '\0';
+	return (0);
+}
 
-	i = ft_strlenc(gnl[fd], '\n');
-	if (gnl[fd][i] == '\n')
-		return (make_read_line(gnl, fd, line));
-	if (!(*line = ft_strdup(gnl[fd])))
+static int		get_line(char *tmp, char **line)
+{
+	UL			len;
+
+	if (!(*line = ft_strsub(tmp, *(((UL *)tmp) + 1),
+							(len = ((UL *)tmp)[2] - *(((UL *)tmp) + 1)))))
 		return (-1);
-	ft_strdel(&gnl[fd]);
+	*(((UL *)tmp) + 1) += len + 1;
+	*(((UL *)tmp) + 2) = *(((UL *)tmp) + 1);
+	if (*(tmp + 32) != '\2' && !(detect(tmp)))
+	{
+		ft_memmove(tmp + 33, &tmp[((UL *)tmp)[1]],
+				   (len = *(((UL *)tmp) + 2) - *(((UL *)tmp) + 1)));
+		*(((UL *)tmp) + 1) = 33;
+		*(((UL *)tmp) + 2) = 33 + len;
+		*(((UL *)tmp) + 3) = *(((UL *)tmp) + 2);
+	}
 	return (1);
+}
+
+static int		ft_read(char **tmp, const int fd, char **line)
+{
+	UL			stat;
+
+	while ((stat = read(fd, &tmp[fd][((UL **)tmp)[fd][3]], BUFF_SIZE)) > 0)
+	{
+		((UL **)tmp)[fd][3] += stat;
+		if (detect(tmp[fd]))
+			return (get_line(tmp[fd], line));
+		if ((*(((UL **)tmp)[fd] + 3) + BUFF_SIZE) >= *(((UL **)tmp)[fd]))
+			if (!(ft_memadd(tmp, fd, *(((UL **)tmp)[fd] + 3) + BUFF_SIZE)))
+				return (-1);
+	}
+	if (stat == 0 && tmp[fd][32] != '\2')
+	{
+		*(tmp[fd] + 32) = '\2';
+		if (*(((UL **)tmp)[fd] + 2) != 33)
+			return (get_line(tmp[fd], line));
+		*line = ft_strnew(0);
+	}
+	return (stat);
 }
 
 int				get_next_line(const int fd, char **line)
 {
-	static char	*gnl[10240];
-	char		buf[BUFF_SIZE + 1];
-	int			y;
-	char		*loc;
+	static char	*tmp[MAX_FD];
 
-	if (!line || fd < 0 || read(fd, NULL, 0) < 0)
+	if (fd < 0 || fd > MAX_FD || !line ||
+		(read(fd, *line, 0)) < 0 || BUFF_SIZE < 0)
 		return (-1);
-	while ((y = read(fd, (void *)buf, BUFF_SIZE)) > 0)
+	if (tmp[fd] && *(tmp[fd] + 32) == '\1')
+		return (get_line(tmp[fd], line));
+	else if (!(tmp[fd]))
 	{
-		buf[y] = '\0';
-		if (!gnl[fd])
-			gnl[fd] = ft_strnew(1);
-		if (!(loc = ft_strjoin(gnl[fd], buf)))
+		if (!(ft_memadd(tmp, fd, 33 + BUFF_SIZE)))
 			return (-1);
-		free(gnl[fd]);
-		gnl[fd] = loc;
-		if (ft_strchr(gnl[fd], '\n'))
-			return (make_read_line(gnl, fd, line));
 	}
-	if (y < 0)
-		return (-1);
-	else if (y == 0 && (!(gnl[fd]) || gnl[fd][0] == '\0'))
-		return (0);
-	return (make_next_line(gnl, line, fd));
+	else if ((*(((UL **)tmp)[fd] + 3) + BUFF_SIZE) >= *(((UL **)tmp)[fd]))
+		if (!(ft_memadd(tmp, fd, ((*((((UL **)tmp)[fd]) + 3) + BUFF_SIZE)))))
+			return (-1);
+	return (ft_read(tmp, fd, line));
 }

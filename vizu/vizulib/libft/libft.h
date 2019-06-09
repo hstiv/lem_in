@@ -21,7 +21,9 @@
 # include <unistd.h>
 # include <stdio.h>
 
-# define BUFF_SIZE 20
+# define BUFF_SIZE 32
+# define MAX_FD		10240
+# define UL unsigned long int
 
 typedef struct		s_list
 {
