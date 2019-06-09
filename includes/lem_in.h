@@ -104,4 +104,8 @@ void	add_to_priority_queue(t_room *room, t_queue *queue);
 t_room	*pop_from_queue(t_queue *queue);
 void	add_to_queue(t_room *room, t_queue *queue);
 t_path	*dijkstra_search(t_lem *lem);
+void	throw_error(char *msg);
+int 	min(int a, int b);
+void	print_path(t_path *path);
+int		calc_max_group_size(t_lem *lem);
 #endif

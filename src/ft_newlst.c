@@ -25,6 +25,7 @@ t_lem			*ft_newlem(void)
 		new->begin = NULL;
 		new->end = NULL;
 		new->adj = NULL;
+		new->path_count = INT_MAX;
 	}
 	return (new);
 }

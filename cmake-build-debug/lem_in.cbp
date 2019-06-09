@@ -44,7 +44,6 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/mdebbi/Desktop/lem_in/."/>
 					<Add directory="/Users/mdebbi/Desktop/lem_in/includes"/>
 					<Add directory="/Users/mdebbi/Desktop/lem_in/libft"/>
 					<Add directory="/Users/mdebbi/Desktop/lem_in/src"/>
@@ -69,7 +68,6 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/mdebbi/Desktop/lem_in/."/>
 					<Add directory="/Users/mdebbi/Desktop/lem_in/includes"/>
 					<Add directory="/Users/mdebbi/Desktop/lem_in/libft"/>
 					<Add directory="/Users/mdebbi/Desktop/lem_in/src"/>
@@ -289,6 +287,9 @@
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/libft/src/ft_toupper.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/libft/src/get_next_line.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/adj_list.c">
 			<Option target="lem_in"/>
 		</Unit>
@@ -319,6 +320,9 @@
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/link_make.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/path.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/queue.c">
 			<Option target="lem_in"/>
 		</Unit>
@@ -326,6 +330,9 @@
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/triple_split.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/utils.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/CMakeLists.txt">

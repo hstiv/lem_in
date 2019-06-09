@@ -88,4 +88,4 @@ add_executable(lem_in
         src/link_make.c
         src/queue.c
         src/recursive_pathfinder.c
-        src/triple_split.c src/dislinker.c)
+        src/triple_split.c src/path.c src/utils.c)

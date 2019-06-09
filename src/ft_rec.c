@@ -31,7 +31,7 @@ void			split_free(t_split *split)
 	}
 }
 
-static int		cnt_char(char *s, char c)
+static int		cnt_char(const char *s, char c)
 {
 	int			i;
 	int			l;
@@ -65,7 +65,7 @@ static t_split		*addlst(t_split *tmp, int l, int *t)
 	return (split);
 }
 
-static int		common_room(t_split *tmp, char **s, int *t)
+static int		common_room(t_split *tmp, char **s, const int *t)
 {
 	if (ft_len2(s) != 3)
 	{
@@ -112,6 +112,7 @@ t_split			*ft_rec(char *file_name, t_lem *lem)
 	int 		t;
 	t_split		*tmp;
 
+	s = NULL;
 	if (!(fd = open(file_name, O_RDONLY)) || fd < 0)
 		return (NULL);
 	t = 0;
