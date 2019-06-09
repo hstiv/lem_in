@@ -152,6 +152,8 @@ int				main(int ac, char **av)
 	}
 	while(data->prev)
 		data = data->prev;
+//	ft_putnbr(lem->ants);
+//	ft_putchar('\n');
 //	while (data)
 //	{
 //		ft_putstr(data->name1);

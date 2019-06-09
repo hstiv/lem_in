@@ -127,9 +127,9 @@ t_split			*ft_rec(char *file_name, t_lem *lem)
 		}
 		else if (ft_strequ(s, "##start") || ft_strequ(s, "##end"))
 			t = (s[2] == 's') ? 1 : 2;
-		else if (cnt_char(s, ' ') == 2 && s[0] != '#')
+		else if (ft_count_char(s, ' ') == 3 && s[0] != '#')
 		{
-			tmp = (tmp) ? addlst(tmp, 2, &t) : ft_newsplit();
+			tmp = (tmp) ? addlst(tmp, 3, &t) : ft_newsplit();
 			if (!common_room(tmp, ft_strsplit(s, ' '), &t))
 			{
 				free(s);
@@ -138,7 +138,7 @@ t_split			*ft_rec(char *file_name, t_lem *lem)
 			lem->rooms_cnt++;
 			t = 0;
 		}
-		else if (cnt_char(s, '-') == 1 && s[0] != '#')
+		else if (ft_count_char(s, '-') == 2 && s[0] != '#')
 		{
 			tmp = (tmp) ? addlst(tmp, 2, &t) : ft_newsplit();
 			linker(tmp, ft_strsplit(s, '-'));
