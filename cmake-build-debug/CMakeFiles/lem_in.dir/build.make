@@ -902,9 +902,22 @@ CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/libft/src/ft_toupper.c -o CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.s
 
+CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o: ../libft/src/get_next_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o   -c /Users/mdebbi/Desktop/lem_in/libft/src/get_next_line.c
+
+CMakeFiles/lem_in.dir/libft/src/get_next_line.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/libft/src/get_next_line.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mdebbi/Desktop/lem_in/libft/src/get_next_line.c > CMakeFiles/lem_in.dir/libft/src/get_next_line.c.i
+
+CMakeFiles/lem_in.dir/libft/src/get_next_line.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/libft/src/get_next_line.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/libft/src/get_next_line.c -o CMakeFiles/lem_in.dir/libft/src/get_next_line.c.s
+
 CMakeFiles/lem_in.dir/src/adj_list.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/adj_list.c.o: ../src/adj_list.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/lem_in.dir/src/adj_list.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/lem_in.dir/src/adj_list.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/adj_list.c.o   -c /Users/mdebbi/Desktop/lem_in/src/adj_list.c
 
 CMakeFiles/lem_in.dir/src/adj_list.c.i: cmake_force
@@ -915,9 +928,22 @@ CMakeFiles/lem_in.dir/src/adj_list.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/adj_list.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/src/adj_list.c -o CMakeFiles/lem_in.dir/src/adj_list.c.s
 
+CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o: ../src/dijkstra_shortest_path_.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o   -c /Users/mdebbi/Desktop/lem_in/src/dijkstra_shortest_path_.c
+
+CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mdebbi/Desktop/lem_in/src/dijkstra_shortest_path_.c > CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.i
+
+CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/src/dijkstra_shortest_path_.c -o CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.s
+
 CMakeFiles/lem_in.dir/src/free_lem.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/free_lem.c.o: ../src/free_lem.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/lem_in.dir/src/free_lem.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/lem_in.dir/src/free_lem.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/free_lem.c.o   -c /Users/mdebbi/Desktop/lem_in/src/free_lem.c
 
 CMakeFiles/lem_in.dir/src/free_lem.c.i: cmake_force
@@ -930,7 +956,7 @@ CMakeFiles/lem_in.dir/src/free_lem.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/ft_newlst.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/ft_newlst.c.o: ../src/ft_newlst.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/lem_in.dir/src/ft_newlst.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/lem_in.dir/src/ft_newlst.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/ft_newlst.c.o   -c /Users/mdebbi/Desktop/lem_in/src/ft_newlst.c
 
 CMakeFiles/lem_in.dir/src/ft_newlst.c.i: cmake_force
@@ -943,7 +969,7 @@ CMakeFiles/lem_in.dir/src/ft_newlst.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/ft_rec.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/ft_rec.c.o: ../src/ft_rec.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/lem_in.dir/src/ft_rec.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/lem_in.dir/src/ft_rec.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/ft_rec.c.o   -c /Users/mdebbi/Desktop/lem_in/src/ft_rec.c
 
 CMakeFiles/lem_in.dir/src/ft_rec.c.i: cmake_force
@@ -956,7 +982,7 @@ CMakeFiles/lem_in.dir/src/ft_rec.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/ft_triplefree.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/ft_triplefree.c.o: ../src/ft_triplefree.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/lem_in.dir/src/ft_triplefree.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/lem_in.dir/src/ft_triplefree.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/ft_triplefree.c.o   -c /Users/mdebbi/Desktop/lem_in/src/ft_triplefree.c
 
 CMakeFiles/lem_in.dir/src/ft_triplefree.c.i: cmake_force
@@ -969,7 +995,7 @@ CMakeFiles/lem_in.dir/src/ft_triplefree.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/groups.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/groups.c.o: ../src/groups.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/lem_in.dir/src/groups.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/lem_in.dir/src/groups.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/groups.c.o   -c /Users/mdebbi/Desktop/lem_in/src/groups.c
 
 CMakeFiles/lem_in.dir/src/groups.c.i: cmake_force
@@ -982,7 +1008,7 @@ CMakeFiles/lem_in.dir/src/groups.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/intersection_handling.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/intersection_handling.c.o: ../src/intersection_handling.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/lem_in.dir/src/intersection_handling.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/lem_in.dir/src/intersection_handling.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/intersection_handling.c.o   -c /Users/mdebbi/Desktop/lem_in/src/intersection_handling.c
 
 CMakeFiles/lem_in.dir/src/intersection_handling.c.i: cmake_force
@@ -995,7 +1021,7 @@ CMakeFiles/lem_in.dir/src/intersection_handling.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/lem_in.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/lem_in.c.o: ../src/lem_in.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/lem_in.dir/src/lem_in.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/lem_in.dir/src/lem_in.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/lem_in.c.o   -c /Users/mdebbi/Desktop/lem_in/src/lem_in.c
 
 CMakeFiles/lem_in.dir/src/lem_in.c.i: cmake_force
@@ -1008,7 +1034,7 @@ CMakeFiles/lem_in.dir/src/lem_in.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/link_make.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/link_make.c.o: ../src/link_make.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/lem_in.dir/src/link_make.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/lem_in.dir/src/link_make.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/link_make.c.o   -c /Users/mdebbi/Desktop/lem_in/src/link_make.c
 
 CMakeFiles/lem_in.dir/src/link_make.c.i: cmake_force
@@ -1019,9 +1045,22 @@ CMakeFiles/lem_in.dir/src/link_make.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/link_make.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/src/link_make.c -o CMakeFiles/lem_in.dir/src/link_make.c.s
 
+CMakeFiles/lem_in.dir/src/queue.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/src/queue.c.o: ../src/queue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/lem_in.dir/src/queue.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/queue.c.o   -c /Users/mdebbi/Desktop/lem_in/src/queue.c
+
+CMakeFiles/lem_in.dir/src/queue.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/queue.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mdebbi/Desktop/lem_in/src/queue.c > CMakeFiles/lem_in.dir/src/queue.c.i
+
+CMakeFiles/lem_in.dir/src/queue.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/queue.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/src/queue.c -o CMakeFiles/lem_in.dir/src/queue.c.s
+
 CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o: ../src/recursive_pathfinder.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o   -c /Users/mdebbi/Desktop/lem_in/src/recursive_pathfinder.c
 
 CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.i: cmake_force
@@ -1034,7 +1073,7 @@ CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/src/triple_split.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/triple_split.c.o: ../src/triple_split.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/lem_in.dir/src/triple_split.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/lem_in.dir/src/triple_split.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/triple_split.c.o   -c /Users/mdebbi/Desktop/lem_in/src/triple_split.c
 
 CMakeFiles/lem_in.dir/src/triple_split.c.i: cmake_force
@@ -1045,31 +1084,31 @@ CMakeFiles/lem_in.dir/src/triple_split.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/triple_split.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/src/triple_split.c -o CMakeFiles/lem_in.dir/src/triple_split.c.s
 
-CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o: ../src/dijkstra_shortest_path_.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o   -c /Users/mdebbi/Desktop/lem_in/src/dijkstra_shortest_path_.c
+CMakeFiles/lem_in.dir/src/path.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/src/path.c.o: ../src/path.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/lem_in.dir/src/path.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/path.c.o   -c /Users/mdebbi/Desktop/lem_in/src/path.c
 
-CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mdebbi/Desktop/lem_in/src/dijkstra_shortest_path_.c > CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.i
+CMakeFiles/lem_in.dir/src/path.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/path.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mdebbi/Desktop/lem_in/src/path.c > CMakeFiles/lem_in.dir/src/path.c.i
 
-CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/src/dijkstra_shortest_path_.c -o CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.s
+CMakeFiles/lem_in.dir/src/path.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/path.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/src/path.c -o CMakeFiles/lem_in.dir/src/path.c.s
 
-CMakeFiles/lem_in.dir/src/queue.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/src/queue.c.o: ../src/queue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/lem_in.dir/src/queue.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/queue.c.o   -c /Users/mdebbi/Desktop/lem_in/src/queue.c
+CMakeFiles/lem_in.dir/src/utils.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/src/utils.c.o: ../src/utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/lem_in.dir/src/utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/utils.c.o   -c /Users/mdebbi/Desktop/lem_in/src/utils.c
 
-CMakeFiles/lem_in.dir/src/queue.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/queue.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mdebbi/Desktop/lem_in/src/queue.c > CMakeFiles/lem_in.dir/src/queue.c.i
+CMakeFiles/lem_in.dir/src/utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/utils.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mdebbi/Desktop/lem_in/src/utils.c > CMakeFiles/lem_in.dir/src/utils.c.i
 
-CMakeFiles/lem_in.dir/src/queue.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/queue.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/src/queue.c -o CMakeFiles/lem_in.dir/src/queue.c.s
+CMakeFiles/lem_in.dir/src/utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/utils.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/src/utils.c -o CMakeFiles/lem_in.dir/src/utils.c.s
 
 # Object files for target lem_in
 lem_in_OBJECTS = \
@@ -1138,7 +1177,9 @@ lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/libft/src/ft_strtrim.c.o" \
 "CMakeFiles/lem_in.dir/libft/src/ft_tolower.c.o" \
 "CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.o" \
+"CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o" \
 "CMakeFiles/lem_in.dir/src/adj_list.c.o" \
+"CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o" \
 "CMakeFiles/lem_in.dir/src/free_lem.c.o" \
 "CMakeFiles/lem_in.dir/src/ft_newlst.c.o" \
 "CMakeFiles/lem_in.dir/src/ft_rec.c.o" \
@@ -1147,10 +1188,11 @@ lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/src/intersection_handling.c.o" \
 "CMakeFiles/lem_in.dir/src/lem_in.c.o" \
 "CMakeFiles/lem_in.dir/src/link_make.c.o" \
+"CMakeFiles/lem_in.dir/src/queue.c.o" \
 "CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o" \
 "CMakeFiles/lem_in.dir/src/triple_split.c.o" \
-"CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o" \
-"CMakeFiles/lem_in.dir/src/queue.c.o"
+"CMakeFiles/lem_in.dir/src/path.c.o" \
+"CMakeFiles/lem_in.dir/src/utils.c.o"
 
 # External object files for target lem_in
 lem_in_EXTERNAL_OBJECTS =
@@ -1220,7 +1262,9 @@ lem_in: CMakeFiles/lem_in.dir/libft/src/ft_strsub.c.o
 lem_in: CMakeFiles/lem_in.dir/libft/src/ft_strtrim.c.o
 lem_in: CMakeFiles/lem_in.dir/libft/src/ft_tolower.c.o
 lem_in: CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.o
+lem_in: CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o
 lem_in: CMakeFiles/lem_in.dir/src/adj_list.c.o
+lem_in: CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o
 lem_in: CMakeFiles/lem_in.dir/src/free_lem.c.o
 lem_in: CMakeFiles/lem_in.dir/src/ft_newlst.c.o
 lem_in: CMakeFiles/lem_in.dir/src/ft_rec.c.o
@@ -1229,13 +1273,14 @@ lem_in: CMakeFiles/lem_in.dir/src/groups.c.o
 lem_in: CMakeFiles/lem_in.dir/src/intersection_handling.c.o
 lem_in: CMakeFiles/lem_in.dir/src/lem_in.c.o
 lem_in: CMakeFiles/lem_in.dir/src/link_make.c.o
+lem_in: CMakeFiles/lem_in.dir/src/queue.c.o
 lem_in: CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o
 lem_in: CMakeFiles/lem_in.dir/src/triple_split.c.o
-lem_in: CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o
-lem_in: CMakeFiles/lem_in.dir/src/queue.c.o
+lem_in: CMakeFiles/lem_in.dir/src/path.c.o
+lem_in: CMakeFiles/lem_in.dir/src/utils.c.o
 lem_in: CMakeFiles/lem_in.dir/build.make
 lem_in: CMakeFiles/lem_in.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Linking C executable lem_in"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Linking C executable lem_in"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lem_in.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

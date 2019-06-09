@@ -4,6 +4,14 @@
 
 #include "lem_in.h"
 
+int		calc_max_group_size(t_lem *lem)
+{
+	int min_paths;
+
+	min_paths = min(lem->begin->link_count, lem->end->link_count);
+	return (min(min(min_paths, lem->ants), lem->path_count));
+}
+
 t_group	*create_group(t_path **patharr, int size)//todo testing
 {
 	t_group *newgroup;
@@ -21,21 +29,21 @@ t_group	*create_group(t_path **patharr, int size)//todo testing
 	return (newgroup);
 }
 
-int get_new_combination(int **iter, int groupsize, int path_count)
-{
-	int i;
-
-	i = groupsize;
-	while (*iter[0] != path_count - groupsize)
-	{
-		i = groupsize;
-		while (*iter[--i] )
-		{
-
-		}
-	}
-	return 0;
-}
+//int get_new_combination(int **iter, int groupsize, int path_count)
+//{
+//	int i;
+//
+//	i = groupsize;
+//	while (*iter[0] != path_count - groupsize)
+//	{
+//		i = groupsize;
+//		while (*iter[--i] )
+//		{
+//
+//		}
+//	}
+//	return 0;
+//}
 
 int n_paths_sumlen(t_path **patharr, int len)
 {

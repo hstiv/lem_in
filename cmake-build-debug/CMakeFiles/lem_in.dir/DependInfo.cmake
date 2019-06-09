@@ -69,6 +69,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/mdebbi/Desktop/lem_in/libft/src/ft_strtrim.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/libft/src/ft_strtrim.c.o"
   "/Users/mdebbi/Desktop/lem_in/libft/src/ft_tolower.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/libft/src/ft_tolower.c.o"
   "/Users/mdebbi/Desktop/lem_in/libft/src/ft_toupper.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.o"
+  "/Users/mdebbi/Desktop/lem_in/libft/src/get_next_line.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o"
   "/Users/mdebbi/Desktop/lem_in/src/adj_list.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/src/adj_list.c.o"
   "/Users/mdebbi/Desktop/lem_in/src/dijkstra_shortest_path_.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o"
   "/Users/mdebbi/Desktop/lem_in/src/free_lem.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/src/free_lem.c.o"
@@ -79,15 +80,16 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/mdebbi/Desktop/lem_in/src/intersection_handling.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/src/intersection_handling.c.o"
   "/Users/mdebbi/Desktop/lem_in/src/lem_in.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/src/lem_in.c.o"
   "/Users/mdebbi/Desktop/lem_in/src/link_make.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/src/link_make.c.o"
+  "/Users/mdebbi/Desktop/lem_in/src/path.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/src/path.c.o"
   "/Users/mdebbi/Desktop/lem_in/src/queue.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/src/queue.c.o"
   "/Users/mdebbi/Desktop/lem_in/src/recursive_pathfinder.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o"
   "/Users/mdebbi/Desktop/lem_in/src/triple_split.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/src/triple_split.c.o"
+  "/Users/mdebbi/Desktop/lem_in/src/utils.c" "/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/src/utils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../."
   "../includes"
   "../libft"
   "../src"
