@@ -21,7 +21,7 @@ t_group	*create_group(t_path **patharr, int size)//todo testing
 	newgroup = malloc(sizeof(t_group));
 	newgroup->size = size;
 	newgroup->path_array = patharr;
-	while (--size)
+	while (size--)
 	{
 		pathsumlen += patharr[size]->len;
 	}
