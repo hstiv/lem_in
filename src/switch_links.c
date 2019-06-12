@@ -14,7 +14,13 @@ static void 		switch_them(int nb, int nb1, t_room **adj)
 	if (room && room->visited == 0)
 		room->visited = 1;
 	else if (room && room->visited == 1)
+	{
 		room->visited = 0;
+		room = adj[nb1]->next;
+		while (room->self != adj[nb] && room->next)
+			room = room->next;
+		room->visited = 1;
+	}
 }
 
 void				switch_links(t_path *path, t_lem *lem)
