@@ -12,9 +12,6 @@
 
 #include "lem_in.h"
 
-
-
-
 //t_path**	find_two(t_path **patharr)
 //{
 //	int sumlen = INT_MAX;
@@ -42,16 +39,15 @@
 //	return (two);
 //}
 
-
-
-
 int				main(int ac, char **av)
 {
 	t_split		*data;
 	t_lem		*lem;
-
+	t_group		*group_list;
+	t_path		*shortest_path;
 
 	lem = ft_newlem();
+	group_list = NULL;
 	if (ac != 2 || !(data = ft_rec(av[1], lem)))
 	{
 		free(lem);
@@ -60,52 +56,22 @@ int				main(int ac, char **av)
 	}
 	while(data->prev)
 		data = data->prev;
-//	ft_putnbr(lem->ants);
-//	ft_putchar('\n');
-//	while (data)
-//	{
-//		ft_putstr(data->name1);
-//		ft_putchar(32);
-//		ft_putstr(data->name2);
-//		ft_putchar(32);
-//		if (data->name3)
-//		{
-//			ft_putstr(data->name3);
-//			ft_putchar(32);
-//		}
-//		ft_putnbr(data->begin);
-//		ft_putchar(32);
-//		ft_putnbr(data->end);
-//		ft_putchar(32);
-//		ft_putchar('\n');
-//		data = data->next;
-//	}
-//	return (0);
 	if (lem->ants <= 0 || !adj_list(lem, data))
 	{
         free(lem);
         split_free(data);
         return (ft_err("Error\n"));
-    }
-//	t_path *path = create_path();
-//	t_path *pathlist = NULL;
-//	printf("total paths count: %d\n",lem->path_count = rpf(lem->begin, lem, path, &pathlist));
-
+	}
 	lem->max_group_size = calc_max_group_size(lem);
-
-
 //	lem->patharr = path_list_to_array(pathlist, lem->path_count, lem->rooms_cnt);
 	//todo free pathlist here, no more need it
 //	print_all_pathes(lem->patharr);
-
-
-	print_path(dijkstra_search(lem));
-//	printf("shortest path len = %d\n", lem->end->dijkstra);
-
-//	t_path **two = find_two(lem->patharr);
-//	printf("two shortest non intersecting paths are:\n");
-//	print_path(two[0]);
-//	print_path(two[1]);
+	while ((shortest_path = dijkstra_search(lem)) != NULL)
+	{
+		switch_links(shortest_path, lem);
+		add_group(group_list, lem);
+	}
+	create_solution(find_best_group(group_list, lem));
 	split_free(data);
 	free_lem(lem);
 	return (0);

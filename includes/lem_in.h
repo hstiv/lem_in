@@ -81,17 +81,17 @@ typedef struct s_group {
 	struct s_group *next;//??maybe?
 } t_group;
 
-void					dislinker(t_lem *lem, t_path, *path);
+void					switch_links(t_path *path, t_lem *lem);
+void					add_group(t_group *group_list, t_lem *lem);
+t_group					*find_best_group(t_group *group_list, t_lem *lem);
+void					create_solution(t_group *group);
 void					split_free(t_split *split);
-//int 					link_make(t_lem *lem, char ***s, int i);
 t_split					*ft_newsplit();
 int						len_rooms(char ***s);
 void					free_lem(t_lem *lem);
 void					free_adj(t_room **adj);
 int						adj_list(t_lem *lem, t_split *split);
-void					ft_triplefree(char ****s);
 t_split					*ft_rec(char *s, t_lem *lem);
-char					***triple_split(char **s, t_lem *lem, int cnt);
 int 					link_make(t_lem *lem, t_split *tmp);
 t_lem					*ft_newlem();
 t_room					*ft_newroom();

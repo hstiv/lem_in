@@ -1,0 +1,14 @@
+5
+##start
+A 10 10
+##end
+D 40 40
+B 10 20
+C 40 30
+A-B
+A-B
+A-C
+B-D
+B-C
+C-D
+C-D

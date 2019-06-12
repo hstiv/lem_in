@@ -76,8 +76,10 @@ add_executable(lem_in
         libft/src/ft_tolower.c
         libft/src/ft_toupper.c
         libft/src/get_next_line.c
+        libft/src/min.c
         src/adj_list.c
         src/dijkstra_shortest_path_.c
+        src/dislinker.c
         src/free_lem.c
         src/ft_newlst.c
         src/ft_rec.c
@@ -86,6 +88,8 @@ add_executable(lem_in
         src/intersection_handling.c
         src/lem_in.c
         src/link_make.c
+        src/path.c
         src/queue.c
         src/recursive_pathfinder.c
-        src/triple_split.c src/path.c src/utils.c)
+        src/triple_split.c
+        src/utils.c)
