@@ -39,6 +39,77 @@
 //	return (two);
 //}
 
+//int 			ant_run(t_path *path, int is_print, int ants)
+//{
+//	t_room		*tmp;
+//
+//	tmp = path->end->prev;
+//	while (tmp->ant == 0 && tmp->prev)
+//		tmp = tmp->prev;
+//	if (ants || tmp->ant == 0)
+//	{
+//
+//	}
+//}
+//
+//int				create_solution(t_group *group, int is_print, t_lem *lem)
+//{
+//	int 		i;
+//	t_room		*room;
+//	t_room		*tmp;
+//	int 		t;
+//	int 		oper;
+//
+//	i = 0;
+//	t = 1;
+//	oper = 0
+//	while (i < group->size)
+//	{
+//		room = group->path_array[i]->start;
+//		while (room->next)
+//		{
+//			tmp = room;
+//			tmp->self = lem->adj[tmp->nb];
+//			room = room->next;
+//			room->prev = tmp;
+//		}
+//		i++;
+//	}
+//	while (lem->end->ant != lem->ants)
+//	{
+//		i = 0;
+//		t = 0;
+//		while (i < group->size || t == 2)
+//		{
+//			t += ant_run(group->path_array[i], is_print, lem->ants);
+//			i++;
+//			if (lem->ants)
+//				lem->ants--;
+//		}
+//		oper++;
+//	}
+//}
+
+static void		print_group(t_group *group)
+{
+	int 		i;
+	t_room		*room;
+
+	i = 0;
+	while (i < group->size)
+	{
+		room = group->path_array[i]->start;
+		while (room)
+		{
+			if (room != group->path_array[i]->end)
+				printf("%s->", room->name);
+			else
+				printf("%s", room->name);
+			room = room->next;
+		}
+	}
+}
+
 int				main(int ac, char **av)
 {
 	t_split		*data;
@@ -71,7 +142,8 @@ int				main(int ac, char **av)
 		switch_links(shortest_path, lem);
 		add_group(group_list, lem);
 	}
-	create_solution(find_best_group(group_list, lem));
+	print_group(find_best_group(group_list, lem));
+//	create_solution(find_best_group(group_list, lem), 0, lem);
 	split_free(data);
 	free_lem(lem);
 	return (0);

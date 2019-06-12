@@ -17,6 +17,7 @@
 # include <fcntl.h>
 # include <string.h>
 # include <limits.h>
+# include <stdio.h>
 
 typedef struct			s_lem
 {
@@ -40,6 +41,7 @@ typedef struct			s_room
 	int					y;
 	int 				link_count;//todo
 	int 				visited;
+	int 				ant_name;
 	struct s_room		*next;
 	struct s_room		*prev;
 	struct s_room		*self;
@@ -84,7 +86,7 @@ typedef struct s_group {
 void					switch_links(t_path *path, t_lem *lem);
 void					add_group(t_group *group_list, t_lem *lem);
 t_group					*find_best_group(t_group *group_list, t_lem *lem);
-void					create_solution(t_group *group);
+//int 					create_solution(t_group *group, int is_print, t_lem *lem);
 void					split_free(t_split *split);
 t_split					*ft_newsplit();
 int						len_rooms(char ***s);
