@@ -79,7 +79,7 @@ add_executable(lem_in
         libft/src/min.c
         src/adj_list.c
         src/dijkstra_shortest_path_.c
-        src/dislinker.c
+        src/switch_links.c
         src/free_lem.c
         src/ft_newlst.c
         src/ft_rec.c
