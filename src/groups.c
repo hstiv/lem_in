@@ -59,36 +59,36 @@ int n_paths_sumlen(t_path **patharr, int len)
 	return (sumlen);
 }
 
-t_group *find_best_group(t_path **patharr, int path_count, int groupsize)
-{
-	t_path **bestgroup;
-	t_path **curgroup;
-	int bestsum;
-	int *iter;
-	int i = -1;
-	int cursum;
-
-	bestsum = INT_MAX;
-	bestgroup = ft_memalloc(sizeof(t_path*) * groupsize);
-	curgroup = ft_memalloc(sizeof(t_path*) * groupsize);
-	iter = ft_memalloc(sizeof(int) * groupsize);
-	while (++i < groupsize)
-		iter[i] = i;
-	while (get_new_combination(&iter, groupsize, path_count))
-	{
-		i = 0;
-		while (i < groupsize)
-		{
-			curgroup[i] = patharr[iter[i]];
-			i++;
-		}
-		if (!is_intersecting_n_paths(curgroup, groupsize))
-			if ((cursum = n_paths_sumlen(bestgroup, groupsize) < bestsum))
-			{
-				bestsum =  cursum;
-				*bestgroup = *curgroup;
-			}
-	}
-	free(curgroup);
-	return (create_group(bestgroup, groupsize));
-}
+//t_group *find_best_group(t_path **patharr, int path_count, int groupsize)
+//{
+//	t_path **bestgroup;
+//	t_path **curgroup;
+//	int bestsum;
+//	int *iter;
+//	int i = -1;
+//	int cursum;
+//
+//	bestsum = INT_MAX;
+//	bestgroup = ft_memalloc(sizeof(t_path*) * groupsize);
+//	curgroup = ft_memalloc(sizeof(t_path*) * groupsize);
+//	iter = ft_memalloc(sizeof(int) * groupsize);
+//	while (++i < groupsize)
+//		iter[i] = i;
+//	while (get_new_combination(&iter, groupsize, path_count))
+//	{
+//		i = 0;
+//		while (i < groupsize)
+//		{
+//			curgroup[i] = patharr[iter[i]];
+//			i++;
+//		}
+//		if (!is_intersecting_n_paths(curgroup, groupsize))
+//			if ((cursum = n_paths_sumlen(bestgroup, groupsize) < bestsum))
+//			{
+//				bestsum =  cursum;
+//				*bestgroup = *curgroup;
+//			}
+//	}
+//	free(curgroup);
+//	return (create_group(bestgroup, groupsize));
+//}

@@ -32,7 +32,16 @@ static void	dijkstra_indexing(t_queue *queue, t_lem *lem)
 
 static void	dijkstra_reset(t_lem *lem)
 {
-	//todo
+	t_room **roomarr;
+
+	roomarr = lem->adj;
+
+	while (*roomarr)
+	{
+		(*roomarr)->dijkstra = INT_MAX;
+		(*roomarr)->visited = 0;
+		roomarr++;
+	}
 }
 
 static t_path	*dijkstra_backtrace(t_lem *lem)

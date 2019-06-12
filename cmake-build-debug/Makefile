@@ -1905,6 +1905,33 @@ libft/src/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/get_next_line.c.s
 .PHONY : libft/src/get_next_line.c.s
 
+libft/src/min.o: libft/src/min.c.o
+
+.PHONY : libft/src/min.o
+
+# target to build an object file
+libft/src/min.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/min.c.o
+.PHONY : libft/src/min.c.o
+
+libft/src/min.i: libft/src/min.c.i
+
+.PHONY : libft/src/min.i
+
+# target to preprocess a source file
+libft/src/min.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/min.c.i
+.PHONY : libft/src/min.c.i
+
+libft/src/min.s: libft/src/min.c.s
+
+.PHONY : libft/src/min.s
+
+# target to generate assembly for a file
+libft/src/min.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/min.c.s
+.PHONY : libft/src/min.c.s
+
 src/adj_list.o: src/adj_list.c.o
 
 .PHONY : src/adj_list.o
@@ -1958,6 +1985,33 @@ src/dijkstra_shortest_path_.s: src/dijkstra_shortest_path_.c.s
 src/dijkstra_shortest_path_.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.s
 .PHONY : src/dijkstra_shortest_path_.c.s
+
+src/dislinker.o: src/dislinker.c.o
+
+.PHONY : src/dislinker.o
+
+# target to build an object file
+src/dislinker.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dislinker.c.o
+.PHONY : src/dislinker.c.o
+
+src/dislinker.i: src/dislinker.c.i
+
+.PHONY : src/dislinker.i
+
+# target to preprocess a source file
+src/dislinker.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dislinker.c.i
+.PHONY : src/dislinker.c.i
+
+src/dislinker.s: src/dislinker.c.s
+
+.PHONY : src/dislinker.s
+
+# target to generate assembly for a file
+src/dislinker.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dislinker.c.s
+.PHONY : src/dislinker.c.s
 
 src/free_lem.o: src/free_lem.c.o
 
@@ -2517,12 +2571,18 @@ help:
 	@echo "... libft/src/get_next_line.o"
 	@echo "... libft/src/get_next_line.i"
 	@echo "... libft/src/get_next_line.s"
+	@echo "... libft/src/min.o"
+	@echo "... libft/src/min.i"
+	@echo "... libft/src/min.s"
 	@echo "... src/adj_list.o"
 	@echo "... src/adj_list.i"
 	@echo "... src/adj_list.s"
 	@echo "... src/dijkstra_shortest_path_.o"
 	@echo "... src/dijkstra_shortest_path_.i"
 	@echo "... src/dijkstra_shortest_path_.s"
+	@echo "... src/dislinker.o"
+	@echo "... src/dislinker.i"
+	@echo "... src/dislinker.s"
 	@echo "... src/free_lem.o"
 	@echo "... src/free_lem.i"
 	@echo "... src/free_lem.s"

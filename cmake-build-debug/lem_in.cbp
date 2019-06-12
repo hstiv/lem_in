@@ -290,10 +290,16 @@
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/libft/src/get_next_line.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/libft/src/min.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/adj_list.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/dijkstra_shortest_path_.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/dislinker.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/free_lem.c">

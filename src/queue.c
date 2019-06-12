@@ -24,6 +24,7 @@ void	add_to_priority_queue(t_room *room, t_queue *queue)
 {
 	t_room *start;
 
+	room->queue_next = NULL;
 	queue->size++;
 	start = queue->start;
 	if (queue->size == 1)
@@ -52,7 +53,9 @@ void	add_to_priority_queue(t_room *room, t_queue *queue)
 				queue->end = room;
 			room->queue_next = start->queue_next;
 			start->queue_next = room;
+			break ;
 		}
+
 		start = start->queue_next;
 	}
 }

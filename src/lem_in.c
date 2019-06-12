@@ -66,12 +66,14 @@ int				main(int ac, char **av)
 //	lem->patharr = path_list_to_array(pathlist, lem->path_count, lem->rooms_cnt);
 	//todo free pathlist here, no more need it
 //	print_all_pathes(lem->patharr);
-	while ((shortest_path = dijkstra_search(lem)) != NULL)
-	{
-		switch_links(shortest_path, lem);
-		add_group(group_list, lem);
-	}
-	create_solution(find_best_group(group_list, lem));
+	print_path(dijkstra_search(lem));
+	print_path(dijkstra_search(lem));
+//	while ((shortest_path = dijkstra_search(lem)) != NULL)
+//	{
+//		switch_links(shortest_path, lem);
+//		add_group(group_list, lem);
+//	}
+//	create_solution(find_best_group(group_list, lem));
 	split_free(data);
 	free_lem(lem);
 	return (0);
