@@ -68,7 +68,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/libft/src/min.c.o"
   "CMakeFiles/lem_in.dir/src/adj_list.c.o"
   "CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o"
-  "CMakeFiles/lem_in.dir/src/dislinker.c.o"
+  "CMakeFiles/lem_in.dir/src/switch_links.c.o"
   "CMakeFiles/lem_in.dir/src/free_lem.c.o"
   "CMakeFiles/lem_in.dir/src/ft_newlst.c.o"
   "CMakeFiles/lem_in.dir/src/ft_rec.c.o"

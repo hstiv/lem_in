@@ -299,9 +299,6 @@
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/dijkstra_shortest_path_.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/dislinker.c">
-			<Option target="lem_in"/>
-		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/free_lem.c">
 			<Option target="lem_in"/>
 		</Unit>
@@ -333,6 +330,9 @@
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/recursive_pathfinder.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/switch_links.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/triple_split.c">

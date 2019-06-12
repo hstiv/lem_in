@@ -18,12 +18,12 @@ static void	dijkstra_indexing(t_queue *queue, t_lem *lem)
 		tmp = cur_room->next;
 		while (tmp)
 		{
-			if (tmp->self->visited == 0)
+			if (tmp->visited == 0 && tmp->self->visited == 0)
 			{
 				add_to_priority_queue(tmp->self, queue);
 				tmp->self->visited = 1;
 			}
-			if (cur_room->dijkstra + 1 < tmp->self->dijkstra)
+			if (tmp->visited == 0 && (cur_room->dijkstra + 1 < tmp->self->dijkstra))
 				tmp->self->dijkstra = cur_room->dijkstra + 1;
 			tmp = tmp->next;
 		}
@@ -44,6 +44,14 @@ static void	dijkstra_reset(t_lem *lem)
 	}
 }
 
+int check_link(t_room *src, t_room *dest)
+{
+	src = src->next;
+	while (src->next && src->self != dest)
+		src = src->next;
+	return (src->visited == 1) ? 0 : 1;
+}
+
 static t_path	*dijkstra_backtrace(t_lem *lem)
 {
 	t_room *end;
@@ -62,7 +70,7 @@ static t_path	*dijkstra_backtrace(t_lem *lem)
 		tmp = cur_room->next;
 		while (tmp)
 		{
-			if (tmp->self->dijkstra <= cur_room->dijkstra)
+			if (tmp->self->dijkstra <= cur_room->dijkstra && check_link(tmp->self, cur_room))
 				cur_room = tmp->self;
 			tmp = tmp->next;
 		}
@@ -71,11 +79,13 @@ static t_path	*dijkstra_backtrace(t_lem *lem)
 	return (spath);
 }
 
-static t_path	*reverse_path(t_path *path)
+t_path	*reverse_path(t_path *path)
 {
 	t_path *reversed;
 	t_room *tmp;
 
+	if (!path)
+		return (NULL);
 	reversed = create_path();
 	tmp = path->end;
 	while (tmp)
@@ -90,12 +100,12 @@ t_path	*dijkstra_search(t_lem *lem)
 {
 	t_path *shortest_path;
 
+	dijkstra_reset(lem);
 	lem->begin->dijkstra = 0;
 	t_queue	*queue = ft_memalloc(sizeof(t_queue));
 
 	dijkstra_indexing(queue, lem);
 	shortest_path = dijkstra_backtrace(lem);
 
-	dijkstra_reset(lem);
 	return (reverse_path(shortest_path));
 }

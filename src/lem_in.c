@@ -39,15 +39,73 @@
 //	return (two);
 //}
 
+t_path *backtrace_path(t_room *room, t_lem *lem)
+{
+	t_path *res_path;
+	t_room *cur_room;
+	t_room *link;
+	t_room *better_link;
+
+	res_path = create_path();
+	add_to_path(res_path, lem->end);
+	cur_room = room;
+	while (cur_room != lem->begin)
+	{
+		add_to_path(res_path, cur_room);
+		link = cur_room->next;
+		better_link = link;
+		while (link)
+		{
+			if (check_link(link->self, cur_room))
+				if (link->self->dijkstra < better_link->self->dijkstra)
+					better_link = link;
+			link = link->next;
+		}
+		cur_room = better_link;
+	}
+	add_to_path(res_path, lem->begin);
+	return (reverse_path(res_path));
+}
+
+t_group *make_group(t_lem *lem)
+{
+	t_path **patharr;
+	t_room *end;
+	t_room *link;
+	int i;
+
+	i = 0;
+	end = lem->end;
+	link = end->next;
+	patharr = ft_memalloc(sizeof(t_room*) * lem->end->link_count);
+	while (link)
+	{
+		if (check_link(link, end))
+			patharr[i++] = backtrace_path(link, lem);
+		link = link->next;
+	}
+	return (create_group(patharr, i));
+}
+
+t_group					*find_best_group(t_group *best_group, t_lem *lem)
+{
+	t_group *cur_group;
+
+	cur_group = make_group(lem);
+	if (!best_group)
+		return (cur_group);
+	if (cur_group && cur_group->sumlen < best_group->sumlen)
+		return (cur_group);
+	return (best_group);
+}
+
 int				main(int ac, char **av)
 {
 	t_split		*data;
 	t_lem		*lem;
-	t_group		*group_list;
 	t_path		*shortest_path;
 
 	lem = ft_newlem();
-	group_list = NULL;
 	if (ac != 2 || !(data = ft_rec(av[1], lem)))
 	{
 		free(lem);
@@ -66,14 +124,23 @@ int				main(int ac, char **av)
 //	lem->patharr = path_list_to_array(pathlist, lem->path_count, lem->rooms_cnt);
 	//todo free pathlist here, no more need it
 //	print_all_pathes(lem->patharr);
-	print_path(dijkstra_search(lem));
-	print_path(dijkstra_search(lem));
-//	while ((shortest_path = dijkstra_search(lem)) != NULL)
-//	{
-//		switch_links(shortest_path, lem);
-//		add_group(group_list, lem);
-//	}
-//	create_solution(find_best_group(group_list, lem));
+
+//	print_path(shortest_path = dijkstra_search(lem));
+//	switch_links(shortest_path, lem);
+//	print_path(shortest_path = dijkstra_search(lem));
+//	switch_links(shortest_path, lem);
+//	print_path(shortest_path = dijkstra_search(lem));
+//	switch_links(shortest_path, lem);
+//	print_path(shortest_path = dijkstra_search(lem));
+
+
+	t_group *best_group = NULL;
+	while ((shortest_path = dijkstra_search(lem)) != NULL)
+	{
+		switch_links(shortest_path, lem);
+		best_group = find_best_group(best_group, lem);
+	}
+//	create_solution(best_group);
 	split_free(data);
 	free_lem(lem);
 	return (0);

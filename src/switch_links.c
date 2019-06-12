@@ -29,6 +29,8 @@ void				switch_links(t_path *path, t_lem *lem)
 	t_room			*tmp;
 	t_room			**adj;
 
+	if (!path)
+		return ;
 	adj = lem->adj;
 	room = path->start;
 	while (room->next)

@@ -108,4 +108,7 @@ void	throw_error(char *msg);
 int 	min(int a, int b);
 void	print_path(t_path *path);
 int		calc_max_group_size(t_lem *lem);
+t_group	*create_group(t_path **patharr, int size);
+int check_link(t_room *src, t_room *dest);
+t_path	*reverse_path(t_path *path);
 #endif

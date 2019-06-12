@@ -187,10 +187,6 @@ CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o: ../src/dijkstra_shortest_path_.c
 
-CMakeFiles/lem_in.dir/src/dislinker.c.o: ../includes/lem_in.h
-CMakeFiles/lem_in.dir/src/dislinker.c.o: ../includes/libft.h
-CMakeFiles/lem_in.dir/src/dislinker.c.o: ../src/dislinker.c
-
 CMakeFiles/lem_in.dir/src/free_lem.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/free_lem.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/free_lem.c.o: ../src/free_lem.c
@@ -234,6 +230,10 @@ CMakeFiles/lem_in.dir/src/queue.c.o: ../src/queue.c
 CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.o: ../src/recursive_pathfinder.c
+
+CMakeFiles/lem_in.dir/src/switch_links.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/src/switch_links.c.o: ../includes/libft.h
+CMakeFiles/lem_in.dir/src/switch_links.c.o: ../src/switch_links.c
 
 CMakeFiles/lem_in.dir/src/triple_split.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/triple_split.c.o: ../includes/libft.h

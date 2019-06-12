@@ -1986,33 +1986,6 @@ src/dijkstra_shortest_path_.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.s
 .PHONY : src/dijkstra_shortest_path_.c.s
 
-src/dislinker.o: src/dislinker.c.o
-
-.PHONY : src/dislinker.o
-
-# target to build an object file
-src/dislinker.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dislinker.c.o
-.PHONY : src/dislinker.c.o
-
-src/dislinker.i: src/dislinker.c.i
-
-.PHONY : src/dislinker.i
-
-# target to preprocess a source file
-src/dislinker.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dislinker.c.i
-.PHONY : src/dislinker.c.i
-
-src/dislinker.s: src/dislinker.c.s
-
-.PHONY : src/dislinker.s
-
-# target to generate assembly for a file
-src/dislinker.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/dislinker.c.s
-.PHONY : src/dislinker.c.s
-
 src/free_lem.o: src/free_lem.c.o
 
 .PHONY : src/free_lem.o
@@ -2310,6 +2283,33 @@ src/recursive_pathfinder.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.s
 .PHONY : src/recursive_pathfinder.c.s
 
+src/switch_links.o: src/switch_links.c.o
+
+.PHONY : src/switch_links.o
+
+# target to build an object file
+src/switch_links.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/switch_links.c.o
+.PHONY : src/switch_links.c.o
+
+src/switch_links.i: src/switch_links.c.i
+
+.PHONY : src/switch_links.i
+
+# target to preprocess a source file
+src/switch_links.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/switch_links.c.i
+.PHONY : src/switch_links.c.i
+
+src/switch_links.s: src/switch_links.c.s
+
+.PHONY : src/switch_links.s
+
+# target to generate assembly for a file
+src/switch_links.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/switch_links.c.s
+.PHONY : src/switch_links.c.s
+
 src/triple_split.o: src/triple_split.c.o
 
 .PHONY : src/triple_split.o
@@ -2580,9 +2580,6 @@ help:
 	@echo "... src/dijkstra_shortest_path_.o"
 	@echo "... src/dijkstra_shortest_path_.i"
 	@echo "... src/dijkstra_shortest_path_.s"
-	@echo "... src/dislinker.o"
-	@echo "... src/dislinker.i"
-	@echo "... src/dislinker.s"
 	@echo "... src/free_lem.o"
 	@echo "... src/free_lem.i"
 	@echo "... src/free_lem.s"
@@ -2616,6 +2613,9 @@ help:
 	@echo "... src/recursive_pathfinder.o"
 	@echo "... src/recursive_pathfinder.i"
 	@echo "... src/recursive_pathfinder.s"
+	@echo "... src/switch_links.o"
+	@echo "... src/switch_links.i"
+	@echo "... src/switch_links.s"
 	@echo "... src/triple_split.o"
 	@echo "... src/triple_split.i"
 	@echo "... src/triple_split.s"

@@ -954,18 +954,18 @@ CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/src/dijkstra_shortest_path_.c -o CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.s
 
-CMakeFiles/lem_in.dir/src/dislinker.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/src/dislinker.c.o: ../src/dislinker.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/lem_in.dir/src/dislinker.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/dislinker.c.o   -c /Users/mdebbi/Desktop/lem_in/src/dislinker.c
+CMakeFiles/lem_in.dir/src/switch_links.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/src/switch_links.c.o: ../src/switch_links.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mdebbi/Desktop/lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/lem_in.dir/src/switch_links.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/src/switch_links.c.o   -c /Users/mdebbi/Desktop/lem_in/src/switch_links.c
 
-CMakeFiles/lem_in.dir/src/dislinker.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/dislinker.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mdebbi/Desktop/lem_in/src/dislinker.c > CMakeFiles/lem_in.dir/src/dislinker.c.i
+CMakeFiles/lem_in.dir/src/switch_links.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/src/switch_links.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/mdebbi/Desktop/lem_in/src/switch_links.c > CMakeFiles/lem_in.dir/src/switch_links.c.i
 
-CMakeFiles/lem_in.dir/src/dislinker.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/dislinker.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/src/dislinker.c -o CMakeFiles/lem_in.dir/src/dislinker.c.s
+CMakeFiles/lem_in.dir/src/switch_links.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/src/switch_links.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/mdebbi/Desktop/lem_in/src/switch_links.c -o CMakeFiles/lem_in.dir/src/switch_links.c.s
 
 CMakeFiles/lem_in.dir/src/free_lem.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/src/free_lem.c.o: ../src/free_lem.c
@@ -1207,7 +1207,7 @@ lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/libft/src/min.c.o" \
 "CMakeFiles/lem_in.dir/src/adj_list.c.o" \
 "CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o" \
-"CMakeFiles/lem_in.dir/src/dislinker.c.o" \
+"CMakeFiles/lem_in.dir/src/switch_links.c.o" \
 "CMakeFiles/lem_in.dir/src/free_lem.c.o" \
 "CMakeFiles/lem_in.dir/src/ft_newlst.c.o" \
 "CMakeFiles/lem_in.dir/src/ft_rec.c.o" \
@@ -1294,7 +1294,7 @@ lem_in: CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o
 lem_in: CMakeFiles/lem_in.dir/libft/src/min.c.o
 lem_in: CMakeFiles/lem_in.dir/src/adj_list.c.o
 lem_in: CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o
-lem_in: CMakeFiles/lem_in.dir/src/dislinker.c.o
+lem_in: CMakeFiles/lem_in.dir/src/switch_links.c.o
 lem_in: CMakeFiles/lem_in.dir/src/free_lem.c.o
 lem_in: CMakeFiles/lem_in.dir/src/ft_newlst.c.o
 lem_in: CMakeFiles/lem_in.dir/src/ft_rec.c.o
