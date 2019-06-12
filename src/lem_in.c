@@ -107,6 +107,7 @@ static void		print_group(t_group *group)
 				printf("%s", room->name);
 			room = room->next;
 		}
+		printf("\n");
 	}
 }
 
