@@ -45,7 +45,7 @@ void		print_group(t_group *group)
 	t_room		*room;
 
 	i = 0;
-	printf("\nGroup------------------\n");
+	printf("\nGroup------------------\n\n");
 	while (i < group->size)
 	{
 		room = group->path_array[i]->start;
@@ -76,11 +76,11 @@ t_path *backtrace_path(t_room *room, t_lem *lem)
 	{
 		add_to_path(res_path, cur_room);
 		link = cur_room->next;
-		better_link = link;
+		better_link = NULL;
 		while (link)
 		{
 			if (!check_link(link->self, cur_room))
-				if (link->self->dijkstra < better_link->self->dijkstra)
+				if (!better_link || (link->self->dijkstra < better_link->self->dijkstra))
 					better_link = link;
 			link = link->next;
 		}
