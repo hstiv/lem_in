@@ -123,6 +123,60 @@ lem_in/fast:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/build
 .PHONY : lem_in/fast
 
+libft/src/check_number.o: libft/src/check_number.c.o
+
+.PHONY : libft/src/check_number.o
+
+# target to build an object file
+libft/src/check_number.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/check_number.c.o
+.PHONY : libft/src/check_number.c.o
+
+libft/src/check_number.i: libft/src/check_number.c.i
+
+.PHONY : libft/src/check_number.i
+
+# target to preprocess a source file
+libft/src/check_number.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/check_number.c.i
+.PHONY : libft/src/check_number.c.i
+
+libft/src/check_number.s: libft/src/check_number.c.s
+
+.PHONY : libft/src/check_number.s
+
+# target to generate assembly for a file
+libft/src/check_number.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/check_number.c.s
+.PHONY : libft/src/check_number.c.s
+
+libft/src/cnt_char.o: libft/src/cnt_char.c.o
+
+.PHONY : libft/src/cnt_char.o
+
+# target to build an object file
+libft/src/cnt_char.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/cnt_char.c.o
+.PHONY : libft/src/cnt_char.c.o
+
+libft/src/cnt_char.i: libft/src/cnt_char.c.i
+
+.PHONY : libft/src/cnt_char.i
+
+# target to preprocess a source file
+libft/src/cnt_char.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/cnt_char.c.i
+.PHONY : libft/src/cnt_char.c.i
+
+libft/src/cnt_char.s: libft/src/cnt_char.c.s
+
+.PHONY : libft/src/cnt_char.s
+
+# target to generate assembly for a file
+libft/src/cnt_char.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/cnt_char.c.s
+.PHONY : libft/src/cnt_char.c.s
+
 libft/src/ft_arraydel.o: libft/src/ft_arraydel.c.o
 
 .PHONY : libft/src/ft_arraydel.o
@@ -2067,33 +2121,6 @@ src/ft_rec.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/ft_rec.c.s
 .PHONY : src/ft_rec.c.s
 
-src/ft_triplefree.o: src/ft_triplefree.c.o
-
-.PHONY : src/ft_triplefree.o
-
-# target to build an object file
-src/ft_triplefree.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/ft_triplefree.c.o
-.PHONY : src/ft_triplefree.c.o
-
-src/ft_triplefree.i: src/ft_triplefree.c.i
-
-.PHONY : src/ft_triplefree.i
-
-# target to preprocess a source file
-src/ft_triplefree.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/ft_triplefree.c.i
-.PHONY : src/ft_triplefree.c.i
-
-src/ft_triplefree.s: src/ft_triplefree.c.s
-
-.PHONY : src/ft_triplefree.s
-
-# target to generate assembly for a file
-src/ft_triplefree.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/ft_triplefree.c.s
-.PHONY : src/ft_triplefree.c.s
-
 src/groups.o: src/groups.c.o
 
 .PHONY : src/groups.o
@@ -2256,6 +2283,33 @@ src/queue.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/queue.c.s
 .PHONY : src/queue.c.s
 
+src/rec_tools.o: src/rec_tools.c.o
+
+.PHONY : src/rec_tools.o
+
+# target to build an object file
+src/rec_tools.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/rec_tools.c.o
+.PHONY : src/rec_tools.c.o
+
+src/rec_tools.i: src/rec_tools.c.i
+
+.PHONY : src/rec_tools.i
+
+# target to preprocess a source file
+src/rec_tools.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/rec_tools.c.i
+.PHONY : src/rec_tools.c.i
+
+src/rec_tools.s: src/rec_tools.c.s
+
+.PHONY : src/rec_tools.s
+
+# target to generate assembly for a file
+src/rec_tools.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/rec_tools.c.s
+.PHONY : src/rec_tools.c.s
+
 src/recursive_pathfinder.o: src/recursive_pathfinder.c.o
 
 .PHONY : src/recursive_pathfinder.o
@@ -2282,6 +2336,60 @@ src/recursive_pathfinder.s: src/recursive_pathfinder.c.s
 src/recursive_pathfinder.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/recursive_pathfinder.c.s
 .PHONY : src/recursive_pathfinder.c.s
+
+src/run_ants.o: src/run_ants.c.o
+
+.PHONY : src/run_ants.o
+
+# target to build an object file
+src/run_ants.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/run_ants.c.o
+.PHONY : src/run_ants.c.o
+
+src/run_ants.i: src/run_ants.c.i
+
+.PHONY : src/run_ants.i
+
+# target to preprocess a source file
+src/run_ants.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/run_ants.c.i
+.PHONY : src/run_ants.c.i
+
+src/run_ants.s: src/run_ants.c.s
+
+.PHONY : src/run_ants.s
+
+# target to generate assembly for a file
+src/run_ants.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/run_ants.c.s
+.PHONY : src/run_ants.c.s
+
+src/split_free.o: src/split_free.c.o
+
+.PHONY : src/split_free.o
+
+# target to build an object file
+src/split_free.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/split_free.c.o
+.PHONY : src/split_free.c.o
+
+src/split_free.i: src/split_free.c.i
+
+.PHONY : src/split_free.i
+
+# target to preprocess a source file
+src/split_free.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/split_free.c.i
+.PHONY : src/split_free.c.i
+
+src/split_free.s: src/split_free.c.s
+
+.PHONY : src/split_free.s
+
+# target to generate assembly for a file
+src/split_free.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/src/split_free.c.s
+.PHONY : src/split_free.c.s
 
 src/switch_links.o: src/switch_links.c.o
 
@@ -2373,6 +2481,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... lem_in"
+	@echo "... libft/src/check_number.o"
+	@echo "... libft/src/check_number.i"
+	@echo "... libft/src/check_number.s"
+	@echo "... libft/src/cnt_char.o"
+	@echo "... libft/src/cnt_char.i"
+	@echo "... libft/src/cnt_char.s"
 	@echo "... libft/src/ft_arraydel.o"
 	@echo "... libft/src/ft_arraydel.i"
 	@echo "... libft/src/ft_arraydel.s"
@@ -2589,9 +2703,6 @@ help:
 	@echo "... src/ft_rec.o"
 	@echo "... src/ft_rec.i"
 	@echo "... src/ft_rec.s"
-	@echo "... src/ft_triplefree.o"
-	@echo "... src/ft_triplefree.i"
-	@echo "... src/ft_triplefree.s"
 	@echo "... src/groups.o"
 	@echo "... src/groups.i"
 	@echo "... src/groups.s"
@@ -2610,9 +2721,18 @@ help:
 	@echo "... src/queue.o"
 	@echo "... src/queue.i"
 	@echo "... src/queue.s"
+	@echo "... src/rec_tools.o"
+	@echo "... src/rec_tools.i"
+	@echo "... src/rec_tools.s"
 	@echo "... src/recursive_pathfinder.o"
 	@echo "... src/recursive_pathfinder.i"
 	@echo "... src/recursive_pathfinder.s"
+	@echo "... src/run_ants.o"
+	@echo "... src/run_ants.i"
+	@echo "... src/run_ants.s"
+	@echo "... src/split_free.o"
+	@echo "... src/split_free.i"
+	@echo "... src/split_free.s"
 	@echo "... src/switch_links.o"
 	@echo "... src/switch_links.i"
 	@echo "... src/switch_links.s"

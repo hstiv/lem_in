@@ -92,6 +92,12 @@
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/includes/libft.h">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/libft/src/check_number.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/libft/src/cnt_char.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/libft/src/ft_arraydel.c">
 			<Option target="lem_in"/>
 		</Unit>
@@ -308,9 +314,6 @@
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/ft_rec.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/ft_triplefree.c">
-			<Option target="lem_in"/>
-		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/groups.c">
 			<Option target="lem_in"/>
 		</Unit>
@@ -329,7 +332,16 @@
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/queue.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/rec_tools.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/recursive_pathfinder.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/run_ants.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/split_free.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/src/switch_links.c">
