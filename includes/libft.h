@@ -32,6 +32,8 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					check_number(char *s);
+int					cnt_char(const char *s, char c);
 int					get_next_line(const int fd, char **line);
 int					ft_err(char *s);
 int					ft_len3(char ***s);

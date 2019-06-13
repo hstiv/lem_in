@@ -28,6 +28,7 @@ typedef struct			s_lem
 	struct s_room		*begin;
 	struct s_room		*end;
 	int					path_count;
+	int 				oper;
 	struct s_path 		**patharr;
 	int					max_group_size;
 }						t_lem;
@@ -73,16 +74,23 @@ typedef struct s_path{
 	t_room *start;
 	t_room *end;
 	struct s_path *next;
+	struct s_path *prev;
 	char *intersection_arr;
 } t_path;
 
 typedef struct s_group {
 	int size;
 	int sumlen;
+	int ants;
 	t_path **path_array;
 	struct s_group *next;//??maybe?
 } t_group;
 
+void					run_ants(t_group *group, t_lem *lem);
+t_split					*addlst(t_split *tmp, int l, int *t);
+int						common_room(t_split *tmp, char **s, const int *t);
+int						linker(t_split *tmp, char **s);
+int						run_ants(t_group *group, t_lem *lem, int n);
 void					switch_links(t_path *path, t_lem *lem);
 void					add_group(t_group *group_list, t_lem *lem);
 t_group					*find_best_group(t_group *group_list, t_lem *lem);
