@@ -48,7 +48,7 @@ t_path *backtrace_path(t_room *room, t_lem *lem)
 
 	res_path = create_path();
 	add_to_path(res_path, lem->end);
-	cur_room = room;
+	cur_room = room->self;
 	while (cur_room != lem->begin)
 	{
 		add_to_path(res_path, cur_room);
@@ -61,7 +61,7 @@ t_path *backtrace_path(t_room *room, t_lem *lem)
 					better_link = link;
 			link = link->next;
 		}
-		cur_room = better_link;
+		cur_room = better_link->self;
 	}
 	add_to_path(res_path, lem->begin);
 	return (reverse_path(res_path));
@@ -80,7 +80,7 @@ t_group *make_group(t_lem *lem)
 	patharr = ft_memalloc(sizeof(t_room*) * lem->end->link_count);
 	while (link)
 	{
-		if (check_link(link, end))
+		if (check_link(link->self, end))
 			patharr[i++] = backtrace_path(link, lem);
 		link = link->next;
 	}
@@ -137,8 +137,10 @@ int				main(int ac, char **av)
 	t_group *best_group = NULL;
 	while ((shortest_path = dijkstra_search(lem)) != NULL)
 	{
+		print_path(shortest_path);
 		switch_links(shortest_path, lem);
 		best_group = find_best_group(best_group, lem);
+
 	}
 //	create_solution(best_group);
 	split_free(data);
