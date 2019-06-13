@@ -12,32 +12,21 @@
 
 #include "lem_in.h"
 
-static void			free_helper(char ***s)
+void			split_free(t_split *split)
 {
-	int				i;
+	t_split		*tmp;
 
-	i = 0;
-	while (s[i] != NULL)
-		i++;
-	i -= 1;
-	while (i >= 0)
+	if (!split)
+		return ;
+	while (split->prev)
+		split = split->prev;
+	while (split)
 	{
-		ft_arraydel(s[i]);
-		i--;
+		tmp = split;
+		split = split->next;
+		free(tmp->name1);
+		free(tmp->name2);
+		if (tmp->l == 3)
+			free(tmp->name3);
 	}
-	free(s);
-	s = NULL;
-}
-
-void				ft_triplefree(char ****s)
-{
-	int				i;
-
-	i = 0;
-	while (s[i] != NULL)
-	{
-		free_helper(s[i]);
-		i++;
-	}
-	free(s);
 }
