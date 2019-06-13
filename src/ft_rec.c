@@ -12,99 +12,6 @@
 
 #include "lem_in.h"
 
-void			split_free(t_split *split)
-{
-	t_split		*tmp;
-
-	if (!split)
-		return ;
-	while (split->prev)
-		split = split->prev;
-	while (split)
-	{
-		tmp = split;
-		split = split->next;
-		free(tmp->name1);
-		free(tmp->name2);
-		if (tmp->l == 3)
-			free(tmp->name3);
-	}
-}
-
-static int		cnt_char(const char *s, char c)
-{
-	int			i;
-	int			l;
-	
-	i = 0;
-	l = 0;
-	if (!s || s[i] == '\0')
-		return (0);
-	while (s[i])
-	{
-		if (s[i] == c)
-			l++;
-		i++;
-	}
-	return (l);
-}
-
-static t_split		*addlst(t_split *tmp, int l, int *t)
-{
-	t_split		*split;
-
-	split = ft_newsplit();
-	tmp->next = split;
-	split->prev = tmp;
-	tmp->l = l;
-	if (*t == 1)
-		split->begin = 1;
-	else if (*t == 2)
-		split->end = 1;
-	*t = 0;
-	return (split);
-}
-
-static int		common_room(t_split *tmp, char **s, const int *t)
-{
-	if (ft_len2(s) != 3)
-	{
-		split_free(tmp);
-		ft_arraydel(s);
-		return (0);
-	}
-	tmp->name1 = s[0];
-	tmp->name2 = s[1];
-	tmp->name3 = s[2];
-	if (tmp->name1[0] == 'L' || !s[2] || !s[1]
-				|| !ft_isdigit(s[2][0]) || !ft_isdigit(s[1][0]))
-	{
-		split_free(tmp);
-		free(s);
-		return (0);
-	}
-	if (*t == 1)
-		tmp->begin = 1;
-	else if (*t == 2)
-		tmp->end = 1;
-	free(s);
-	return (1);
-}
-
-static int		linker(t_split *tmp, char **s)
-{
-	if (ft_len2(s) != 2)
-	{
-		split_free(tmp);
-		ft_arraydel(s);
-		return (0);
-	}
-	tmp->name1 = s[0];
-	tmp->name2 = s[1];
-	free(s);
-	return (1);
-}
-
 t_split			*ft_rec(char *file_name, t_lem *lem)
 {
 	int			fd;
@@ -121,7 +28,7 @@ t_split			*ft_rec(char *file_name, t_lem *lem)
 	{
 		if (s[0] != '#' && !cnt_char(s, 32) && !cnt_char(s, '-') && ft_isdigit(s[0]))
 		{
-			if (!lem->ants)
+			if (!lem->ants && check_number(s))
 				lem->ants = ft_atoi(s);
 			else
 				return (0);
