@@ -39,6 +39,29 @@
 //	return (two);
 //}
 
+void		print_group(t_group *group)
+{
+	int 		i;
+	t_room		*room;
+
+	i = 0;
+	printf("\nGroup------------------\n");
+	while (i < group->size)
+	{
+		room = group->path_array[i]->start;
+		while (room)
+		{
+			if (room != group->path_array[i]->end)
+				printf("%s->", room->name);
+			else
+				printf("%s\n", room->name);
+			room = room->next;
+		}
+		i++;
+	}
+	printf("\nend group---------------\n\n");
+}
+
 t_path *backtrace_path(t_room *room, t_lem *lem)
 {
 	t_path *res_path;
@@ -56,7 +79,7 @@ t_path *backtrace_path(t_room *room, t_lem *lem)
 		better_link = link;
 		while (link)
 		{
-			if (check_link(link->self, cur_room))
+			if (!check_link(link->self, cur_room))
 				if (link->self->dijkstra < better_link->self->dijkstra)
 					better_link = link;
 			link = link->next;
@@ -80,7 +103,7 @@ t_group *make_group(t_lem *lem)
 	patharr = ft_memalloc(sizeof(t_room*) * lem->end->link_count);
 	while (link)
 	{
-		if (check_link(link->self, end))
+		if (!check_link(link->self, end))
 			patharr[i++] = backtrace_path(link, lem);
 		link = link->next;
 	}
@@ -92,6 +115,7 @@ t_group					*find_best_group(t_group *best_group, t_lem *lem)
 	t_group *cur_group;
 
 	cur_group = make_group(lem);
+	print_group(cur_group);
 	if (!best_group)
 		return (cur_group);
 	if (cur_group && cur_group->sumlen < best_group->sumlen)
@@ -137,10 +161,10 @@ int				main(int ac, char **av)
 	t_group *best_group = NULL;
 	while ((shortest_path = dijkstra_search(lem)) != NULL)
 	{
+		printf("shortest path:   ");
 		print_path(shortest_path);
 		switch_links(shortest_path, lem);
 		best_group = find_best_group(best_group, lem);
-
 	}
 //	create_solution(best_group);
 	split_free(data);
