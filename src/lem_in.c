@@ -104,7 +104,10 @@ t_group *make_group(t_lem *lem)
 	while (link)
 	{
 		if (!check_link(link->self, end))
-			patharr[i++] = backtrace_path(link, lem);
+		{
+			patharr[i] = backtrace_path(link, lem);
+			fill_intersection_array(patharr[i++], lem);
+		}
 		link = link->next;
 	}
 	return (create_group(patharr, i));
@@ -116,6 +119,8 @@ t_group					*find_best_group(t_group *best_group, t_lem *lem)
 
 	cur_group = make_group(lem);
 	print_group(cur_group);
+	if (is_intersecting_n_paths(cur_group->path_array, cur_group->size))
+		printf("^^^^^^^WARNING: Group has intersections!!!!^^^^^^^^^");
 	if (!best_group)
 		return (cur_group);
 	if (cur_group && cur_group->sumlen < best_group->sumlen)

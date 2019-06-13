@@ -4,18 +4,18 @@
 
 #include "lem_in.h"
 
-void	fill_intersection_array(t_path *path, int node_count)
+void	fill_intersection_array(t_path *path, t_lem *lem)
 {
 	char *array;
 	int i;
 	t_room *start;
 
 	start = path->start;
-	array = ft_memalloc(sizeof(char) * node_count);
+	array = ft_memalloc(sizeof(char) * (lem->rooms_cnt + 1));
 	i = 0;
 	while (start)
 	{
-		array[start->nb] == 0 ? array[start->nb]++ : throw_error("path error");
+		array[start->nb] == 0 ? (array[start->nb])++ : throw_error("path error");
 		i++;
 		start = start->next;
 	}
@@ -24,25 +24,25 @@ void	fill_intersection_array(t_path *path, int node_count)
 	path->intersection_arr = array;
 }
 
-t_path	**path_list_to_array(t_path *pathlist, int pathcount, int nodecount)
-{
-	int i;
-
-	t_path *path;
-	path = pathlist;
-	t_path **patharr = malloc(sizeof(t_path*) * pathcount + 1);
-	i = 0;
-	while (path)
-	{
-		fill_intersection_array(path, nodecount);
-		patharr[i++] = path;
-		path = path->next;
-	}
-	patharr[i] = NULL;
-	if (i != pathcount)
-		throw_error("path to array error");
-	return (patharr);
-}
+//t_path	**path_list_to_array(t_path *pathlist, int pathcount, int nodecount)
+//{
+//	int i;
+//
+//	t_path *path;
+//	path = pathlist;
+//	t_path **patharr = malloc(sizeof(t_path*) * pathcount + 1);
+//	i = 0;
+//	while (path)
+//	{
+//		fill_intersection_array(path);
+//		patharr[i++] = path;
+//		path = path->next;
+//	}
+//	patharr[i] = NULL;
+//	if (i != pathcount)
+//		throw_error("path to array error");
+//	return (patharr);
+//}
 
 t_path	*create_path()
 {

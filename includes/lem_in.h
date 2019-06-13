@@ -113,4 +113,5 @@ int		calc_max_group_size(t_lem *lem);
 t_group	*create_group(t_path **patharr, int size);
 int check_link(t_room *src, t_room *dest);
 t_path	*reverse_path(t_path *path);
+void	fill_intersection_array(t_path *path, t_lem *lem);
 #endif
