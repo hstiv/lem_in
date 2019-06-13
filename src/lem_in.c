@@ -118,9 +118,14 @@ t_group					*find_best_group(t_group *best_group, t_lem *lem)
 	t_group *cur_group;
 
 	cur_group = make_group(lem);
-	print_group(cur_group);
+
 	if (is_intersecting_n_paths(cur_group->path_array, cur_group->size))
+	{
 		printf("^^^^^^^WARNING: Group has intersections!!!!^^^^^^^^^");
+		print_group(cur_group);
+	}
+	cur_group = delete_intersecting_paths(cur_group);
+	print_group(cur_group);
 	if (!best_group)
 		return (cur_group);
 	if (cur_group && cur_group->sumlen < best_group->sumlen)
@@ -166,7 +171,7 @@ int				main(int ac, char **av)
 	t_group *best_group = NULL;
 	while ((shortest_path = dijkstra_search(lem)) != NULL)
 	{
-		printf("shortest path:   ");
+		printf("\n\nshortest path:   ");
 		print_path(shortest_path);
 		switch_links(shortest_path, lem);
 		best_group = find_best_group(best_group, lem);
