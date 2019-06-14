@@ -86,7 +86,7 @@ typedef struct s_group {
 	struct s_group *next;//??maybe?
 } t_group;
 
-
+void					make_prev_for_path(t_group *group);
 t_split					*addlst(t_split *tmp, int l, int *t);
 int						common_room(t_split *tmp, char **s, const int *t);
 int						linker(t_split *tmp, char **s);

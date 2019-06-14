@@ -175,6 +175,7 @@ int				main(int ac, char **av)
 		print_path(shortest_path);
 		switch_links(shortest_path, lem);
 		best_group = find_best_group(best_group, lem);
+		run_ants(best_group, lem, 1);
 	}
 //	create_solution(best_group);
 	split_free(data);
