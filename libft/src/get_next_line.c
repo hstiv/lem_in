@@ -96,6 +96,7 @@ int				get_next_line(const int fd, char **line)
 {
 	static char	*tmp[MAX_FD];
 
+	*line = NULL;
 	if (fd < 0 || fd > MAX_FD || !line ||
 		(read(fd, *line, 0)) < 0 || BUFF_SIZE < 0)
 		return (-1);

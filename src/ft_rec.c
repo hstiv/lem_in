@@ -10,7 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <zconf.h>
 #include "lem_in.h"
+
+static int		common_cond(t_split **tmp, int *t, t_lem *lem, char *s)
+{
+	if (ft_count_char(s, ' ') == 3)
+	{
+		*tmp = (*tmp) ? addlst(*tmp, 3, t) : ft_newsplit();
+		if (!common_room(*tmp, ft_strsplit(s, ' '), t))
+		{
+			free(s);
+			return (0);
+		}
+		lem->rooms_cnt++;
+		*t = 0;
+	}
+	else if (ft_count_char(s, '-') == 2)
+	{
+		*tmp = (*tmp) ? addlst(*tmp, 2, t) : ft_newsplit();
+		linker(*tmp, ft_strsplit(s, '-'));
+	}
+	return (1);
+}
 
 t_split			*ft_rec(char *file_name, t_lem *lem)
 {
@@ -19,10 +41,8 @@ t_split			*ft_rec(char *file_name, t_lem *lem)
 	int 		t;
 	t_split		*tmp;
 
-	s = NULL;
 	if (!(fd = open(file_name, O_RDONLY)) || fd < 0)
 		return (NULL);
-	t = 0;
 	tmp = NULL;
 	while (get_next_line(fd, &s))
 	{
@@ -35,22 +55,9 @@ t_split			*ft_rec(char *file_name, t_lem *lem)
 		}
 		else if (ft_strequ(s, "##start") || ft_strequ(s, "##end"))
 			t = (s[2] == 's') ? 1 : 2;
-		else if (ft_count_char(s, ' ') == 3 && s[0] != '#')
-		{
-			tmp = (tmp) ? addlst(tmp, 3, &t) : ft_newsplit();
-			if (!common_room(tmp, ft_strsplit(s, ' '), &t))
-			{
-				free(s);
+		else if (s[0] != '#')
+			if (!common_cond(&tmp, &t, lem, s))
 				return (0);
-			}
-			lem->rooms_cnt++;
-			t = 0;
-		}
-		else if (ft_count_char(s, '-') == 2 && s[0] != '#')
-		{
-			tmp = (tmp) ? addlst(tmp, 2, &t) : ft_newsplit();
-			linker(tmp, ft_strsplit(s, '-'));
-		}
 		free(s);
 	}
 	if (!lem->rooms_cnt)
