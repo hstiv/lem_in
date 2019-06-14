@@ -1,16 +1,4 @@
 /Users/mdebbi/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/mdebbi/Desktop/lem_in
 -- Configuring done
-CMake Error at CMakeLists.txt:10 (add_executable):
-  Cannot find source file:
-
-    libft/src/check_number.c
-
-  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .m .M .mm .h .hh .h++ .hm
-  .hpp .hxx .in .txx
-
-
-CMake Error at CMakeLists.txt:10 (add_executable):
-  No SOURCES given to target: lem_in
-
-
+-- Generating done
 -- Build files have been written to: /Users/mdebbi/Desktop/lem_in/cmake-build-debug

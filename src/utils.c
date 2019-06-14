@@ -23,7 +23,7 @@ void			make_prev_for_path(t_group *group)
 	t_room		*tmp;
 
 	i = 0;
-	while (group->path_array[i])
+	while (i < group->size)
 	{
 		path = group->path_array[i]->start;
 		while (path->next)

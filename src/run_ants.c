@@ -4,14 +4,19 @@ static int 		is_ants_at_finish(t_group *group)
 {
 	int 		i;
 	int 		res;
+//	int			ended_paths;
 
+//	ended_paths = 0;
 	i = 0;
 	res = 0;
-	while (group->path_array[i])
+	while (i < group->size)
 	{
 		res += group->path_array[i]->end->ant;
+//		if (group->path_array[i]->end->ant > 0)
+//			ended_paths++;
 		i++;
 	}
+//	return (ended_paths ? res / ended_paths : res);
 	return (res);
 }
 
@@ -83,6 +88,17 @@ void			push_ants(t_path *path, int ants_bg, int n)
 		if_midd(tmp, path, ants_bg, n);
 }
 
+void	reset_ants_at_finish(t_group *group)
+{
+	int i;
+
+	i = 0;
+	while (i < group->size)
+	{
+		group->path_array[i++]->end->ant = 0;
+	}
+}
+
 int				run_ants(t_group *group, t_lem *lem, int n)
 {
 	int 		i;
@@ -90,10 +106,10 @@ int				run_ants(t_group *group, t_lem *lem, int n)
 	lem->oper = 0;
 	group->ants = lem->ants;
 	make_prev_for_path(group);
-	while (lem->ants != is_ants_at_finish(group))
+	while (lem->ants != is_ants_at_finish(group))///something wrong
 	{
 		i = 0;
-		while (group->path_array[i])
+		while (i < group->size)
 		{
 			push_ants(group->path_array[i], (group->ants > 0) ? group->ants : 0, n);
 			group->ants--;
@@ -103,5 +119,6 @@ int				run_ants(t_group *group, t_lem *lem, int n)
 		lem->oper++;
 	}
 	(n) ? printf("%d", lem->oper) : 0;
+	reset_ants_at_finish(group);
 	return (lem->oper);
 }

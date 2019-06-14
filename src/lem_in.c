@@ -128,7 +128,7 @@ t_group					*find_best_group(t_group *best_group, t_lem *lem)
 	print_group(cur_group);
 	if (!best_group)
 		return (cur_group);
-	if (cur_group && cur_group->sumlen < best_group->sumlen)
+	if (cur_group && run_ants(cur_group, lem, 0) < run_ants(best_group, lem, 0))
 		return (cur_group);
 	return (best_group);
 }
@@ -175,8 +175,11 @@ int				main(int ac, char **av)
 		print_path(shortest_path);
 		switch_links(shortest_path, lem);
 		best_group = find_best_group(best_group, lem);
-		run_ants(best_group, lem, 1);
+
 	}
+	printf("best group for this antcount:\n");
+	print_group(best_group);
+	run_ants(best_group, lem, 1);
 //	create_solution(best_group);
 	split_free(data);
 	free_lem(lem);
