@@ -24,9 +24,10 @@ static int 		is_ants_at_finish(t_group *group)
 
 static void		if_next_end(t_room *tmp, t_path *path, int ants_bg, int n, int nb)
 {
+	(tmp == path->start && n && ants_bg) ? tmp->ant += nb : 0;
 	(n) ? printf("L%d-%s ", tmp->ant, tmp->next->name) : 0;
 	path->end->ant++;
-	tmp->ant = 0;
+	(tmp != path->start) ? tmp->ant = 0 : 0;
 	if (tmp->prev && tmp->prev->ant != 0)
 	{
 		while (tmp->prev != path->start && tmp->prev->ant > 0)
@@ -109,7 +110,7 @@ int				run_ants(t_group *group, t_lem *lem, int n)
 	nb = 0;
 	group->ants = lem->ants;
 	make_prev_for_path(group);
-	while (lem->ants != is_ants_at_finish(group))
+	while (lem->ants > is_ants_at_finish(group))
 	{
 		i = 0;
 		while (i < group->size)
@@ -117,7 +118,7 @@ int				run_ants(t_group *group, t_lem *lem, int n)
 			if (group->path_array[i])
 			{
 				push_ants(group->path_array[i],
-				(group->ants > 0) ? group->ants : 0, n,(!nb) ? 1 : group->size);
+		(group->ants > 0) ? group->ants : 0, n, (!nb) ? 1 : group->size);
 				group->ants--;
 				nb++;
 			}
@@ -126,7 +127,6 @@ int				run_ants(t_group *group, t_lem *lem, int n)
 		(n) ? printf("\n") : 0;
 		lem->oper++;
 	}
-	(n) ? printf("%d", lem->oper) : 0;
 	reset_ants_at_finish(group);
 	return (lem->oper);
 }

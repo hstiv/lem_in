@@ -146,8 +146,8 @@ int				main(int ac, char **av)
 		split_free(data);
 		return (ft_err("Error\n"));
 	}
-	while(data->prev)
-		data = data->prev;
+//	while(data->prev)
+//		data = data->prev;
 	if (lem->ants <= 0 || !adj_list(lem, data))
 	{
         free(lem);

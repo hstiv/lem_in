@@ -71,7 +71,10 @@ SRC = $(PATH_SRC)ft_strlen.c \
 	$(PATH_SRC)ft_len2.c \
 	$(PATH_SRC)ft_len3.c \
 	$(PATH_SRC)ft_err.c \
-	$(PATH_SRC)get_next_line.c
+	$(PATH_SRC)get_next_line.c \
+	$(PATH_SRC)cnt_char.c \
+	$(PATH_SRC)check_number.c \
+	
 	
 CFLAGS = -Wall -Wextra -Werror
 
