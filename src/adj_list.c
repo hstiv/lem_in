@@ -80,6 +80,6 @@ int						adj_list(t_lem *lem, t_split *split)
 	lem->adj[l] = NULL;
 	if (!lem->begin || !lem->end)
 		return (0);
-	lem->begin->ant = lem->ants;
+//	lem->begin->ant = lem->ants;
 	return(link_make(lem, tmp));
 }
