@@ -89,7 +89,7 @@ typedef struct s_group {
 } t_group;
 
 int 					is_ants_at_finish(t_group *group);
-void					make_prev_for_path(t_group *group);
+void					make_prev_for_path(t_group *group, t_lem *lem);
 t_split					*addlst(t_split *tmp, int l, int *t);
 int						common_room(t_split *tmp, char **s, const int *t);
 int						linker(t_split *tmp, char **s);

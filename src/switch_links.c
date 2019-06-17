@@ -1,10 +1,18 @@
-//
-//	Created by Hallie Stiv on 2019-06-09.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   switch_links.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/17 18:17:47 by hstiv             #+#    #+#             */
+/*   Updated: 2019/06/17 18:17:51 by hstiv            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "lem_in.h"
 
-static void 		switch_them(int nb, int nb1, t_room **adj)
+static void			switch_them(int nb, int nb1, t_room **adj)
 {
 	t_room			*room;
 

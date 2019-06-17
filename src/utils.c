@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/17 18:25:02 by hstiv             #+#    #+#             */
+/*   Updated: 2019/06/17 18:25:05 by hstiv            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
 void			throw_error(char *msg)
@@ -7,18 +19,20 @@ void			throw_error(char *msg)
 	exit(0);
 }
 
-int 			min(int a, int b)
+int				min(int a, int b)
 {
 	return (a < b ? a : b);
 }
 
-void			make_prev_for_path(t_group *group)
+void			make_prev_for_path(t_group *group, t_lem *lem)
 {
-	int 		i;
+	int			i;
 	t_room		*path;
 	t_room		*tmp;
 
 	i = 0;
+	lem->oper = 0;
+	lem->nb = 1;
 	while (i < group->size)
 	{
 		path = group->path_array[i]->start;
@@ -26,16 +40,16 @@ void			make_prev_for_path(t_group *group)
 		{
 			tmp = path;
 			path = path->next;
-			path->prev  = tmp;
+			path->prev = tmp;
 		}
 		i++;
 	}
 }
 
-int 			is_ants_at_finish(t_group *group)
+int				is_ants_at_finish(t_group *group)
 {
-	int 		i;
-	int 		res;
+	int			i;
+	int			res;
 
 	i = 0;
 	res = 0;

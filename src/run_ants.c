@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   run_ants.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/17 18:11:21 by hstiv             #+#    #+#             */
+/*   Updated: 2019/06/17 18:11:23 by hstiv            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
 static void		if_next_end(t_room *tmp, t_path *path, int ants_bg, t_lem *lem)
@@ -85,13 +97,11 @@ void			push_ants(t_path *path, int ants_bg, t_lem *lem)
 
 int				run_ants(t_group *group, t_lem *lem, int n)
 {
-	int 		i;
+	int			i;
 
-	lem->oper = 0;
-	lem->nb = 1;
 	lem->n = n;
 	group->ants = lem->ants;
-	make_prev_for_path(group);
+	make_prev_for_path(group, lem);
 	while (lem->ants > is_ants_at_finish(group))
 	{
 		i = 0;
@@ -99,20 +109,17 @@ int				run_ants(t_group *group, t_lem *lem, int n)
 		{
 			if (group->path_array[i])
 			{
-				push_ants(group->path_array[i],
+				push_ants(group->path_array[i++],
 		(group->ants > 0) ? group->ants : 0, lem);
 				group->ants--;
 				lem->nb++;
 			}
-			i++;
 		}
-		(n) ? printf("\n") : 0;
+		(lem->n) ? printf("\n") : 0;
 		lem->oper++;
 	}
 	i = 0;
 	while (i < group->size)
-	{
 		group->path_array[i++]->end->ant = 0;
-	}
 	return (lem->oper);
 }

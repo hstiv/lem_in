@@ -93,5 +93,4 @@ add_executable(lem_in
         src/run_ants.c
         src/split_free.c
         src/switch_links.c
-        src/triple_split.c
         src/utils.c)
