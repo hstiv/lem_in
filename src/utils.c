@@ -1,7 +1,3 @@
-//
-// Created by Maybell Debbi on 2019-06-09.
-//
-
 #include "lem_in.h"
 
 void			throw_error(char *msg)
@@ -34,4 +30,19 @@ void			make_prev_for_path(t_group *group)
 		}
 		i++;
 	}
+}
+
+int 			is_ants_at_finish(t_group *group)
+{
+	int 		i;
+	int 		res;
+
+	i = 0;
+	res = 0;
+	while (i < group->size)
+	{
+		res += group->path_array[i]->end->ant;
+		i++;
+	}
+	return (res);
 }

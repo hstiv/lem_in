@@ -22,6 +22,8 @@
 typedef struct			s_lem
 {
 	char				**s;
+	int 				n;
+	int 				nb;
 	struct s_room		**adj;
 	int					ants;//todo?
 	int					rooms_cnt;
@@ -86,6 +88,7 @@ typedef struct s_group {
 	struct s_group *next;//??maybe?
 } t_group;
 
+int 					is_ants_at_finish(t_group *group);
 void					make_prev_for_path(t_group *group);
 t_split					*addlst(t_split *tmp, int l, int *t);
 int						common_room(t_split *tmp, char **s, const int *t);
@@ -107,20 +110,20 @@ t_lem					*ft_newlem();
 t_room					*ft_newroom();
 int 					rpf(t_room *room, t_lem *lem, t_path *path, t_path **pathlist);
 t_path					*create_path();
-void	add_to_path(t_path *path, t_room *room);
-int 	is_intersect(t_path *path1, t_path *path2);
-int		is_intersecting_n_paths(t_path **path_arr, int size);
-void	add_to_priority_queue(t_room *room, t_queue *queue);
-t_room	*pop_from_queue(t_queue *queue);
-void	add_to_queue(t_room *room, t_queue *queue);
-t_path	*dijkstra_search(t_lem *lem);
-void	throw_error(char *msg);
-int 	min(int a, int b);
-void	print_path(t_path *path);
-int		calc_max_group_size(t_lem *lem);
-t_group	*create_group(t_path **patharr, int size);
-int check_link(t_room *src, t_room *dest);
-t_path	*reverse_path(t_path *path);
-void	fill_intersection_array(t_path *path, t_lem *lem);
-t_group	*delete_intersecting_paths(t_group *group);
+void					add_to_path(t_path *path, t_room *room);
+int 					is_intersect(t_path *path1, t_path *path2);
+int						is_intersecting_n_paths(t_path **path_arr, int size);
+void					add_to_priority_queue(t_room *room, t_queue *queue);
+t_room					*pop_from_queue(t_queue *queue);
+void					add_to_queue(t_room *room, t_queue *queue);
+t_path					*dijkstra_search(t_lem *lem);
+void					throw_error(char *msg);
+int 					min(int a, int b);
+void					print_path(t_path *path);
+int						calc_max_group_size(t_lem *lem);
+t_group					*create_group(t_path **patharr, int size);
+int						check_link(t_room *src, t_room *dest);
+t_path					*reverse_path(t_path *path);
+void					fill_intersection_array(t_path *path, t_lem *lem);
+t_group					*delete_intersecting_paths(t_group *group);
 #endif
