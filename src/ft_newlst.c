@@ -43,7 +43,6 @@ t_room			*ft_newroom(void)
 		new->ant = 0;
 		new->x = 0;
 		new->y = 0;
-		new->ant_name = 0;
 		new->name = NULL;
 		new->link_count = 0;
 		new->next = NULL;

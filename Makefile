@@ -8,8 +8,10 @@ WWW = -Wall -Wextra -Werror
 
 LFT = libft/libft.a
 
-SRC = src/lem_in.c src/ft_rec.c src/ft_newlst.c src/triple_split.c \
-src/ft_triplefree.c src/adj_list.c src/free_lem.c src/link_make.c $(LFT)
+SRC = src/lem_in.c src/ft_rec.c src/ft_newlst.c src/split_free.c \
+src/switch_links.c src/adj_list.c src/free_lem.c src/link_make.c \
+src/utils.c src/groups.c src/dijkstra_shortest_path.c src/path.c \
+src/intersection_handling.c src/queue.c src/rec_tools.c src/run_ants.c $(LFT)
 
 all: $(NAME)
 
