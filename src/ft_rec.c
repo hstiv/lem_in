@@ -34,37 +34,52 @@ static int		common_cond(t_split **tmp, int *t, t_lem *lem, char *s)
 	return (1);
 }
 
-t_split			*ft_rec(char *file_name, t_lem *lem)
+static void		*ret_null(t_split *tmp)
 {
-	int			fd;
-	char 		*s;
-	int 		t;
+	split_free(tmp);
+	return (NULL);
+}
+
+static t_split	*getting(int fd, t_lem *lem)
+{
+	int			t;
+	char		*s;
 	t_split		*tmp;
 
-	if (!(fd = open(file_name, O_RDONLY)) || fd < 0)
-		return (NULL);
 	tmp = NULL;
 	while (get_next_line(fd, &s))
 	{
-		if (s[0] != '#' && !cnt_char(s, 32) && !cnt_char(s, '-') && ft_isdigit(s[0]))
+		if (s[0] != '#' && !cnt_char(s, 32)
+			&& !cnt_char(s, '-') && ft_isdigit(s[0]))
 		{
 			if (!lem->ants && check_number(s))
 				lem->ants = ft_atoi(s);
 			else
-				return (0);
+				return (ret_null(tmp));
 		}
 		else if (ft_strequ(s, "##start") || ft_strequ(s, "##end"))
 			t = (s[2] == 's') ? 1 : 2;
 		else if (s[0] != '#')
 			if (!common_cond(&tmp, &t, lem, s))
-				return (0);
+				return (ret_null(tmp));
 		free(s);
 	}
-	if (!lem->rooms_cnt)
-	{
-		split_free(tmp);
+	while (tmp->prev)
+		tmp = tmp->prev;
+	return (tmp);
+}
+
+t_split			*ft_rec(char *file_name, t_lem *lem)
+{
+	int			fd;
+	t_split		*tmp;
+
+	if (!(fd = open(file_name, O_RDONLY)) || fd < 0)
 		return (NULL);
-	}
+	if (!(tmp = getting(fd, lem)))
+		return (NULL);
+	if (!lem->rooms_cnt)
+		return (ret_null(tmp));
 	while (tmp->prev)
 		tmp = tmp->prev;
 	return (tmp);
