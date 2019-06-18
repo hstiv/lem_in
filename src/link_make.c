@@ -66,7 +66,7 @@ int					link_make(t_lem *lem, t_split *tmp)
 	int				n1;
 	int				n2;
 
-	if (!lem->begin || !lem->end)
+	if (!lem->begin || !lem->end || !tmp)
 		return (0);
 	if (tmp->l != 2)
 		return (2);

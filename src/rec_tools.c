@@ -12,6 +12,12 @@
 
 #include "lem_in.h"
 
+int				ret_null(t_split *tmp)
+{
+	split_free(tmp);
+	return (0);
+}
+
 int				common_room(t_split *tmp, char **s, const int *t)
 {
 	if (ft_len2(s) != 3)
@@ -66,4 +72,20 @@ int				linker(t_split *tmp, char **s)
 	tmp->name2 = s[1];
 	free(s);
 	return (1);
+}
+
+int				dublicates(t_split *split)
+{
+	t_split		*tmp;
+
+	while (split->prev)
+		split = split->prev;
+	while (split->next)
+	{
+		tmp = split;
+		split = split->next;
+		if (ft_strequ(tmp->name1, split->name1))
+			return (1);
+	}
+	return (0);
 }

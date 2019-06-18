@@ -4,6 +4,8 @@ project(lem_in C)
 set(CMAKE_C_STANDARD 11)
 
 include_directories(includes)
+include_directories(libft)
+include_directories(src)
 
 add_executable(lem_in
         includes/lem_in.h

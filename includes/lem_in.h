@@ -90,6 +90,8 @@ typedef struct			s_group
 	struct s_group		*next;//??maybe?
 }						t_group;
 
+int 					dublicates(t_split *tmp);
+int						ret_null(t_split *tmp);
 int						is_ants_at_finish(t_group *group);
 void					make_prev_for_path(t_group *group, t_lem *lem);
 t_split					*addlst(t_split *tmp, int l, int *t);
