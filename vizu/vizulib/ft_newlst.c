@@ -25,6 +25,10 @@ t_lem			*ft_newlem(void)
 		new->begin = NULL;
 		new->end = NULL;
 		new->adj = NULL;
+		new->oper = 0;
+		new->path_count = INT_MAX;
+		new->nb = 1;
+		new->n = 0;
 	}
 	return (new);
 }
@@ -45,7 +49,8 @@ t_room			*ft_newroom(void)
 		new->self = NULL;
 		new->prev = NULL;
 		new->visited = 0;
-		new->cor = 0;
+		new->dijkstra = INT_MAX;
+		new->queue_next = NULL;
 	}
 	return (new);
 }

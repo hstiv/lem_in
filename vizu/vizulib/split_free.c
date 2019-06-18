@@ -12,19 +12,29 @@
 
 #include "vizulib.h"
 
-void				ft_triplefree(char ***s)
+void			split_free(t_split *split)
 {
-	int				i;
+	t_split		*tmp;
 
-	i = 0;
-	while (s[i] != NULL)
-		i++;
-	i -= 1;
-	while (i >= 0)
+	if (!split)
+		return ;
+	while (split->prev)
+		split = split->prev;
+	while (split)
 	{
-		ft_arraydel(s[i]);
-		i--;
+		tmp = split;
+		split = split->next;
+		if (tmp->name1)
+		{
+			free(tmp->name1);
+			tmp->name1 = NULL;
+			if (tmp->name2)
+			{
+				free(tmp->name2);
+				tmp->name2 = NULL;
+				(tmp->l == 3) ? free(tmp->name3) : 0;
+				tmp->name3 = NULL;
+			}
+		}
 	}
-	free(s);
-	s = NULL;
 }

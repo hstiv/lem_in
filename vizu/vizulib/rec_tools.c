@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem_in.h"
+#include "vizulib.h"
 
 int				ret_null(t_split *tmp)
 {
@@ -52,11 +52,11 @@ t_split			*addlst(t_split *tmp, int l, int *t)
 	tmp->next = split;
 	split->prev = tmp;
 	tmp->l = l;
-	if ((*t) == 1)
+	if (*t == 1)
 		split->begin = 1;
-	else if ((*t) == 2)
+	else if (*t == 2)
 		split->end = 1;
-	(*t) = 0;
+	*t = 0;
 	return (split);
 }
 

@@ -140,10 +140,12 @@ int				main(int ac, char **av)
 	t_path		*shortest_path;
 
 	lem = ft_newlem();
+	data = NULL;
 	if (ac != 2 || !(data = ft_rec(av[1], lem)))
 	{
 		free(lem);
-		split_free(data);
+		if (data != NULL)
+			split_free(data);
 		return (ft_err("Error\n"));
 	}
 //	while(data->prev)

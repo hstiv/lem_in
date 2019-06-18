@@ -57,6 +57,8 @@ void				run_window(t_mlx *mlx)
 	mlx_hook(mlx->wind, 4, 0, mouse_press, mlx);
 	mlx_hook(mlx->wind, 6, 0, mouse_move, mlx);
 	mlx_hook(mlx->wind, 5, 0, mouse_release, mlx);
+	if (mlx->m)
+		
 	putman(mlx);
 	mlx_loop(mlx->ptr);
 }

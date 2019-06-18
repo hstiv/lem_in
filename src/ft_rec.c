@@ -21,6 +21,8 @@ static int		common_cond(t_split **tmp, int *t, t_lem *lem, char *s)
 		if (!common_room(*tmp, ft_strsplit(s, ' '), t))
 		{
 			free(s);
+			free(*tmp);
+			*tmp = NULL;
 			return (0);
 		}
 		lem->rooms_cnt++;
@@ -48,15 +50,15 @@ static int		body_of_getting(char *s, t_split **tmp, int *t, t_lem *lem)
 		*t = (s[2] == 's') ? 1 : 2;
 	else if (s[0] != '#')
 		if (!common_cond(tmp, t, lem, s))
-			return (ret_null(*tmp));
+			return (0);
 	if (s[0] == '\0')
-		return (ret_null(tmp));
+		return (ret_null(*tmp));
 	free(s);
 	return (1);
 }
 
 static t_split	*getting(int fd, t_lem *lem)
-{
+  {
 	int			t;
 	char		*s;
 	t_split		*tmp;
@@ -66,6 +68,11 @@ static t_split	*getting(int fd, t_lem *lem)
 	{
 		if (!(body_of_getting(s, &tmp, &t, lem)))
 			return (NULL);
+	}
+	if (s)
+	{
+		free(s);
+		s = NULL;
 	}
 	while (tmp && tmp->prev)
 		tmp = tmp->prev;
@@ -82,7 +89,10 @@ t_split			*ft_rec(char *file_name, t_lem *lem)
 	if (!(tmp = getting(fd, lem)))
 		return (NULL);
 	if (!lem->rooms_cnt || lem->ants <= 0 || dublicates(tmp))
-		return (ret_null(tmp));
+	{
+		split_free(tmp);
+		return (NULL);
+	}
 	while (tmp->prev)
 		tmp = tmp->prev;
 	return (tmp);

@@ -23,6 +23,7 @@ static void			others(t_mlx *mlx)
 	mlx->fill = 1;
 	mlx->cor = 0;
 	mlx->cmnd = 0;
+	mlx->m = 0;
 }
 
 t_mlx				*ft_newmlx(void)

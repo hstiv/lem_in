@@ -32,6 +32,8 @@ static void		x_and_y(int keycode, t_mlx *param)
 		param->l -= 0.1;
 	if (keycode == 259)
 		param->cmnd = 1;
+	if (keycode == 46)
+		param->m = 1;
 }
 
 int				key_release(int keycode, t_mlx *param)
@@ -41,6 +43,8 @@ int				key_release(int keycode, t_mlx *param)
 		param->cmnd = 0;
 		param->cor = 0;
 	}
+	if (keycode == 46)
+		param->m = 0;
 	return (0);
 }
 

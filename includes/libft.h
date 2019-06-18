@@ -21,7 +21,7 @@
 # include <unistd.h>
 # include <stdio.h>
 
-# define BUFF_SIZE	32
+# define BUFF_SIZE	24
 # define MAX_FD		10240
 # define UL unsigned long int
 

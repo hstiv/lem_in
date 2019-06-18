@@ -24,9 +24,18 @@ void			split_free(t_split *split)
 	{
 		tmp = split;
 		split = split->next;
-		free(tmp->name1);
-		free(tmp->name2);
-		if (tmp->l == 3)
-			free(tmp->name3);
+		if (tmp->name1)
+		{
+			free(tmp->name1);
+			tmp->name1 = NULL;
+			if (tmp->name2)
+			{
+				free(tmp->name2);
+				tmp->name2 = NULL;
+				(tmp->l == 3) ? free(tmp->name3) : 0;
+				tmp->name3 = NULL;
+			}
+		}
+		free(tmp);
 	}
 }

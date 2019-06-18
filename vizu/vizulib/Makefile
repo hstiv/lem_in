@@ -3,14 +3,18 @@ NAME = libvizu.a
 LFT = $(LFT)
 
 SRC = ft_newmlx.c run_window.c bresenham.c circle.c mappaint.c \
-		ft_rec.c ft_newlst.c triple_split.c ft_triplefree.c adj_list.c \
-		free_lem.c link_make.c key_press.c mouse_press.c mouse_move.c \
-		mouse_release.c mappaint_tools.c
+	ft_rec.c ft_newlst.c split_free.c utils.c path.c adj_list.c \
+	free_lem.c link_make.c key_press.c mouse_press.c mouse_move.c \
+	mouse_release.c mappaint_tools.c dijkstra_shortest_path_.c groups.c \
+	intersection_handling.c queue.c rec_tools.c recursive_pathfinder.c \
+	run_ants.c
 
 OBJECT = ft_newmlx.o run_window.o bresenham.o circle.o mappaint.o \
-		ft_rec.o ft_newlst.o triple_split.o ft_triplefree.o adj_list.o \
-		free_lem.o link_make.o key_press.o mouse_press.o mouse_move.o \
-		mouse_release.o mappaint_tools.o
+	ft_rec.o ft_newlst.o split_free.o utils.o path.o adj_list.o \
+	free_lem.o link_make.o key_press.o mouse_press.o mouse_move.o \
+	mouse_release.o mappaint_tools.o dijkstra_shortest_path_.o groups.o \
+	intersection_handling.o queue.o rec_tools.o recursive_pathfinder.o \
+	run_ants.o
 
 INCLUDES = libft/
 

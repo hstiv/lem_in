@@ -6,7 +6,7 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:03:55 by hstiv             #+#    #+#             */
-/*   Updated: 2019/06/02 17:42:12 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/06/17 18:44:01 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ static void			lnk_connect(t_room **adj, int n1, int n2)
 			tmp = tmp->next;
 		tmp->next = room;
 		room->prev = tmp;
-
 	}
 	adj[n1]->link_count += 1;
 	room->self = adj[n2];
@@ -67,21 +66,23 @@ int					link_make(t_lem *lem, t_split *tmp)
 	int				n1;
 	int				n2;
 
+	if (!lem->begin || !lem->end || !tmp)
+		return (0);
 	if (tmp->l != 2)
 		return (2);
 	while (tmp != NULL)
 	{
-			n1 = ind_sch(lem, tmp->name1);
-			n2 = ind_sch(lem, tmp->name2);
-			if (!lem->adj[n1] || !lem->adj[n2])
-			    return (0);
-			if (!double_linked(n1, n2, lem->adj)
-				&& !double_linked(n2, n1, lem->adj))
-			{
-				lnk_connect(lem->adj, n1, n2);
-				lnk_connect(lem->adj, n2, n1);
-			}
-			tmp = tmp->next;
+		n1 = ind_sch(lem, tmp->name1);
+		n2 = ind_sch(lem, tmp->name2);
+		if (!lem->adj[n1] || !lem->adj[n2])
+			return (0);
+		if (!double_linked(n1, n2, lem->adj)
+			&& !double_linked(n2, n1, lem->adj))
+		{
+			lnk_connect(lem->adj, n1, n2);
+			lnk_connect(lem->adj, n2, n1);
+		}
+		tmp = tmp->next;
 	}
 	return (1);
 }
