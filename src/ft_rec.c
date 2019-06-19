@@ -63,6 +63,7 @@ static t_split	*getting(int fd, t_lem *lem)
 	t_split		*tmp;
 
 	tmp = NULL;
+	t = 0;
 	while (get_next_line(fd, &s))
 	{
 		if (!(body_of_getting(s, &tmp, &t, lem)))
