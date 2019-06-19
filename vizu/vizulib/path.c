@@ -20,26 +20,6 @@ void	fill_intersection_array(t_path *path, t_lem *lem)
 	path->intersection_arr = array;
 }
 
-//t_path	**path_list_to_array(t_path *pathlist, int pathcount, int nodecount)
-//{
-//	int i;
-//
-//	t_path *path;
-//	path = pathlist;
-//	t_path **patharr = malloc(sizeof(t_path*) * pathcount + 1);
-//	i = 0;
-//	while (path)
-//	{
-//		fill_intersection_array(path);
-//		patharr[i++] = path;
-//		path = path->next;
-//	}
-//	patharr[i] = NULL;
-//	if (i != pathcount)
-//		throw_error("path to array error");
-//	return (patharr);
-//}
-
 t_path	*create_path()
 {
 	t_path	*path;

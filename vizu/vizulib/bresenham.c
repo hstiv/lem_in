@@ -12,10 +12,17 @@
 
 #include "vizulib.h"
 
-static void		delta(t_room *d0, t_room *d1, int *delx, int *dely)
+static int		delta(t_room *d0, t_room *d1, int *delx, int *dely)
 {
+	int			col;
+
 	*delx = (d1->x - d0->x > 0) ? (d1->x - d0->x) : (d0->x - d1->x);
 	*dely = (d1->y - d0->y > 0) ? (d1->y - d0->y) : (d0->y - d1->y);
+	if (d1->color == 849467 && d0->color == 849467)
+		col = 849467;
+	else
+		col = 16777215;
+	return (col);
 }
 
 static void		ft_dir(int *diry, int *dirx, t_room *d0, t_room *d1)
@@ -31,12 +38,12 @@ void			ft_bresenham(t_room *d0, t_room *d1, t_mlx *mlx)
 	int			diry;
 	int			dirx;
 
-	delta(d0, d1, &delx, &dely);
+	mlx->col = delta(d0, d1, &delx, &dely);	
 	ft_dir(&diry, &dirx, d0, d1);
 	mlx->err = delx - dely;
 	while (d0->x != d1->x || d0->y != d1->y)
 	{
-		mlx_pixel_put(mlx->ptr, mlx->wind, d0->x, d0->y, 16777215);
+		mlx_pixel_put(mlx->ptr, mlx->wind, d0->x, d0->y, mlx->col);
 		mlx->derr = mlx->err * 2;
 		if (mlx->derr > -dely)
 		{

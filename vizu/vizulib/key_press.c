@@ -33,7 +33,7 @@ static void		x_and_y(int keycode, t_mlx *param)
 	if (keycode == 259)
 		param->cmnd = 1;
 	if (keycode == 46)
-		param->m = 1;
+		param->m += 1;
 }
 
 int				key_release(int keycode, t_mlx *param)
@@ -43,8 +43,6 @@ int				key_release(int keycode, t_mlx *param)
 		param->cmnd = 0;
 		param->cor = 0;
 	}
-	if (keycode == 46)
-		param->m = 0;
 	return (0);
 }
 
@@ -52,6 +50,10 @@ int				key_press(int keycode, t_mlx *param)
 {
 	x_and_y(keycode, param);
 	mlx_clear_window(param->ptr, param->wind);
+	if (param->m % 2 == 0)
+		give_color(param);
+	if (param->m % 2 == 1)
+		resert_color(param);
 	mappaint(param);
 	putman(param);
 	return (0);

@@ -56,6 +56,7 @@ typedef struct			s_room
 	int					link_count;
 	int					visited;
 	int					cor;
+	int					color;
 	struct s_room		*next;
 	struct s_room		*prev;
 	struct s_room		*self;
@@ -88,6 +89,7 @@ typedef	struct			s_mlx
 	int					cor;
 	int					cmnd;
 	int					m;
+	int					col;
 	t_lem				*lem;
 }						t_mlx;
 
@@ -130,6 +132,8 @@ typedef struct			s_group
 	struct s_group		*next;//??maybe?
 }						t_group;
 
+void					resert_color(t_mlx *mlx);
+void					give_color(t_mlx *mlx);
 int						min(int a, int b);
 void					print_path(t_path *path);
 int						calc_max_group_size(t_lem *lem);

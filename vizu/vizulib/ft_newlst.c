@@ -49,6 +49,7 @@ t_room			*ft_newroom(void)
 		new->self = NULL;
 		new->prev = NULL;
 		new->visited = 0;
+		new->color = 16777215;
 		new->dijkstra = INT_MAX;
 		new->queue_next = NULL;
 	}

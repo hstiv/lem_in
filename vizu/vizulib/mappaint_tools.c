@@ -51,6 +51,8 @@ void		graph_color(t_lem *lem, t_room *adj, t_mlx *mlx, int *col)
 		*col = mlx->blue;
 	else if (lem->end == adj)
 		*col = mlx->yellow;
+	else if (adj->color == mlx->green)
+		*col = mlx->green;
 	else
 		*col = mlx->white;
 }
