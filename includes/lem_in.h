@@ -131,5 +131,8 @@ int						check_link(t_room *src, t_room *dest);
 t_path					*reverse_path(t_path *path);
 void					fill_intersection_array(t_path *path, t_lem *lem);
 t_group					*delete_intersecting_paths(t_group *group);
-
+void	free_path(t_path *path);
+void	free_group(t_group *group);
+void	free_queue(t_queue *queue);
+void	free_path_full(t_path *path);
 #endif

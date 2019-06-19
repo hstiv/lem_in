@@ -21,7 +21,7 @@ static int		common_cond(t_split **tmp, int *t, t_lem *lem, char *s)
 		if (!common_room(*tmp, ft_strsplit(s, ' '), t))
 		{
 			free(s);
-			free(*tmp);
+//			free(*tmp);
 			*tmp = NULL;
 			return (0);
 		}

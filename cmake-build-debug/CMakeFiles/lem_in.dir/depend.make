@@ -249,10 +249,6 @@ CMakeFiles/lem_in.dir/src/switch_links.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/switch_links.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/switch_links.c.o: ../src/switch_links.c
 
-CMakeFiles/lem_in.dir/src/triple_split.c.o: ../includes/lem_in.h
-CMakeFiles/lem_in.dir/src/triple_split.c.o: ../includes/libft.h
-CMakeFiles/lem_in.dir/src/triple_split.c.o: ../src/triple_split.c
-
 CMakeFiles/lem_in.dir/src/utils.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/utils.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/utils.c.o: ../src/utils.c

@@ -92,3 +92,17 @@ int n_paths_sumlen(t_path **patharr, int len)
 //	free(curgroup);
 //	return (create_group(bestgroup, groupsize));
 //}
+
+void	free_group(t_group *group)
+{
+	int i;
+
+	i = 0;
+	while (i < group->size)
+	{
+		free_path_full(group->path_array[i]);
+		i++;
+	}
+	free(group->path_array);
+	free(group);
+}

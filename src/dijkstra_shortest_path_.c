@@ -93,6 +93,7 @@ t_path	*reverse_path(t_path *path)
 		add_to_path(reversed, tmp);
 		tmp = tmp->prev;
 	}
+	free_path_full(path);
 	return (reversed);
 }
 
@@ -107,5 +108,6 @@ t_path	*dijkstra_search(t_lem *lem)
 	dijkstra_indexing(queue, lem);
 	shortest_path = dijkstra_backtrace(lem);
 
+	free_queue(queue);
 	return (reverse_path(shortest_path));
 }

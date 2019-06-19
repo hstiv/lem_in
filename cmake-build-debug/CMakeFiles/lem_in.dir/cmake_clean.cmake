@@ -84,7 +84,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/src/run_ants.c.o"
   "CMakeFiles/lem_in.dir/src/split_free.c.o"
   "CMakeFiles/lem_in.dir/src/switch_links.c.o"
-  "CMakeFiles/lem_in.dir/src/triple_split.c.o"
   "CMakeFiles/lem_in.dir/src/utils.c.o"
   "lem_in.pdb"
   "lem_in"

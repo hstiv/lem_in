@@ -129,7 +129,11 @@ t_group					*find_best_group(t_group *best_group, t_lem *lem)
 	if (!best_group)
 		return (cur_group);
 	if (cur_group && run_ants(cur_group, lem, 0) < run_ants(best_group, lem, 0))
+	{
+		free_group(best_group);
 		return (cur_group);
+	}
+	free_group(cur_group);
 	return (best_group);
 }
 
@@ -176,12 +180,16 @@ int				main(int ac, char **av)
 		printf("\n\nshortest path:   ");
 		print_path(shortest_path);
 		switch_links(shortest_path, lem);
+		free_path(shortest_path);
 		best_group = find_best_group(best_group, lem);
 
 	}
-	printf("best group for this antcount:\n");
+	printf("best group for this antcount(%d): \n", lem->ants);
+	if (!best_group)
+		throw_error("no possible pathes");
 	print_group(best_group);
 	run_ants(best_group, lem, 1);
+	free_group(best_group);
 //	create_solution(best_group);
 	split_free(data);
 	free_lem(lem);

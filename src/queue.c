@@ -76,3 +76,8 @@ t_room	*pop_from_queue(t_queue *queue)
 	queue->size--;
 	return (res);
 }
+
+void	free_queue(t_queue *queue)
+{
+	free(queue);
+}

@@ -75,10 +75,31 @@ void	print_path(t_path *path)
 	printf("\n");
 }
 
-void	print_all_pathes(t_path **patharr)
+void	free_path_full(t_path *path)
 {
-	while (*patharr)
+	int i;
+
+	i = 0;
+	t_room *room;
+	t_room *tmp;
+
+	room = path->start;
+	while (room)
 	{
-		print_path(*patharr++);
+		tmp = room;
+		room = room->next;
+		free(tmp);
 	}
+	if (path->intersection_arr)
+		free(path->intersection_arr);
+
+	free(path);
+}
+
+void	free_path(t_path *path)
+{
+	if (path->intersection_arr)
+		free(path->intersection_arr);
+
+	free(path);
 }

@@ -83,6 +83,7 @@ t_group	*delete_intersecting_paths(t_group *group)
 			newpatarr[j++] = patharr[i];
 		i++;
 	}
-	//todo free old group
+//	free_group(group);
+	free(group);
 	return create_group(newpatarr, newsize);
 }
