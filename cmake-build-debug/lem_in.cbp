@@ -293,6 +293,9 @@
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/libft/src/ft_toupper.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/mdebbi/Desktop/lem_in/libft/src/g_memalloc.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/mdebbi/Desktop/lem_in/libft/src/get_next_line.c">
 			<Option target="lem_in"/>
 		</Unit>

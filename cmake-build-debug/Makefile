@@ -1932,6 +1932,33 @@ libft/src/ft_toupper.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.s
 .PHONY : libft/src/ft_toupper.c.s
 
+libft/src/g_memalloc.o: libft/src/g_memalloc.c.o
+
+.PHONY : libft/src/g_memalloc.o
+
+# target to build an object file
+libft/src/g_memalloc.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/g_memalloc.c.o
+.PHONY : libft/src/g_memalloc.c.o
+
+libft/src/g_memalloc.i: libft/src/g_memalloc.c.i
+
+.PHONY : libft/src/g_memalloc.i
+
+# target to preprocess a source file
+libft/src/g_memalloc.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/g_memalloc.c.i
+.PHONY : libft/src/g_memalloc.c.i
+
+libft/src/g_memalloc.s: libft/src/g_memalloc.c.s
+
+.PHONY : libft/src/g_memalloc.s
+
+# target to generate assembly for a file
+libft/src/g_memalloc.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/src/g_memalloc.c.s
+.PHONY : libft/src/g_memalloc.c.s
+
 libft/src/get_next_line.o: libft/src/get_next_line.c.o
 
 .PHONY : libft/src/get_next_line.o
@@ -2655,6 +2682,9 @@ help:
 	@echo "... libft/src/ft_toupper.o"
 	@echo "... libft/src/ft_toupper.i"
 	@echo "... libft/src/ft_toupper.s"
+	@echo "... libft/src/g_memalloc.o"
+	@echo "... libft/src/g_memalloc.i"
+	@echo "... libft/src/g_memalloc.s"
 	@echo "... libft/src/get_next_line.o"
 	@echo "... libft/src/get_next_line.i"
 	@echo "... libft/src/get_next_line.s"

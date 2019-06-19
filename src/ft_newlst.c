@@ -16,7 +16,7 @@ t_lem			*ft_newlem(void)
 {
 	t_lem		*new;
 
-	new = (t_lem *)malloc(sizeof(t_lem));
+	new = (t_lem *) gmalloc(sizeof(t_lem));
 	if (new)
 	{
 		new->s = NULL;
@@ -37,7 +37,7 @@ t_room			*ft_newroom(void)
 {
 	t_room		*new;
 
-	new = (t_room *)malloc(sizeof(t_room));
+	new = (t_room *) gmalloc((sizeof(t_room)));
 	if (new)
 	{
 		new->ant = 0;
@@ -59,7 +59,7 @@ t_split			*ft_newsplit(void)
 {
 	t_split		*new;
 
-	new = (t_split *)malloc(sizeof(t_split));
+	new = (t_split *) gmalloc(sizeof(t_split));
 	if (new)
 	{
 		new->l = 0;

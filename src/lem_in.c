@@ -12,6 +12,8 @@
 
 #include "lem_in.h"
 
+
+
 //t_path**	find_two(t_path **patharr)
 //{
 //	int sumlen = INT_MAX;
@@ -100,7 +102,7 @@ t_group *make_group(t_lem *lem)
 	i = 0;
 	end = lem->end;
 	link = end->next;
-	patharr = ft_memalloc(sizeof(t_room*) * lem->end->link_count);
+	patharr = gmalloc(sizeof(t_room *) * lem->end->link_count);
 	while (link)
 	{
 		if (!check_link(link->self, end))
@@ -143,6 +145,7 @@ int				main(int ac, char **av)
 	t_lem		*lem;
 	t_path		*shortest_path;
 
+	g_memlist = create_memlist();
 	lem = ft_newlem();
 	data = NULL;
 	if (ac != 2 || !(data = ft_rec(av[1], lem)))
@@ -190,8 +193,37 @@ int				main(int ac, char **av)
 	print_group(best_group);
 	run_ants(best_group, lem, 1);
 	free_group(best_group);
-//	create_solution(best_group);
+
 	split_free(data);
 	free_lem(lem);
 	return (0);
 }
+
+//void	free_memlist(t_memlist *memlist)
+//{
+//	t_memnode *start;
+//
+//	start = memlist->start;
+//	while (start)
+//	{
+//		if (start->memptr)
+//			free(start->memptr);
+//		start->memptr = NULL;
+//		start = start->next;
+//	}
+//}
+
+//int main()
+//{
+//	g_memlist = create_memlist();
+//	char *str = gmalloc(10);
+//	char *str2 = gmalloc(20);
+//	char *str3 = gmalloc(200);
+//	char *str4 = gmalloc(200);
+//	char **s;
+////	s = (char **)ftg_memalloc(sizeof(char *) * 20000000);
+//	printf("%s\n", str4);
+//	str4 = gmalloc(100);
+////	str2 = g_memalloc(200);
+////	free_memlist(g_memlist);
+//}

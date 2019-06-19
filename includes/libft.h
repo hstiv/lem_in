@@ -32,6 +32,22 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct s_memnode{
+	void *memptr;
+	struct s_memnode *next;
+} t_memnode;
+
+typedef struct s_memlist{
+	t_memnode *start;
+	int allocs_count;
+} t_memlist;
+
+t_memlist *g_memlist;
+
+void	add_to_memlist(t_memlist *memlist, t_memnode *node);
+t_memlist *create_memlist();
+t_memnode *create_memnode(void *memptr);
+void	*gmalloc(size_t size);
 int					check_number(char *s);
 int					cnt_char(const char *s, char c);
 int					get_next_line(const int fd, char **line);

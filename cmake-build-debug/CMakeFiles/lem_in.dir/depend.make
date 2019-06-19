@@ -180,6 +180,9 @@ CMakeFiles/lem_in.dir/libft/src/ft_tolower.c.o: ../libft/src/ft_tolower.c
 
 CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.o: ../libft/src/ft_toupper.c
 
+CMakeFiles/lem_in.dir/libft/src/g_memalloc.c.o: ../includes/libft.h
+CMakeFiles/lem_in.dir/libft/src/g_memalloc.c.o: ../libft/src/g_memalloc.c
+
 CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o: ../libft/src/get_next_line.c
 

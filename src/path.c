@@ -11,7 +11,7 @@ void	fill_intersection_array(t_path *path, t_lem *lem)
 	t_room *start;
 
 	start = path->start;
-	array = ft_memalloc(sizeof(char) * (lem->rooms_cnt + 1));
+	array = gmalloc(sizeof(char) * (lem->rooms_cnt + 1));
 	i = 0;
 	while (start)
 	{
@@ -48,7 +48,7 @@ t_path	*create_path()
 {
 	t_path	*path;
 
-	path = malloc(sizeof(t_path));
+	path = gmalloc(sizeof(t_path));
 	path->end = NULL;
 	path->start = NULL;
 	path->len = 0;
@@ -77,9 +77,6 @@ void	print_path(t_path *path)
 
 void	free_path_full(t_path *path)
 {
-	int i;
-
-	i = 0;
 	t_room *room;
 	t_room *tmp;
 
