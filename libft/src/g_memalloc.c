@@ -22,11 +22,8 @@ void			add_to_memlist(t_memlist *memlist, t_memnode *node)
 	else
 	{
 		start = memlist->start;
-		while (start->next)
-		{
-			start = start->next;
-		}
-		start->next = node;
+		node->next = start;
+		memlist->start = node;
 	}
 }
 

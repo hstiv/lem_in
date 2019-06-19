@@ -92,6 +92,7 @@ typedef struct			s_group
 	struct s_group		*next;
 }						t_group;
 
+void					ft_printf(int ant, char *s);
 int						dublicates(t_split *tmp);
 int						ret_null(t_split *tmp);
 int						is_ants_at_finish(t_group *group);

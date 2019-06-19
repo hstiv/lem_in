@@ -133,7 +133,7 @@ typedef struct			s_group
 }						t_group;
 
 int						g_recursdepth;
-
+void					ft_printf(int ant, char *s);
 int						check_link(t_room *src, t_room *dest);
 void					free_queue(t_queue *queue);
 void					free_path_full(t_path *path);

@@ -78,6 +78,15 @@ static t_split	*getting(int fd, t_lem *lem)
 	return (tmp);
 }
 
+void			ft_printf(int ant, char *s)
+{
+	write(1, "L", 1);
+	ft_putnbr(ant);
+	write(1, "-", 1);
+	ft_putstr(s);
+	ft_putchar(' ');
+}
+
 t_split			*ft_rec(char *file_name, t_lem *lem)
 {
 	int			fd;

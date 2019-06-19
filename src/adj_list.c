@@ -55,7 +55,7 @@ int						adj_list(t_lem *lem, t_split *tmp)
 	int					l;
 
 	if (!(lem->adj = (t_room **)
-			malloc(sizeof(t_room *) * (lem->rooms_cnt + 1))))
+			gmalloc(sizeof(t_room *) * (lem->rooms_cnt + 1))))
 		return (0);
 	l = 0;
 	while (l < lem->rooms_cnt)
