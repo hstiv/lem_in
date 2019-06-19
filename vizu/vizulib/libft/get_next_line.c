@@ -6,7 +6,7 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 16:10:47 by hstiv             #+#    #+#             */
-/*   Updated: 2019/05/08 14:05:20 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/06/19 20:56:23 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int		get_line(char *tmp, char **line)
 	if (*(tmp + 32) != '\2' && !(detect(tmp)))
 	{
 		ft_memmove(tmp + 33, &tmp[((UL *)tmp)[1]],
-				   (len = *(((UL *)tmp) + 2) - *(((UL *)tmp) + 1)));
+		(len = *(((UL *)tmp) + 2) - *(((UL *)tmp) + 1)));
 		*(((UL *)tmp) + 1) = 33;
 		*(((UL *)tmp) + 2) = 33 + len;
 		*(((UL *)tmp) + 3) = *(((UL *)tmp) + 2);

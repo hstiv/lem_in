@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   queue.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/19 17:32:57 by hstiv             #+#    #+#             */
+/*   Updated: 2019/06/19 20:59:09 by hstiv            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "vizulib.h"
 
-void	add_to_queue(t_room *room, t_queue *queue)
+void			add_to_queue(t_room *room, t_queue *queue)
 {
 	if (queue->size == 0)
 	{
-		queue->start = queue->end = room;
+		queue->end = room;
+		queue->start = queue->end;
 	}
 	else
 	{
@@ -15,31 +28,15 @@ void	add_to_queue(t_room *room, t_queue *queue)
 	queue->size++;
 }
 
-void	add_to_priority_queue(t_room *room, t_queue *queue)
+static void		body_atpq(t_room *start, t_queue *queue, t_room *room)
 {
-	t_room *start;
-
-	room->queue_next = NULL;
-	queue->size++;
-	start = queue->start;
-	if (queue->size == 1)
-	{
-		queue->start = queue->end = room;
-		return ;
-	}
-	if (room->dijkstra <= start->dijkstra)
-	{
-		room->queue_next = start;
-		queue->start = room;
-		return ;
-	}
 	while (start)
 	{
 		if (start->queue_next == NULL)
 		{
 			start->queue_next = room;
 			queue->end = room;
-			room->queue_next = NULL;//
+			room->queue_next = NULL;
 			break ;
 		}
 		if (room->dijkstra <= start->queue_next->dijkstra)
@@ -50,14 +47,35 @@ void	add_to_priority_queue(t_room *room, t_queue *queue)
 			start->queue_next = room;
 			break ;
 		}
-
 		start = start->queue_next;
 	}
 }
 
-t_room	*pop_from_queue(t_queue *queue)
+void			add_to_priority_queue(t_room *room, t_queue *queue)
 {
-	t_room *res;
+	t_room		*start;
+
+	room->queue_next = NULL;
+	queue->size++;
+	start = queue->start;
+	if (queue->size == 1)
+	{
+		queue->end = room;
+		queue->start = queue->end;
+		return ;
+	}
+	if (room->dijkstra <= start->dijkstra)
+	{
+		room->queue_next = start;
+		queue->start = room;
+		return ;
+	}
+	body_atpq(start, queue, room);
+}
+
+t_room			*pop_from_queue(t_queue *queue)
+{
+	t_room		*res;
 
 	if (queue->size <= 0)
 		return (NULL);
@@ -70,4 +88,9 @@ t_room	*pop_from_queue(t_queue *queue)
 	}
 	queue->size--;
 	return (res);
+}
+
+void			free_queue(t_queue *queue)
+{
+	free(queue);
 }

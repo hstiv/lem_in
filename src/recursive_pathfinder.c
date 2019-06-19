@@ -12,8 +12,6 @@
 
 #include "lem_in.h"
 
-int			recursdepth = 0;
-
 void		add_to_path(t_path *path, t_room *room)
 {
 	t_room	*newroom;
@@ -42,6 +40,7 @@ void		remove_last_from_path(t_path *path)
 		end->prev->next = NULL;
 	}
 	free(end);
+	g_recursdepth--;
 }
 
 t_path		*copy_path(t_path *path)
@@ -78,11 +77,11 @@ int			rpf(t_room *room, t_lem *lem, t_path *path, t_path **pathlist)
 
 	this_room = room;
 	path_count = 0;
-	recursdepth++;
+	g_recursdepth = 0;
 	add_to_path(path, room);
 	if (room == lem->end)
 	{
-		recursdepth--;
+		g_recursdepth--;
 		add_path_to_all(path, pathlist);
 		remove_last_from_path(path);
 		return (1);
@@ -97,6 +96,5 @@ int			rpf(t_room *room, t_lem *lem, t_path *path, t_path **pathlist)
 	}
 	this_room->visited = 0;
 	remove_last_from_path(path);
-	recursdepth--;
 	return (path_count);
 }

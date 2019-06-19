@@ -12,23 +12,31 @@
 
 #include "vizulib.h"
 
-static int		delta(t_room *d0, t_room *d1, int *delx, int *dely)
+static void		delta(t_room *d0, t_room *d1, int *delx, int *dely)
 {
-	int			col;
-
 	*delx = (d1->x - d0->x > 0) ? (d1->x - d0->x) : (d0->x - d1->x);
 	*dely = (d1->y - d0->y > 0) ? (d1->y - d0->y) : (d0->y - d1->y);
-	if (d1->color == 849467 && d0->color == 849467)
-		col = 849467;
-	else
-		col = 16777215;
-	return (col);
 }
 
 static void		ft_dir(int *diry, int *dirx, t_room *d0, t_room *d1)
 {
 	*diry = (d0->y < d1->y) ? 1 : -1;
 	*dirx = (d0->x < d1->x) ? 1 : -1;
+}
+
+static void		color(t_mlx *mlx, t_room *d0, t_room *d1)
+{
+	t_room		**adj;
+
+	adj = mlx->lem->adj;
+	if (d1->color == 849467 && d0->color == 849467)
+		mlx->col = 849467;
+	else if (adj[d1->nb] == mlx->lem->begin && d0->color == 849467)
+		mlx->col = 849467;
+	else if (adj[d0->nb] == mlx->lem->begin && d1->color == 849467)
+		mlx->col = 849467;
+	else
+		mlx->col = 16777215;
 }
 
 void			ft_bresenham(t_room *d0, t_room *d1, t_mlx *mlx)
@@ -38,8 +46,9 @@ void			ft_bresenham(t_room *d0, t_room *d1, t_mlx *mlx)
 	int			diry;
 	int			dirx;
 
-	mlx->col = delta(d0, d1, &delx, &dely);	
+	delta(d0, d1, &delx, &dely);
 	ft_dir(&diry, &dirx, d0, d1);
+	color(mlx, d0, d1);
 	mlx->err = delx - dely;
 	while (d0->x != d1->x || d0->y != d1->y)
 	{

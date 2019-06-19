@@ -19,6 +19,8 @@
 # include <limits.h>
 # include <stdio.h>
 
+int			g_recursdepth;
+
 typedef struct			s_lem
 {
 	char				**s;

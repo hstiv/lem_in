@@ -88,6 +88,7 @@ static void		body(t_lem *lem)
 	t_group		*best_group;
 
 	best_group = NULL;
+	g_recursdepth = 0;
 	while ((shortest_path = dijkstra_search(lem)) != NULL)
 	{
 		switch_links(shortest_path, lem);

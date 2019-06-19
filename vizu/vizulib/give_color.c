@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   give_color.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/19 20:59:23 by hstiv             #+#    #+#             */
+/*   Updated: 2019/06/19 21:01:20 by hstiv            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "vizulib.h"
 
 static t_path	*backtrace_path(t_room *room, t_lem *lem)
@@ -18,7 +30,8 @@ static t_path	*backtrace_path(t_room *room, t_lem *lem)
 		while (link)
 		{
 			if (!check_link(link->self, cur_room))
-				if (!better_link || (link->self->dijkstra < better_link->self->dijkstra))
+				if (!better_link
+		|| (link->self->dijkstra < better_link->self->dijkstra))
 					better_link = link;
 			link = link->next;
 		}
@@ -56,7 +69,6 @@ t_group			*find_best_group(t_group *best_group, t_lem *lem)
 	t_group		*cur_group;
 
 	cur_group = make_group(lem);
-
 	is_intersecting_n_paths(cur_group->path_array, cur_group->size);
 	cur_group = delete_intersecting_paths(cur_group);
 	if (!best_group)
@@ -85,14 +97,14 @@ void			resert_color(t_mlx *mlx)
 void			give_color(t_mlx *mlx)
 {
 	t_path		*shortest_path;
-    t_group		*best_group;
+	t_group		*best_group;
 	int			i;
 	t_room		*path;
 
 	i = 0;
-    mlx->lem->max_group_size = calc_max_group_size(mlx->lem);
-    best_group = NULL;
-    while ((shortest_path = dijkstra_search(mlx->lem)) != NULL)
+	mlx->lem->max_group_size = calc_max_group_size(mlx->lem);
+	best_group = NULL;
+	while ((shortest_path = dijkstra_search(mlx->lem)) != NULL)
 	{
 		switch_links(shortest_path, mlx->lem);
 		best_group = find_best_group(best_group, mlx->lem);

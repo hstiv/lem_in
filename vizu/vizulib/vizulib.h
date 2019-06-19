@@ -6,7 +6,7 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 18:28:45 by hstiv             #+#    #+#             */
-/*   Updated: 2019/06/05 18:28:47 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/06/19 20:55:32 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ typedef	struct			s_mlx
 	int					cmnd;
 	int					m;
 	int					col;
+	int					g;
 	t_lem				*lem;
 }						t_mlx;
 
@@ -103,7 +104,6 @@ typedef struct			s_split
 	int					end;
 	struct s_split		*next;
 	struct s_split		*prev;
-	
 }						t_split;
 
 typedef	struct			s_queue
@@ -129,9 +129,15 @@ typedef struct			s_group
 	int					sumlen;
 	int					ants;
 	t_path				**path_array;
-	struct s_group		*next;//??maybe?
+	struct s_group		*next;
 }						t_group;
 
+int						g_recursdepth;
+
+int						check_link(t_room *src, t_room *dest);
+void					free_queue(t_queue *queue);
+void					free_path_full(t_path *path);
+void					ft_input(t_mlx *mlx);
 void					resert_color(t_mlx *mlx);
 void					give_color(t_mlx *mlx);
 int						min(int a, int b);
@@ -153,7 +159,7 @@ t_path					*dijkstra_search(t_lem *lem);
 void					throw_error(char *msg);
 int						rpf(t_room *room, t_lem *lem,
 						t_path *path, t_path **pathlist);
-int 					dublicates(t_split *tmp);
+int						dublicates(t_split *tmp);
 int						ret_null(t_split *tmp);
 int						is_ants_at_finish(t_group *group);
 void					make_prev_for_path(t_group *group, t_lem *lem);

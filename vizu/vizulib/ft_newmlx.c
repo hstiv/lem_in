@@ -25,6 +25,7 @@ static void			others(t_mlx *mlx)
 	mlx->cmnd = 0;
 	mlx->m = 1;
 	mlx->col = 0;
+	mlx->g = 0;
 }
 
 t_mlx				*ft_newmlx(void)

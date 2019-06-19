@@ -6,7 +6,7 @@
 /*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 15:46:51 by hstiv             #+#    #+#             */
-/*   Updated: 2019/06/02 17:40:13 by hstiv            ###   ########.fr       */
+/*   Updated: 2019/06/19 21:09:10 by hstiv            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,17 +50,14 @@ static int				if_common(t_lem *lem, t_split *tmp, int *l)
 	return (1);
 }
 
-int						adj_list(t_lem *lem, t_split *split)
+int						adj_list(t_lem *lem, t_split *tmp)
 {
-	t_room				**adj;
 	int					l;
-	t_split				*tmp;
 
-	tmp = split;
-	if (!(adj = (t_room **) malloc(sizeof(t_room *) * (lem->rooms_cnt + 1))))
+	if (!(lem->adj = (t_room **)
+			malloc(sizeof(t_room *) * (lem->rooms_cnt + 1))))
 		return (0);
 	l = 0;
-	lem->adj = adj;
 	while (l < lem->rooms_cnt)
 	{
 		if (tmp->begin)
@@ -78,9 +75,5 @@ int						adj_list(t_lem *lem, t_split *split)
 		tmp = tmp->next;
 	}
 	lem->adj[l] = NULL;
-	if (!lem->begin || !lem->end)
-		return (0);
-	lem->begin->ant = lem->ants;
-	return(link_make(lem, tmp));
+	return (link_make(lem, tmp));
 }
-

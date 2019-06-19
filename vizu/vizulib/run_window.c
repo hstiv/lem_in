@@ -49,6 +49,7 @@ int					ft_close(void *param)
 void				run_window(t_mlx *mlx)
 {
 	mlx->ptr = mlx_init();
+	g_recursdepth = 0;
 	mlx->wind = mlx_new_window(mlx->ptr, WIDTH, HEIGHT, VIZU);
 	mlx_hook(mlx->wind, 17, (1L << 17), ft_close, mlx);
 	mlx_hook(mlx->wind, 2, 0, key_press, mlx);

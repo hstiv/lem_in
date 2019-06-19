@@ -46,6 +46,14 @@ void			make_prev_for_path(t_group *group, t_lem *lem)
 	}
 }
 
+int				check_link(t_room *src, t_room *dest)
+{
+	src = src->next;
+	while (src->next && src->self != dest)
+		src = src->next;
+	return (src->visited == 1) ? 0 : 1;
+}
+
 int				is_ants_at_finish(t_group *group)
 {
 	int			i;
