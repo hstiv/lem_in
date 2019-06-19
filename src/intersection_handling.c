@@ -1,14 +1,22 @@
-//
-// Created by Maybell Debbi on 2019-06-04.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   intersection_handling.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hstiv <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/19 15:07:51 by hstiv             #+#    #+#             */
+/*   Updated: 2019/06/19 15:07:52 by hstiv            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "lem_in.h"
 
-int 	is_intersect(t_path *path1, t_path *path2)
+int			is_intersect(t_path *path1, t_path *path2)
 {
-	t_path *shorter;
-	t_path *longer;
-	t_room *shorthead;
+	t_path	*shorter;
+	t_path	*longer;
+	t_room	*shorthead;
 
 	shorter = (path1->len < path2->len) ? path1 : path2;
 	longer = (shorter == path1) ? path2 : path1;
@@ -16,17 +24,17 @@ int 	is_intersect(t_path *path1, t_path *path2)
 	while (shorthead)
 	{
 		if (shorthead != shorter->start && shorthead != shorter->end)
-			if(longer->intersection_arr[shorthead->nb] != 0)
+			if (longer->intersection_arr[shorthead->nb] != 0)
 				return (1);
 		shorthead = shorthead->next;
 	}
 	return (0);
 }
 
-int		is_intersecting_n_paths(t_path **path_arr, int size)//todo testing
+int			is_intersecting_n_paths(t_path **path_arr, int size)//todo testing
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (i < size)
@@ -43,36 +51,11 @@ int		is_intersecting_n_paths(t_path **path_arr, int size)//todo testing
 	return (0);
 }
 
-t_group	*delete_intersecting_paths(t_group *group)
+t_group		*newpatharr(t_path **patharr, t_group *group, int newsize)
 {
-	int i;
-	int j;
-	t_path **patharr;
-	int newsize;
-	t_path **newpatarr;
-
-	newsize = group->size;
-	patharr = group->path_array;
-
-	i = 0;
-	while (i < group->size)
-	{
-		j = i + 1;
-		while (j < group->size)
-		{
-			if (patharr[i] && patharr[j])
-				if (is_intersect(patharr[i], patharr[j]))
-				{
-					if (patharr[i]->len > patharr[j]->len)
-						patharr[i] = NULL;
-					else
-						patharr[j] = NULL;
-					newsize--;
-				}
-			j++;
-		}
-		i++;
-	}
+	int		i;
+	int		j;
+	t_path	**newpatarr;
 
 	i = 0;
 	j = 0;
@@ -83,7 +66,34 @@ t_group	*delete_intersecting_paths(t_group *group)
 			newpatarr[j++] = patharr[i];
 		i++;
 	}
-//	free_group(group);
 	free(group);
-	return create_group(newpatarr, newsize);
+	return (create_group(newpatarr, newsize));
+}
+
+t_group		*delete_intersecting_paths(t_group *group)
+{
+	int		i;
+	int		j;
+	int		newsize;
+
+	newsize = group->size;
+	i = -1;
+	while (++i < group->size)
+	{
+		j = i + 1;
+		while (j < group->size)
+		{
+			if (group->path_array[i] && group->path_array[j])
+				if (is_intersect(group->path_array[i], group->path_array[j]))
+				{
+					if (group->path_array[i]->len > group->path_array[j]->len)
+						group->path_array[i] = NULL;
+					else
+						group->path_array[j] = NULL;
+					newsize--;
+				}
+			j++;
+		}
+	}
+	return (newpatharr(group->path_array, group, newsize));
 }
