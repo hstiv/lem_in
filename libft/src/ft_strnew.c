@@ -18,7 +18,7 @@ char				*ft_strnew(size_t size)
 {
 	char			*str;
 
-	str = (char *) gmalloc(size + 1);
+	str = (char *)gmalloc(size + 1);
 	if (str == NULL)
 		return (NULL);
 	ft_memset(str, 0, size + 1);

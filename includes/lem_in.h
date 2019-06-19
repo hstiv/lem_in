@@ -87,10 +87,10 @@ typedef struct			s_group
 	int					sumlen;
 	int					ants;
 	t_path				**path_array;
-	struct s_group		*next;//??maybe?
+	struct s_group		*next;
 }						t_group;
 
-int 					dublicates(t_split *tmp);
+int						dublicates(t_split *tmp);
 int						ret_null(t_split *tmp);
 int						is_ants_at_finish(t_group *group);
 void					make_prev_for_path(t_group *group, t_lem *lem);
@@ -101,8 +101,6 @@ int						run_ants(t_group *group, t_lem *lem, int n);
 void					switch_links(t_path *path, t_lem *lem);
 void					add_group(t_group *group_list, t_lem *lem);
 t_group					*find_best_group(t_group *group_list, t_lem *lem);
-/* int 					create_solution(t_group *group,
- 						int is_print, t_lem *lem); */
 void					split_free(t_split *split);
 t_split					*ft_newsplit();
 void					free_lem(t_lem *lem);
@@ -124,7 +122,6 @@ void					add_to_queue(t_room *room, t_queue *queue);
 t_path					*dijkstra_search(t_lem *lem);
 void					throw_error(char *msg);
 int						min(int a, int b);
-void					print_path(t_path *path);
 int						calc_max_group_size(t_lem *lem);
 t_group					*create_group(t_path **patharr, int size);
 int						check_link(t_room *src, t_room *dest);
@@ -135,5 +132,5 @@ void					free_path(t_path *path);
 void					free_group(t_group *group);
 void					free_queue(t_queue *queue);
 void					free_path_full(t_path *path);
-void	*gmalloc(size_t size);
+
 #endif

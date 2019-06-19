@@ -61,7 +61,7 @@ static int		get_line(char *tmp, char **line)
 	if (*(tmp + 32) != '\2' && !(detect(tmp)))
 	{
 		ft_memmove(tmp + 33, &tmp[((UL *)tmp)[1]],
-				   (len = *(((UL *)tmp) + 2) - *(((UL *)tmp) + 1)));
+		(len = *(((UL *)tmp) + 2) - *(((UL *)tmp) + 1)));
 		*(((UL *)tmp) + 1) = 33;
 		*(((UL *)tmp) + 2) = 33 + len;
 		*(((UL *)tmp) + 3) = *(((UL *)tmp) + 2);

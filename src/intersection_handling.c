@@ -31,7 +31,7 @@ int			is_intersect(t_path *path1, t_path *path2)
 	return (0);
 }
 
-int			is_intersecting_n_paths(t_path **path_arr, int size)//todo testing
+int			is_intersecting_n_paths(t_path **path_arr, int size)
 {
 	int		i;
 	int		j;

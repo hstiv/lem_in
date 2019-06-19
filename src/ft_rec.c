@@ -21,7 +21,6 @@ static int		common_cond(t_split **tmp, int *t, t_lem *lem, char *s)
 		if (!common_room(*tmp, ft_strsplit(s, ' '), t))
 		{
 			free(s);
-//			free(*tmp);
 			*tmp = NULL;
 			return (0);
 		}
@@ -58,7 +57,7 @@ static int		body_of_getting(char *s, t_split **tmp, int *t, t_lem *lem)
 }
 
 static t_split	*getting(int fd, t_lem *lem)
-  {
+{
 	int			t;
 	char		*s;
 	t_split		*tmp;

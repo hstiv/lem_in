@@ -28,9 +28,10 @@ void				putman(t_mlx *mlx)
 			color = mlx->blue;
 		else if (adj[i] == mlx->lem->end)
 			color = mlx->yellow;
+		else if (adj[i]->color == mlx->green)
+			color = mlx->green;
 		else
 			color = mlx->white;
-		
 		mlx_string_put(mlx->ptr, mlx->wind, 5,
 			adj[i]->cor + mlx->cor, color, adj[i]->name);
 		i++;

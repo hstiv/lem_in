@@ -186,8 +186,6 @@ CMakeFiles/lem_in.dir/libft/src/g_memalloc.c.o: ../libft/src/g_memalloc.c
 CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o: ../libft/src/get_next_line.c
 
-CMakeFiles/lem_in.dir/libft/src/min.c.o: ../libft/src/min.c
-
 CMakeFiles/lem_in.dir/src/adj_list.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/src/adj_list.c.o: ../includes/libft.h
 CMakeFiles/lem_in.dir/src/adj_list.c.o: ../src/adj_list.c

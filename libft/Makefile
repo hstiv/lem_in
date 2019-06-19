@@ -74,6 +74,7 @@ SRC = $(PATH_SRC)ft_strlen.c \
 	$(PATH_SRC)get_next_line.c \
 	$(PATH_SRC)cnt_char.c \
 	$(PATH_SRC)check_number.c \
+	$(PATH_SRC)g_memalloc.c
 	
 	
 CFLAGS = -Wall -Wextra -Werror

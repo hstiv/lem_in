@@ -68,7 +68,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/libft/src/ft_toupper.c.o"
   "CMakeFiles/lem_in.dir/libft/src/g_memalloc.c.o"
   "CMakeFiles/lem_in.dir/libft/src/get_next_line.c.o"
-  "CMakeFiles/lem_in.dir/libft/src/min.c.o"
   "CMakeFiles/lem_in.dir/src/adj_list.c.o"
   "CMakeFiles/lem_in.dir/src/dijkstra_shortest_path_.c.o"
   "CMakeFiles/lem_in.dir/src/free_lem.c.o"

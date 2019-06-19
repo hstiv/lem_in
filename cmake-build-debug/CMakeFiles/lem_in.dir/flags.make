@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/mdebbi/Desktop/lem_in/includes -I/Users/mdebbi/Desktop/lem_in/libft -I/Users/mdebbi/Desktop/lem_in/src 
+C_INCLUDES = -I/Users/hstiv/lem_in/includes -I/Users/hstiv/lem_in/libft -I/Users/hstiv/lem_in/src 
 

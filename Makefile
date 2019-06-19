@@ -10,8 +10,9 @@ LFT = libft/libft.a
 
 SRC = src/lem_in.c src/ft_rec.c src/ft_newlst.c src/split_free.c \
 src/switch_links.c src/adj_list.c src/free_lem.c src/link_make.c \
-src/utils.c src/groups.c src/dijkstra_shortest_path.c src/path.c \
-src/intersection_handling.c src/queue.c src/rec_tools.c src/run_ants.c $(LFT)
+src/utils.c src/groups.c src/dijkstra_shortest_path_.c src/path.c \
+src/intersection_handling.c src/queue.c src/rec_tools.c src/run_ants.c \
+src/recursive_pathfinder.c $(LFT)
 
 all: $(NAME)
 
