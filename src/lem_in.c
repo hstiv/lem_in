@@ -12,35 +12,6 @@
 
 #include "lem_in.h"
 
-
-
-//t_path**	find_two(t_path **patharr)
-//{
-//	int sumlen = INT_MAX;
-//	int i = 0;
-//	int j;
-//	t_path	**two = ft_memalloc(sizeof(t_path*) * 2);
-//	while (patharr[i])
-//	{
-//		j = i + 1;
-//		while (patharr[j])
-//		{
-//			if (!is_intersect(patharr[i], patharr[j]))
-//			{
-//				if (patharr[i]->len + patharr[j]->len < sumlen)
-//				{
-//					sumlen = patharr[i]->len + patharr[j]->len;
-//					two[0] = patharr[i];
-//					two[1] = patharr[j];
-//				}
-//			}
-//			j++;
-//		}
-//		i++;
-//	}
-//	return (two);
-//}
-
 void		print_group(t_group *group)
 {
 	int 		i;
